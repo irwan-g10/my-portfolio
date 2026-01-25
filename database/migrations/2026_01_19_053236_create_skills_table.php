@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('level')->nullable();
             $table->string('experence_months')->nullable();
 
+
             $table->timestamps();
         });
     }

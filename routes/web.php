@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
@@ -9,6 +10,8 @@ Route::get('/', function () {
         'canRegister' => Features::enabled(Features::registration()),
     ]);
 })->name('home');
+// Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
+Route::resource('portfolio', PortfolioController::class);
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
