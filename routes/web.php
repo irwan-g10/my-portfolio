@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ExampleController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
@@ -12,6 +13,9 @@ Route::get('/', function () {
 })->name('home');
 // Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
 Route::resource('portfolio', PortfolioController::class);
+
+// Route::resource('example', ExampleController::class);
+Route::get('/example', [ExampleController::class, 'index'])->name('example');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
