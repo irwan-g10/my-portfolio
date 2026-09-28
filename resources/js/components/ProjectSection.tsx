@@ -1,23 +1,23 @@
+import ProjectCountCard from "./Common/ProjectCountCard";
+import ProjectHeroCard from "./Common/ProjectHeroCard";
+import ProjectList from "./Common/ProjectList";
+
 export default function ProjectSection() {
     return (
         <div className="container">
-            <h1 className="align-items-center justify-content-center d-flex ">Latest Project</h1>
-            <div className="project-count d-flex justify-content-center align-items-center gap-2">
-                <div className="card m- fw-bold col border-sm shadow justify-content-center align-items-center" style={{ height: '200px' }}>Client Order</div>
-                <div className="card m- fw-bold col border-sm shadow justify-content-center align-items-center" style={{ height: '200px' }}>Completed Project</div>
-                <div className="card m- fw-bold col border-sm shadow justify-content-center align-items-center" style={{ height: '200px' }}>Star Rating</div>
-                <div className="card m- fw-bold col border-sm shadow justify-content-center align-items-center" style={{ height: '200px' }}>Months of Experience</div>
+            <h1 className="align-items-center justify-content-center d-flex mb-5 ">Latest Project</h1>
+            <div className="project-count d-flex gap-2 justify-content-center align-items-centerm mb-3">
+                
+                <ProjectCountCard count={5} label="Total Projects" />
+                <ProjectCountCard count={12} label="Completed Projects" />
+                <ProjectCountCard count={2} label='Years Of Experience'/>
+                <ProjectCountCard count={4.5} label='Starts Rating'/>
             </div>
-            <div className="project-list">
-                <div>
-                    <div>gambar</div>
-                    <div className="project-detail">
-                        <p>Project Name</p>
-                        <p>Description of the project.</p>
-                    </div>
-                    <div>Detail</div>
-                </div>
+            <div className="project-list mt-5 ">
+                <ProjectHeroCard />
+                <ProjectList />
             </div>
+
         </div>
     )
 }

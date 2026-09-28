@@ -1,6 +1,6 @@
 export default function HeroSection() {
     return (
-        <div className="container">
+        <div className="container vh-100">
             <div className="row m-5">
                 <div className="col ">
                     <h3>Hello Semua</h3>
@@ -8,7 +8,7 @@ export default function HeroSection() {
                     <h1>Nama Saya <span className="text-primary">Irwan Gumilar</span></h1>
                     <label className="text-secondary">Saya Seorang Frontend Developer</label>
                     <p className="my-3">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis necessitatibus obcaecati quos fuga quidem ab totam corrupti repellat autem ratione? Aut dolorem eaque officiis natus veritatis sed, qui nam numquam quia mollitia possimus harum, magni alias ratione reprehenderit repellat reiciendis quae! Rerum, totam sapiente minima fugiat dolores, nam saepe mollitia quos, illum eveniet quas quis voluptatem vitae reprehenderit cupiditate sed.
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, vero quis inventore voluptatum non nihil, commodi tenetur numquam animi vel neque cumque, consequatur sunt suscipit dolorem doloribus ea molestias tempora cum alias dolorum blanditiis quasi! Vitae vero qui eaque eius dolor cum? Quod nemo vero ipsum assumenda illo laborum pariatur, perspiciatis dolore quas accusantium fuga mollitia accusamus, fugit ducimus distinctio quisquam asperiores nam iure repudiandae blanditiis tempora numquam voluptas placeat.
                     </p>
 
                 </div>
@@ -22,7 +22,7 @@ export default function HeroSection() {
                 </div>
                 <div className="d-flex justify-content-between align-items-center mt-3">
 
-                    <button className="btn btn-primary d-flex gap-3 mt-3 justify-content-start align-items-center"><label >Download CV</label> <i className="bi bi-download"></i></button>
+                    <button className="btn btn-primary fw-bold d-flex gap-3 mt-3 justify-content-start align-items-center"><label >Download CV</label> <i className="bi bi-download"></i></button>
 
                     <div className="d-flex gap-3 align-items-center justify-content-end mt-3">
                         <div>Find me on</div>
