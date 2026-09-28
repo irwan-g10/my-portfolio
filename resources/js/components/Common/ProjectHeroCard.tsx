@@ -3,10 +3,10 @@ import TechLabel from "./TechLabel";
 
 export default function ProjectHeroCard() {
     return (
-        <div className="border rounded p-3 py-5 ">
+        <div className="border rounded-5 p-3 py-5 ">
            <div className="row gap-5 ">
              <div className="gambar col">
-                <img src="/images/website.png" alt="Project Image" className="w-100 border border-secondary img-fluid object-fit-cover shadow-sm rounded"  style={{ height: '250px' }}    />
+                <img src="/images/website.png" alt="Project Image" className="w-100 border border-secondary img-fluid object-fit-cover shadow-sm rounded-5"  style={{ height: '250px' }}    />
             </div>
             <div className="deskripsi col-5">
                 <div className="d-flex mb-3 align-items-center gap-2 border border-primary shadow-sm rounded-pill fst-italic p-1 px-3 mb-2 fw-bold text-white bg-primary" style={{ width: 'fit-content' }}>

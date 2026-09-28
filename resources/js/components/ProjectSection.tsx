@@ -4,8 +4,9 @@ import ProjectList from "./Common/ProjectList";
 
 export default function ProjectSection() {
     return (
-        <div className="container">
-            <h1 className="align-items-center justify-content-center d-flex mb-5 ">Latest Project</h1>
+        <div className="container mb-5">
+            <h1 className="align-items-center justify-content-start d-flex  ">Latest Project</h1>
+            <hr className="mb-5" />
             <div className="project-count d-flex gap-2 justify-content-center align-items-centerm mb-3">
                 
                 <ProjectCountCard count={5} label="Total Projects" />

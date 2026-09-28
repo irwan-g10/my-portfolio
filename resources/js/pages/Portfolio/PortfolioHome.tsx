@@ -1,6 +1,12 @@
+import CertificationSection from '@/components/CertificationSection';
 import HeroSection from '@/components/HeroSection';
+import HireSection from '@/components/HIreSection';
+import JourneySection from '@/components/JourneySection';
+import Footer from '@/components/Navigation/Footer';
 import Navbar from '@/components/Navigation/Navbar';
+import OfferingSection from '@/components/OfferingSection';
 import ProjectSection from '@/components/ProjectSection';
+import ToolsAndSkillSection from '@/components/ToolsAndSkillSection';
 import { Link } from '@inertiajs/react';
 
 export default function Home() {
@@ -10,22 +16,15 @@ export default function Home() {
 
             <main>
                 <HeroSection />
+                <OfferingSection />
+                <ToolsAndSkillSection />
+                <CertificationSection />
                 <ProjectSection />
-                
+                <JourneySection />
+                <HireSection />
             </main>
-
             
-
-            
-
-            <div className="skill ">
-                <h1>What I Do</h1>
-            </div>
-            <div className="project-count">Project Count</div>
-            <div className="why-hire-me">Why Hire Me</div>
-            <div className="journey">My Journey</div>
-            <div className="tools-and-skills">Tools and Skills</div>
-            <div className="footer">Footer</div>
+            <Footer />
         </>
 
         

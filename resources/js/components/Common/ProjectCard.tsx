@@ -2,8 +2,8 @@ import TechLabel from "./TechLabel";
 
 export default function ProjectCard() {
     return (
-        <div className="card col-3 shadow-sm">
-            <img src="/images/website.png" className="card-img-top" alt="Project Image" />
+        <div className="card col-3 rounded-5 shadow-sm">
+            <img src="/images/website.png" className="card-img-top rounded mt-2" alt="Project Image" />
             <div className="card-body">
                 <label className=" text-primary fw-semibold  small">Project STACK</label>
                 <div className="card-title fw-bold">Project Title</div>
