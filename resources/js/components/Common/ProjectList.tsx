@@ -6,8 +6,6 @@ export default function ProjectList() {
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
         </div>
     )
 }
