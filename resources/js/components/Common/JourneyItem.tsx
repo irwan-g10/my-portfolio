@@ -1,3 +1,4 @@
+import ExpandableButton from "./ExpandableButton";
 import JourneyItemCard from "./JourneyItemCard";
 
 export default function JourneyItem({ left = true }) {
@@ -17,6 +18,7 @@ export default function JourneyItem({ left = true }) {
                         <JourneyItemCard />
                     </div>
                 </div>
+                {/* <ExpandableButton /> */}
             </div>
 
         )

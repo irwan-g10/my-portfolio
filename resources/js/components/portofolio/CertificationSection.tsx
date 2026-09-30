@@ -1,4 +1,5 @@
 import CertificationCard from "../Common/CertificationCard";
+import ExpandableButton from "../Common/ExpandableButton";
 import SectionTitle from "../Common/SectionTitle";
 
 
@@ -10,6 +11,7 @@ export default function CertificationSection() {
                 <CertificationCard />
                 <CertificationCard />
                 <CertificationCard />
+                <ExpandableButton />
 
             </div>
         </div>

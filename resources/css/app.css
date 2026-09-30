@@ -11,6 +11,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.bg-grad-expand {
+    background: #7a7a7a;
+background: linear-gradient(0deg, rgba(122, 122, 122, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
 
 .quicksand {
   font-family: "Quicksand", sans-serif;

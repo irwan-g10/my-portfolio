@@ -1,3 +1,4 @@
+import ExpandableButton from "../Common/ExpandableButton";
 import JourneyItemCard from "../Common/JourneyItem";
 import SectionTitle from "../Common/SectionTitle";
 
@@ -7,6 +8,7 @@ export default function JourneySection() {
       <SectionTitle title="My Journey" />
 
       <JourneyItemCard/>
+      <ExpandableButton />
 
     </div>
   )

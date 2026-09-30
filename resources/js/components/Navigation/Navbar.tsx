@@ -5,7 +5,7 @@ export default function Navbar() {
     const { url } = usePage();
 
     return (
-        <nav className="navbar navbar-expand-lg bg-secondarys p-3 shadow-sm px-5">
+        <nav className="navbar navbar-expand-lg  p-3 shadow-sm px-5">
             <div className="container-fluid">
 
                 <a href="#" className="navbar-brand text-dark fw-bold fs-4">Atomic<i className="text-primary">Site</i></a>
