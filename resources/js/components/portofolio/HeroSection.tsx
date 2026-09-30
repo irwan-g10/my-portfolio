@@ -6,8 +6,8 @@ export default function HeroSection() {
                     <h3>Hello Semua</h3>
 
                     <h1>Nama Saya <span className="text-primary">Irwan Gumilar</span></h1>
-                    <label className="text-secondary">Saya Seorang Frontend Developer</label>
-                    <p className="my-3">
+                    <label className="text-secondary fst-italic">Saya Seorang Frontend Developer</label>
+                    <p className="my-3 small">
                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, vero quis inventore voluptatum non nihil, commodi tenetur numquam animi vel neque cumque, consequatur sunt suscipit dolorem doloribus ea molestias tempora cum alias dolorum blanditiis quasi! Vitae vero qui eaque eius dolor cum? Quod nemo vero ipsum assumenda illo laborum pariatur, perspiciatis dolore quas accusantium fuga mollitia accusamus, fugit ducimus distinctio quisquam asperiores nam iure repudiandae blanditiis tempora numquam voluptas placeat.
                     </p>
 

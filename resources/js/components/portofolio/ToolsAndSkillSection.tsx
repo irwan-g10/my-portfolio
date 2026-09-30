@@ -1,8 +1,9 @@
+import SectionTitle from "../Common/SectionTitle"
+
 export default function ToolsAndSkillSection() {
     return (
         <div className="container mb-5">
-            <h1 className="align-items-center justify-content-start d-flex ">Tools and Skills</h1>
-            <hr className="mb-5"/>
+            <SectionTitle title="Tools and Skills" />
             <div className="d-flex gap-2 justify-content-center align-items-center fw-bold text-primary mb-3">
                 <div className="btn btn-outline-primary fw-bold">All</div>
                 <div className="btn btn-outline-primary fw-bold">Programming Languages</div>
