@@ -1,3 +1,5 @@
+import ProjectCountCard from "../Common/ProjectCountCard";
+
 export default function HeroSection() {
     return (
         <div className="container vh-100">
@@ -8,11 +10,17 @@ export default function HeroSection() {
                     <h1>Nama Saya <span className="text-primary">Irwan Gumilar</span></h1>
                     <label className="text-secondary fst-italic">Saya Seorang Frontend Developer</label>
                     <p className="my-3 small">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, vero quis inventore voluptatum non nihil, commodi tenetur numquam animi vel neque cumque, consequatur sunt suscipit dolorem doloribus ea molestias tempora cum alias dolorum blanditiis quasi! Vitae vero qui eaque eius dolor cum? Quod nemo vero ipsum assumenda illo laborum pariatur, perspiciatis dolore quas accusantium fuga mollitia accusamus, fugit ducimus distinctio quisquam asperiores nam iure repudiandae blanditiis tempora numquam voluptas placeat.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, fugit aperiam voluptatem quidem ipsa quod error iure laudantium natus sapiente perspiciatis nam voluptatibus vitae voluptate porro. Sapiente harum non nemo, modi, possimus facilis quaerat maiores doloremque, necessitatibus rerum neque magnam.
                     </p>
+                    <div className="project-count d-flex gap-2 justify-content-center">
+                                    
+                                    <ProjectCountCard count={5} label="Projects" />
+                                    <ProjectCountCard count={2} label='Years Experience'/>
+                                    <ProjectCountCard count={4.5} label='Starts Rating'/>
+                                </div>
 
                 </div>
-                <div className="profesional-foto  col-5 justify-content-end align-items-end d-flex">
+                <div className="profesional-foto  col-5 justify-content-end align-items-center d-flex">
                     <img
                         src="/images/profesional-foto-removebg.png"
                         alt="Foto Irwan Gumilar"
