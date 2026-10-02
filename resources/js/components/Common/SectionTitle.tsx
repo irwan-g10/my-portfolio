@@ -1,13 +1,10 @@
 export default function SectionTitle({ title = 'Title Section' }) {
     return (
-        <div className="row">
-            <div className="col-auto">
+        <div className="mb-10 flex">
                 <div className="section-title">
-                    <h1 className="align-items-center justify-content-start fw-bold ">{title}</h1>
-                    <hr className="mb-5 border-5 rounded-pill" />
+                    <h1 className="text-3xl font-black mb-2">{title}</h1>
+                    <hr className="border-3 rounded-full border-black-900" />
                 </div>
-            </div>
-            <div className="col"></div>
         </div>
     )
 }

@@ -2,9 +2,9 @@ import SectionTitle from "../Common/SectionTitle"
 
 export default function ToolsAndSkillSection() {
     return (
-        <div className="container mb-5">
+        <div className="w-4/5 mx-auto mb-10">
             <SectionTitle title="Tools and Skills" />
-            <div className="d-flex gap-2 justify-content-center align-items-center fw-bold text-primary mb-3">
+            <div className="flex flex-row gap-2 justify-center align-items-center mb-5 flex-wrap">
                 <div className="btn btn-outline-primary fw-bold">All</div>
                 <div className="btn btn-outline-primary fw-bold">Programming Languages</div>
                 <div className="btn btn-outline-primary fw-bold">Framework</div>
@@ -13,7 +13,7 @@ export default function ToolsAndSkillSection() {
                 <div className="btn btn-outline-primary fw-bold">AI Coding Asistant</div>
                 <div className="btn btn-outline-primary fw-bold">Tools</div>
             </div>
-            <div className="d-flex gap-2 justify-content-center align-items-center flex-wrap fw-bold text-secondary  p-2">
+            <div className="flex flex-row gap-2 justify-center items-center flex-wrap">
                 <label className="p-2 border rounded small">PHP</label>
                 <label className="p-2 border rounded small">Javascript</label>
                 <label className="p-2 border rounded small">CSS</label>

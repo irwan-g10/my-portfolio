@@ -4,9 +4,9 @@ import SectionTitle from "../Common/SectionTitle";
 
 export default function OfferingSection() {
     return (
-        <div className="container mb-5">
+        <div className="w-4/5 mx-auto mb-10">
             <SectionTitle title='What Do I Offer'/>
-            <div className=" d-flex gap-3">
+            <div className="flex gap-3">
                 <OfferingCard />
                 <OfferingCard />
                 <OfferingCard />

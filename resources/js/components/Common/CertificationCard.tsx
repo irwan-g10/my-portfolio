@@ -1,30 +1,31 @@
+import Button from "./Button";
 import TechLabel from "./TechLabel";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 export default function CertificationCard() {
     return (
-        <div className="row gap-3">
-            <div className="col-4 d-flex flex-column justify-content-center align-items-center">
-                <div className="jurusan justify-content-center align-items-center d-flex flex-column">
-                    <div className="">Desember 2025</div>
-                    <div className="fw-bold">Dicoding Academy</div>
+        <div className="justify-center items-center flex flex-col">
+            <div className=" grid grid-cols-3 justify-center items-center ">
+                <div className=" text-center">
+                        <div className="text-sm">Desember 2025</div>
+                        <div className="text-lg font-bold">Dicoding Academy</div>
+                    
+                </div>
+                <div className="flex flex-col gap-3">
+                        <h5 className="font-black text-xl">Full Stack Web Developer</h5>
+                        <div className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit distinctio unde tenetur. Expedita, quam eligendi! Odit ullam unde officia ipsum!</div>
+                        <div className="flex gap-2">
+                            <TechLabel label="Laravel" />
+                            <TechLabel label="Laravel" />
+                            <TechLabel label="Laravel" />
+                            <TechLabel label="Laravel" />
+                        </div>
+                </div>
+                <div className="items-end flex justify-end">
+                    <Button title="Lihat Sertifikat"/>
                 </div>
             </div>
-            <div className="col ">
-                <div className="ow">
-                    <h5 className="fw-bold">Full Stack Web Developer</h5>
-                    <div className="small text-body-tertiary mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit distinctio unde tenetur. Expedita, quam eligendi! Odit ullam unde officia ipsum!</div>
-                    <div className="d-flex gap-2">
-                        <TechLabel label="Laravel" />
-                        <TechLabel label="Laravel" />
-                        <TechLabel label="Laravel" />
-                        <TechLabel label="Laravel" />
-                    </div>
-                </div>
-            </div>
-            <div className="col-2 d-flex flex-column justify-content-center align-items-center">
-                <button className="btn btn-outline-primary rounded-pill">Lihat Sertifikat</button>
-            </div>
-            <hr />
+            <hr className='border-2 w-3/5 my-3 rounded-full ' />
         </div>
     )
 }

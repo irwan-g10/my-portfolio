@@ -6,13 +6,13 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 
-Route::get('/', function () {
-    return Inertia::render('welcome', [
-        'canRegister' => Features::enabled(Features::registration()),
-    ]);
-})->name('home');
+// Route::get('/', function () {
+//     return Inertia::render('welcome', [
+//         'canRegister' => Features::enabled(Features::registration()),
+//     ]);
+// })->name('home');
 // Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
-Route::resource('portfolio', PortfolioController::class);
+Route::resource('/', PortfolioController::class);
 
 // Route::resource('example', ExampleController::class);
 Route::get('/example', [ExampleController::class, 'index'])->name('example');
