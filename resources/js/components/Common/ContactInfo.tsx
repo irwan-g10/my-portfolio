@@ -1,9 +1,9 @@
 export default function ContactInfo({label = 'label', value = 'value', icon = 'icon'}) {
     return (
-        <div className="row gap-2 mb-2">
-            <div className=" col-auto border rounded-4  justify-content-center align-items-center d-flex" style={{width:'50px', height:'50px'}}><i className={`bi bi-${icon}`}></i></div>
+        <div className="flex gap-5 mb-2">
+            <div className="border p-2 rounded-full w-10 h-10 flex justify-center items-center border-blue-500 text-blue-500">{icon}</div>
             <div className=" col ">
-                <div className="d-flex flex-column ">
+                <div className="flex flex-col ">
                     <label>{label}</label>
                     <label htmlFor="">{value}</label>
                 </div>

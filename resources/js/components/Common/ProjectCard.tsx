@@ -1,23 +1,25 @@
+import { FaArrowRightLong } from "react-icons/fa6";
+import Button from "./Button";
 import TechLabel from "./TechLabel";
 
 export default function ProjectCard() {
     return (
-        <div className="card col-3 rounded-5 shadow-sm">
+        <div className="border  rounded-xl shadow-md m-2 p-5 flex flex-col gap-2 hover:scale-105 transition-all duration-300">
             <img src="/images/website.png" className="card-img-top rounded mt-2" alt="Project Image" />
             <div className="card-body">
-                <label className=" text-primary fw-semibold  small">Project STACK</label>
-                <div className="card-title fw-bold">Project Title</div>
-                <div className="card-text text-secondary small mb-2">
+                <label className=" text-primary font-semibold  text-sm">Project STACK</label>
+                <div className="text-xl font-black">Project Title</div>
+                <div className="card-text text-sm mb-2">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus at corrupti tempora. Consectetur, dolorum ratione?
                     </div>
-                <div className="d-flex flex-wrap gap-2 mb-2 ">
+                <div className="flex flex-wrap gap-2 mb-5 ">
                     <TechLabel label="React JS" />
                     <TechLabel label="Laravel" />
                     <TechLabel label="Inertia.js" />
                     <TechLabel label="Bootstrap" />
                     <TechLabel label="+5" />
                 </div>
-                <div className="btn btn-outline-primary fw-bold">Explore Project <i className="bi bi-arrow-right"></i></div>
+                <Button title ='Explore Project' icon={<FaArrowRightLong/>} />
             </div>
         </div>
     )

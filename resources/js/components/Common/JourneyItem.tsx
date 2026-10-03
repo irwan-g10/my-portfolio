@@ -1,3 +1,5 @@
+import { FaArrowRightLong } from "react-icons/fa6";
+import Button from "./Button";
 import ExpandableButton from "./ExpandableButton";
 import JourneyItemCard from "./JourneyItemCard";
 
@@ -8,17 +10,17 @@ export default function JourneyItem({ left = true }) {
 
     if (left) {
         content = (
-            <div className="d-flex justify-content-end">
-                <div className=" p-2 d-flex gap-2 position-relative">
-                    <div className="timeline bg-primary position-absolute" style={{ width: '5px',top:100,bottom:100 }}></div>
-                    <div className="d-flex flex-column gap-3">
+            <div className="flex justify-end ">
+                <div className=" p-2 flex gap-2 relative">
+                    <div className="timeline bg-blue-500 absolute top-25 left-2 bottom-25" style={{ width: '5px' }}></div>
+                    <div className="flex flex-col gap-3">
 
                         <JourneyItemCard />
                         <JourneyItemCard />
                         <JourneyItemCard />
                     </div>
                 </div>
-                {/* <ExpandableButton /> */}
+                    
             </div>
 
         )
@@ -47,6 +49,7 @@ export default function JourneyItem({ left = true }) {
     return (
         <div className="px-5">
             {content}
+            
         </div>
     )
 }

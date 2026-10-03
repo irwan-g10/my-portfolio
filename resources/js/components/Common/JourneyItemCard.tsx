@@ -1,13 +1,13 @@
 export default function JourneyItemCard() {
     return (
-        <div className="d-flex gap-4 align-items-center">
-            <div className="buletan bg-primary border-4 position-absolute start-0 border-light rounded-circle "
+        <div className="flex gap-4 items-center">
+            <div className="buletan bg-blue-500 border-4 absolute start-0 border-white rounded-full "
                 style={{ width: "20px", height: "20px" }}></div>
-            <div className="fw-bold ps-4">2025</div>
-            <div className=" border rounded-5 p-3">
-                <h5>Dicoding Indonesia</h5>
-                <div className="">Front End Developer</div>
-                <p style={{ maxWidth: '350px' }}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptate nostrum ab animi, eveniet inventore beatae molestias magnam tempore laboriosam.</p>
+            <div className="font-bold ps-10">2025</div>
+            <div className=" border rounded-lg p-5 shadow-sm">
+                <h5 className="text-xl font-bold">Dicoding Indonesia</h5>
+                <div className="text- italic">Front End Developer</div>
+                <p className="text-sm" style={{ maxWidth: '350px' }}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptate nostrum ab animi, eveniet inventore beatae molestias magnam tempore laboriosam.</p>
             </div>
         </div>
     )
