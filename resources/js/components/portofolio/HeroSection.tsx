@@ -1,57 +1,69 @@
-import Button from "../Common/Button";
-import ProjectCountCard from "../Common/ProjectCountCard";
-import { TbFileDownload } from "react-icons/tb";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-
-import SocialButton from "../Common/SocialButton";
-
+import CodeCard from "../Common/CodeCard";
+import HeroPhoto from "../Common/HeroPhoto.";
+import DotField from "../DotField";
+import GradientWaves from "../GradientWaves";
+import ScrollVelocity from "../ScrollVelocity";
+import StrokeText from "../StrokeText";
+import WebThreads from "../WebThreads";
 
 export default function HeroSection() {
     return (
-        <section className="h-screen  flex items-center justify-center" id="about">
-            <div className=" w-4/5">
-                <div className="flex mb-5 flex-row gap-5">
-                    <div className="flex-1 flex flex-col gap-2">
-                        <h3 className="text-3xl font-semibold">Halo Semua,</h3>
-                        <h1 className="text-4xl font-bold ">Nama Saya <span className="text-blue-500">Irwan Gumilar</span></h1>
-                        <label className="text-gray-500 italic">Saya Seorang Frontend Developer</label>
-                        <p className="my-3 text-sm">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, fugit aperiam voluptatem quidem ipsa quod error iure laudantium natus sapiente perspiciatis nam voluptatibus vitae voluptate porro. Sapiente harum non nemo, modi, possimus facilis quaerat maiores doloremque, necessitatibus rerum neque magnam.
-                        </p>
-                        <div className="project-count flex gap-2 justify-center">
 
-                            <ProjectCountCard count={5} label="Projects" />
-                            <ProjectCountCard count={2} label='Years Experience' />
-                            <ProjectCountCard count={4.5} label='Starts Rating' />
-                        </div>
-
-                    </div>
-                    <div className="profesional-foto flex-1 flex justify-end">
-                        <img
-                            src="/images/profesional-foto-removebg.png"
-                            alt="Foto Irwan Gumilar"
-                            className="object-fit-cover"
-                        />
-
-                    </div>
-                </div>
-                <div className="flex justify-between items-center mt-10">
-
-                    <Button title="Download CV" icon={<TbFileDownload className="text-xl" />} />
-
-                    <div className="flex gap-3  items-center justify-center">
-                        <div className="font-bold">Find me on</div>
-                        <div className="flex gap-2">
-                            <SocialButton icon={<FaWhatsapp  />} />
-                            <SocialButton icon={<FaInstagram  />} />
-                            <SocialButton icon={<FaLinkedin  />} />
-                            <SocialButton icon={<FaGithub  />} />
-                        </div>
-                    </div>
-                </div>
+        <div className="relative w-100% h-screen flex justify-center items-center" id="home">
+            <div className='absolute inset-0 z-0 pointer-events-none rotate-180' >
+                {/* <GradientWaves
+                    horizonColor="#212529"
+                    waveColor="#495057"
+                    crestColor="#FFFFFF"
+                    speed={0.4}
+                    amplitude={2.5}
+                    waveScale={0.6}
+                    waveRatio={0.9}
+                    swell={35}
+                    turbulence={20}
+                    tilt={1.11}
+                    zoom={1}
+                    height={5.5}
+                    fogDepth={15}
+                    detail="medium"
+                    brightness={1}
+                    opacity={1}
+                    mouseInteraction
+                    parallaxStrength={0.5}
+                    grain
+                    grainIntensity={0.05}
+                />*/}
+                
+            </div> 
+            
+            <div className='absolute left-0 right-0 top-20 z-0 noto-sans pointer-events-none  flex justify-center' >
+                {/* <StrokeText
+                    text="IRWAN GUMILAR"
+                    strokeColor="#ffffff"
+                    fillColor="transparent"
+                    strokeWidth={1.4}
+                    drawDuration={1.6}
+                    fillDelay={0.5}
+                    stagger={0.05}
+                    ease="power2.out"
+                    trigger="mount"
+                    fillMode="wipe"
+                    fontSize={128}
+                    fontWeight={700}
+                    letterSpacing={-4}
+                    reverse={false}
+                /> */}
+            </div>
+            <div className='absolute bottom-0 right-0 m-10' >
+                <CodeCard />
+            </div>
+            <div className="absolute bottom-0 ">
+                <HeroPhoto />
             </div>
 
-        </section>
+            {/* <section className="h-screen relative z-10 flex items-center justify-center text-white" id="about">
+
+            </section> */}
+        </div>
     )
 }

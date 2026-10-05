@@ -6,7 +6,7 @@ export default function Navbar() {
     const { url } = usePage();
 
     return (
-        <nav className="navbar px-20 flex justify-between shadow-sm p-2">
+        <nav className=" navbar px-20 flex justify-between shadow-xl p-2 text-white bg-black/30 backdrop-blur-xs ">
 
                 <div className="navbar-brand flex flex-column justify-center items-center ">
                     <a href="#" className="navbar-brand text-xl font-semibold flex">Vantomic<p className="text-blue-500 font-black italic">Studio</p></a>
@@ -18,8 +18,8 @@ export default function Navbar() {
                     <NavbarLink href="#about" title="About" />
                     <NavbarLink href="#project" title="Project" />
                     <NavbarLink href="#blog" title="Blog" />
-                    <NavbarLink href="#contact" title="Contact Me" />
                 </div>
+                    <NavbarLink href="#contact" title="Contact Me" className="border-2 rounded-sm" showHover={false} />
 
 
         </nav>
