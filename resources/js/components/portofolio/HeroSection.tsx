@@ -37,25 +37,47 @@ export default function HeroSection() {
                 
             </div> 
             
-            <div className='absolute top-20 z-0 noto-sans pointer-events-none  flex justify-center' >
+            <div className='absolute top-17 z-0 pointer-events-none  flex flex-col justify-center items-center' >
+                
+                <StrokeText
+                    text="PORTFOLIO"
+                    strokeColor="#646464"
+                    fillColor="#646464"
+                    strokeWidth={3}
+                    drawDuration={2}
+                    fillDelay={0}
+                    stagger={0.05}
+                    ease="power2.out"
+                    trigger="mount"
+                    fillMode="wipe"
+                    fontSize={80}
+                    fontWeight={700}
+                    letterSpacing={-4}
+                    reverse={false}
+                />
+                
+            </div>
+            <div className='absolute top-35 z-0  noto-sans pointer-events-none  flex flex-col justify-center items-center' >
+                
                 <StrokeText
                     text="IRWAN GUMILAR"
                     strokeColor="#646464"
                     fillColor="transparent"
                     strokeWidth={3}
-                    drawDuration={10}
-                    fillDelay={0.5}
+                    drawDuration={5}
+                    fillDelay={0}
                     stagger={0.05}
                     ease="power2.out"
                     trigger="mount"
                     fillMode="wipe"
-                    fontSize={128}
+                    fontSize={120}
                     fontWeight={700}
                     letterSpacing={-4}
                     reverse={false}
                 />
+                
             </div>
-            <div className='absolute inset-x-0 z-20 bottom-0 flex justify-between m-20' >
+            <div className='absolute inset-x-0 z-20 bottom-0 flex justify-between items-end m-20' >
                 <HeroGreetings />
                 <CodeCard />
             </div>

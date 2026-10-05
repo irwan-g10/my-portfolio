@@ -1,13 +1,13 @@
-export default function Button({icon, title=''}) {
+export default function Button({icon ='', title='', className=''}) {
     let content;
 
     
     content = (
-        <button className="text-md bg-blue-500 text-white py-1 px-5 rounded-md flex  gap-2 font-semibold  hover:bg-transparent border-2 transition-all border-blue-500 hover:text-blue-500 flex gap-3 justify-center items-center">{title} {icon}</button>
+        <button className={`text-md text-slate-100/70 bg-purple-400/40 border-purple-400/80 backdrop-blur-xl py-1 px-5 rounded-md flex  gap-2 font-semibold  hover:bg-black/40 hover:border-slate-200/50 border-2 transition-all border-blue-500 hover:text-slate-200 flex gap-3 justify-center items-center w-full ${className}`}>{title}</button>
     )
 
     return (
-        <div className="">
+        <div className="w-full">
             {content}
         </div>
     )

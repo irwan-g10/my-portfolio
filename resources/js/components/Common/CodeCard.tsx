@@ -1,8 +1,8 @@
 export default function CodeCard() {
     return (
-        <div className="relative">
+        <div className="relative h-fit">
             <div className="absolute -inset-1 rounded2xl bg-gradient-to-r from-indigo-500 to-sky-500 opacity-30 blur-lg">a</div>
-            <div className="relative font-mono text-sm border rounded-xl p-5 " style={{ background: '#121314' }}>
+            <div className="relative font-mono text-sm border rounded-xl p-5 bg-slate-950/70" >
                 <div className="text-slate-400 flex gap-3 items-center border-b border-slate-700/80 mb-4 pb-3">
                     <div className="h-3 w-3 bg-red-500/80 rounded-full"></div>
                     <div className="h-3 w-3 bg-yellow-500/80 rounded-full"></div>
