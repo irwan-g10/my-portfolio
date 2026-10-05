@@ -8,12 +8,14 @@ import SocialButton from "../Common/SocialButton";
 import TechText from "../TechText";
 import DotField from "../DotField";
 import WebThreads from "../WebThreads";
+import StrokeText from "../StrokeText";
 
 
 export default function AboutSection() {
     return (
 
         <div className="relative w-100% h-screen " >
+
             <div className='absolute inset-0 z-0 pointer-events-none' >
                 {/* <WebThreads
                     color1="#5227FF"
@@ -46,9 +48,7 @@ export default function AboutSection() {
                         <div className="flex-1 flex flex-col gap-2">
                             <h3 className="text-3xl font-semibold">Halo Semua,</h3>
                             <div className="flex items-center">
-                                <div className="flex-none text-4xl font-bold">Nama Saya Irwan Gumilar</div>
-                                
-
+                                <div className=" text-4xl font-bold">Nama Saya Irwan Gumilar</div>
 
                             </div>
                             <label className="text italic">Saya Seorang Frontend Developer</label>

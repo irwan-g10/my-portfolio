@@ -2,6 +2,7 @@ import CodeCard from "../Common/CodeCard";
 import HeroPhoto from "../Common/HeroPhoto.";
 import DotField from "../DotField";
 import GradientWaves from "../GradientWaves";
+import HeroGreetings from "../Herogreetings";
 import ScrollVelocity from "../ScrollVelocity";
 import StrokeText from "../StrokeText";
 import WebThreads from "../WebThreads";
@@ -10,8 +11,8 @@ export default function HeroSection() {
     return (
 
         <div className="relative w-100% h-screen flex justify-center items-center" id="home">
-            <div className='absolute inset-0 z-0 pointer-events-none rotate-180' >
-                {/* <GradientWaves
+            <div className='absolute inset-0 z-0 pointer-events-none' >
+                <GradientWaves
                     horizonColor="#212529"
                     waveColor="#495057"
                     crestColor="#FFFFFF"
@@ -32,17 +33,17 @@ export default function HeroSection() {
                     parallaxStrength={0.5}
                     grain
                     grainIntensity={0.05}
-                />*/}
+                />
                 
             </div> 
             
-            <div className='absolute left-0 right-0 top-20 z-0 noto-sans pointer-events-none  flex justify-center' >
-                {/* <StrokeText
+            <div className='absolute top-20 z-0 noto-sans pointer-events-none  flex justify-center' >
+                <StrokeText
                     text="IRWAN GUMILAR"
-                    strokeColor="#ffffff"
+                    strokeColor="#646464"
                     fillColor="transparent"
-                    strokeWidth={1.4}
-                    drawDuration={1.6}
+                    strokeWidth={3}
+                    drawDuration={10}
                     fillDelay={0.5}
                     stagger={0.05}
                     ease="power2.out"
@@ -52,12 +53,13 @@ export default function HeroSection() {
                     fontWeight={700}
                     letterSpacing={-4}
                     reverse={false}
-                /> */}
+                />
             </div>
-            <div className='absolute bottom-0 right-0 m-10' >
+            <div className='absolute inset-x-0 z-20 bottom-0 flex justify-between m-20' >
+                <HeroGreetings />
                 <CodeCard />
             </div>
-            <div className="absolute bottom-0 ">
+            <div className="absolute z-10 bottom-0 ">
                 <HeroPhoto />
             </div>
 

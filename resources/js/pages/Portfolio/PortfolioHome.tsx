@@ -35,7 +35,10 @@ export default function Home() {
                 </div> */}
 
             {/* <div className="relative z-10"> */}
-            <div className="text-white" style={{ backgroundColor: '#120F16' }}>
+            
+
+            <div className=" relative text-white" style={{ backgroundColor: '#120F16' }}>
+
                 <Navbar />
                 <main>
                     <HeroSection />
