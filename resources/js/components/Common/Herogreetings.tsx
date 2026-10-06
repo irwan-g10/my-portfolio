@@ -1,5 +1,6 @@
-import Button from "./Common/Button";
-import ProjectCountCard from "./Common/ProjectCountCard";
+import Button from "./Button";
+import Card from "./Card";
+
 
 export default function HeroGreetings() {
     return (
@@ -13,20 +14,23 @@ export default function HeroGreetings() {
                 <div className="font-bold text-xl">Fullstack Developer</div>
                 <div className="text-xs text-slate-300">Fokus pada pengembangan aplikasi web modern, performa tinggi, dan UI/UX yang responsif.</div>
             </div>
-            <div className="flex border rounded-2xl w-full p-5 gap-3 bg-slate-500/10 border-slate-400/20 shadow-sm shadow-slate-200/20">
-                <div className="flex-1">
-                    <div className="text-purple-500 font-extrabold text-xl">2+</div>
-                    <div className="text-slate-200 text-xs">Tahun Pengalaman</div>
+            <Card content={
+                <div className="flex ">
+                    <div className="flex-1">
+                        <div className="text-purple-500 font-extrabold text-xl">2+</div>
+                        <div className="text-slate-200 text-xs">Tahun Pengalaman</div>
+                    </div>
+                    <div className=" flex-1">
+                        <div className="text-purple-500 font-extrabold text-xl">10+</div>
+                        <div className="text-slate-200 text-xs">Proyek Selesai</div>
+                    </div>
                 </div>
-                <div className=" flex-1">
-                    <div className="text-purple-500 font-extrabold text-xl">10+</div>
-                    <div className="text-slate-200 text-xs">Proyek Selesai</div>
-                </div>
-            </div>
+            } />
+
             {/* CTA Buttons */}
             <div className="flex items-center gap-3 pt-1">
-                <Button title="About me" className="w-full"/>
-                <Button title="Download CV" className=""/>
+                <Button title="About me" className="w-full" />
+                <Button title="Download CV" className="" />
             </div>
         </div>
 

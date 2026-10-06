@@ -9,6 +9,7 @@ import TechText from "../TechText";
 import DotField from "../DotField";
 import WebThreads from "../WebThreads";
 import StrokeText from "../StrokeText";
+import ImageBadge from "../Common/ImageBadge";
 
 
 export default function AboutSection() {
@@ -55,35 +56,17 @@ export default function AboutSection() {
                             <p className="my-3 text-sm">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, fugit aperiam voluptatem quidem ipsa quod error iure laudantium natus sapiente perspiciatis nam voluptatibus vitae voluptate porro. Sapiente harum non nemo, modi, possimus facilis quaerat maiores doloremque, necessitatibus rerum neque magnam.
                             </p>
-                            <div className="project-count flex gap-2 justify-center">
-
-                                <ProjectCountCard count={5} label="Projects" />
-                                <ProjectCountCard count={2} label='Years Experience' />
-                                <ProjectCountCard count={4.5} label='Starts Rating' />
+                            <div className="flex gap-3  items-center justify-end">
+                                <div className="flex gap-3">
+                                    <SocialButton icon={<FaInstagram />} />
+                                    <SocialButton icon={<FaLinkedin />} />
+                                    <SocialButton icon={<FaGithub />} />
+                                </div>
                             </div>
 
                         </div>
-                        <div className="profesional-foto flex-1 flex justify-end items-end">
-                            <img
-                                src="/images/profesional-foto-removebg.png"
-                                alt="Foto Irwan Gumilar"
-                                className="object-cover w-80 h-80 "
-                            />
-
-                        </div>
-                    </div>
-                    <div className="flex justify-between items-center mt-10">
-
-                        <Button title="Download CV" icon={<TbFileDownload className="text-xl" />} />
-
-                        <div className="flex gap-3  items-center justify-center">
-                            <div className="font-bold">Find me on</div>
-                            <div className="flex gap-2">
-                                <SocialButton icon={<FaWhatsapp />} />
-                                <SocialButton icon={<FaInstagram />} />
-                                <SocialButton icon={<FaLinkedin />} />
-                                <SocialButton icon={<FaGithub />} />
-                            </div>
+                        <div className="profesional-foto flex-1 flex items-center justify-end">
+                            <ImageBadge />
                         </div>
                     </div>
                 </div>
