@@ -16,7 +16,7 @@ export default function CertificationSection() {
 
             </div>
                 <div className="flex justify-center items-center">
-                    <Button title="Lihat Lebih Banyak" icon={<FaArrowRightLong />}/>
+                    <ExpandableButton title='Lihat Lebih Banyak'/>
                 </div>
         </div>
     )

@@ -12,9 +12,7 @@ export default function ProjectList() {
                 <ProjectCard />
                 <ProjectCard />
             </div>
-            <div className=" flex justify-center items-center">
-                <Button title='Lihat lebih banyak' icon={<FaArrowRightLong />} />
-            </div>
+            <ExpandableButton title='Lihat Lebih Banyak'/>
         </div>
     )
 }

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import Button from "./Button";
 
-export default function ExpandableButton( ) {
-
+export default function ExpandableButton({ title = '' }) {
+  let icon = (<i className="bi bi-arrow-right"></i>)
   return (
-    <div className="d-flex justify-content-center align-items-center">
-      <div className="btn btn-outline-primary border-0 rounded-pill p-3 fw-bold">Lihat Lebih Banyak <i className="bi bi-arrow-right"></i></div>
-    </div>
+    <div className="">
+      <Button title={title}  icon={icon} className="bg-transparent border-none hover:bg-transparent hover:scale-110 text-white text-sm"/>
+</div>
   );
 }

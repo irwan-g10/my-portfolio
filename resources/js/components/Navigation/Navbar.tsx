@@ -6,7 +6,7 @@ export default function Navbar() {
     const { url } = usePage();
 
     return (
-        <nav className="fixed w-4/5 z-100 inset-x-0 mx-auto top-5 rounded-full navbar px-20 flex justify-between shadow-2xl p-2 text-white bg-slate-500/10 backdrop-blur-sm ">
+        <nav className="fixed w-4/5 z-100 inset-x-0 mx-auto top-5 rounded-full navbar px-20 flex justify-between shadow-lg p-2 text-white bg-slate-500/10 backdrop-blur-sm ">
 
             <div className="navbar-brand flex flex-column justify-center items-center ">
                 <a href="#" className="navbar-brand text-xl font-semibold flex">Vantomic<p className="text-blue-500 font-black italic">Studio</p></a>

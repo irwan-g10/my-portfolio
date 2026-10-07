@@ -10,7 +10,7 @@ export default function JourneySection() {
       <SectionTitle title="My Journey" />
 
       <JourneyItemCard/>
-      <div className="flex justify-center"><Button title='Lihat lebih banyak' icon={<FaArrowRightLong />} /></div>
+      <ExpandableButton title='Lihat Lebih Banyak'/>
 
     </div>
   )

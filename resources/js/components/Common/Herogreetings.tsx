@@ -26,13 +26,13 @@ export default function HeroGreetings() {
                     </div>
                 </div>
             } 
-            className='bg-slate-500/10 border-slate-400/20'
+            className='bg-slate-300/10 border-slate-400/20'
             />
 
             {/* CTA Buttons */}
-            <div className="flex items-center gap-3 pt-1">
-                <Button title="About me" width="w-full" />
-                <Button title="Download CV" width="w-full" />
+            <div className="flex items-center gap-5 pt-1">
+                <Button title="About me" width="w-full" className='bg-slate-300/10 border-slate-400/20 transition-all duration-200 hover:scale-110'/>
+                <Button title="Download CV" width="w-full" className='bg-slate-300/10 border-slate-400/20 transition-all duration-200 hover:scale-110'/>
             </div>
         </div>
 

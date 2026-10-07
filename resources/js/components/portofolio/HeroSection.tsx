@@ -6,6 +6,7 @@ import GradientWaves from "../GradientWaves";
 import ScrollVelocity from "../ScrollVelocity";
 import StrokeText from "../StrokeText";
 import WebThreads from "../WebThreads";
+import { motion } from "motion/react";
 
 export default function HeroSection() {
     return (
@@ -34,11 +35,11 @@ export default function HeroSection() {
                     grain
                     grainIntensity={0.05}
                 />
-                
-            </div> 
-            
+
+            </div>
+
             <div className='absolute top-17 z-0 pointer-events-none  flex flex-col justify-center items-center' >
-                
+
                 <StrokeText
                     text="PORTFOLIO"
                     strokeColor="#646464"
@@ -55,10 +56,10 @@ export default function HeroSection() {
                     letterSpacing={-4}
                     reverse={false}
                 />
-                
+
             </div>
             <div className='absolute top-35 z-0  noto-sans pointer-events-none  flex flex-col justify-center items-center' >
-                
+
                 <StrokeText
                     text="IRWAN GUMILAR"
                     strokeColor="#646464"
@@ -75,14 +76,54 @@ export default function HeroSection() {
                     letterSpacing={-4}
                     reverse={false}
                 />
-                
+
             </div>
             <div className='absolute inset-x-0 z-20 bottom-0 flex justify-between items-end m-20' >
-                <HeroGreetings />
-                <CodeCard />
+                {/* 1. HeroGreetings */}
+                <motion.div
+                    className="pointer-events-auto"
+                    initial={{ opacity: 0, x: -60, y: 0 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: false, amount: 0.5 }} // once: false agar animasi ulang terus saat discroll
+                    transition={{
+                        duration: 0.8,
+                        delay: 0.2,
+                        ease: [0.25, 0.1, 0.25, 1]
+                    }}
+                >
+                    <HeroGreetings />
+                </motion.div>
+
+                {/* 2. CodeCard */}
+                <motion.div
+                    className="pointer-events-auto"
+                    initial={{ opacity: 0, x: 60, y: 0 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }} // once: false agar animasi ulang terus saat discroll
+                    transition={{
+                        duration: 0.8,
+                        delay: 0.4,
+                        ease: [0.25, 0.1, 0.25, 1]
+                    }}
+                >
+                    <CodeCard />
+                </motion.div>
             </div>
             <div className="absolute z-10 bottom-0 ">
+                {/* <motion.div
+                    className=""
+                    initial={{ opacity: 0, x: 0, y: 0 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: false, amount: 0.3 }}
+                    transition={{
+                        duration: 0.8,
+                        delay: 0.4,
+                        ease: [0.25, 0.1, 0.25, 1]
+                    }}
+                > */}
+
                 <HeroPhoto />
+                {/* </motion.div> */}
             </div>
 
             {/* <section className="h-screen relative z-10 flex items-center justify-center text-white" id="about">
