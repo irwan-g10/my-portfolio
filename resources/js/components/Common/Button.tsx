@@ -1,4 +1,4 @@
-export default function Button({icon ='', title='', className=''}) {
+export default function Button({icon ='', title='', className='', width=''}) {
     let content;
 
     
@@ -7,7 +7,7 @@ export default function Button({icon ='', title='', className=''}) {
     )
 
     return (
-        <div className="w-full">
+        <div className={`${width}`}>
             {content}
         </div>
     )

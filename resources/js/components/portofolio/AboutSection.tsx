@@ -65,7 +65,7 @@ export default function AboutSection() {
                             </div>
 
                         </div>
-                        <div className="profesional-foto flex-1 flex items-center justify-end">
+                        <div className=" profesional-foto flex-1 flex items-center justify-end">
                             <ImageBadge />
                         </div>
                     </div>

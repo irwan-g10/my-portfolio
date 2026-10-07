@@ -25,12 +25,14 @@ export default function HeroGreetings() {
                         <div className="text-slate-200 text-xs">Proyek Selesai</div>
                     </div>
                 </div>
-            } />
+            } 
+            className='bg-slate-500/10 border-slate-400/20'
+            />
 
             {/* CTA Buttons */}
             <div className="flex items-center gap-3 pt-1">
-                <Button title="About me" className="w-full" />
-                <Button title="Download CV" className="" />
+                <Button title="About me" width="w-full" />
+                <Button title="Download CV" width="w-full" />
             </div>
         </div>
 
