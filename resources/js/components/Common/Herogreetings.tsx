@@ -5,7 +5,7 @@ import Card from "./Card";
 export default function HeroGreetings() {
     return (
 
-        <div className="flex flex-col gap-4 w-sm">
+        <div className="flex flex-col gap-4 md:w-sm">
             <div className="border flex items-center gap-2 px-3 p-2 bg-emerald-500/10 border-emerald-500/20 rounded-full w-fit">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span className="text-xs font-semibold text-emerald-500">Open To Work</span>

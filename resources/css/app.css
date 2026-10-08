@@ -14,21 +14,22 @@
 
 .bg-grad-expand {
     background: #7a7a7a;
-background: linear-gradient(0deg, rgba(122, 122, 122, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(0deg, rgba(122, 122, 122, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 
 .quicksand {
-  font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
+
 .noto-sans {
-  font-family: "Noto Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
 }
 
 @theme {
@@ -164,5 +165,5 @@ background: linear-gradient(0deg, rgba(122, 122, 122, 1) 0%, rgba(255, 255, 255,
     body {
         @apply bg-background text-foreground;
     }
-    
+
 }

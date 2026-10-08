@@ -5,7 +5,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 export default function CertificationCard() {
     return (
         <div className="justify-center items-center flex flex-col">
-            <div className=" grid grid-cols-3 justify-center items-center ">
+            <div className=" grid md:grid-cols-3 justify-center items-center gap-3">
                 <div className=" text-center">
                         <div className="text-sm">Desember 2025</div>
                         <div className="text-lg font-bold">Dicoding Academy</div>
@@ -25,7 +25,7 @@ export default function CertificationCard() {
                     <Button title="Lihat Sertifikat"/>
                 </div>
             </div>
-            <hr className='border-2 w-3/5 my-3 rounded-full ' />
+            <hr className='border-2 w-full md:w-3/5 my-3 rounded-full ' />
         </div>
     )
 }

@@ -9,7 +9,7 @@ export default function ContactMeSection() {
     return (
         <div className="w-4/5 mx-auto mb-5">
             <SectionTitle title="Contact Me" />
-            <div className="flex">
+            <div className="md:flex ">
 
                 <div className="flex gap-4 flex-col">
                     <div className="flex w-50 border p-2 px-3 gap-2 rounded-full mb-2 border-blue-500 text-blue-500 font-bold">
@@ -27,7 +27,7 @@ export default function ContactMeSection() {
                     </div>
                 </div>
                 <div className="p-5 ">
-                    <div className="flex gap-2">
+                    <div className="md:flex gap-2">
 
                         <ContactInput label="Nama Lengkap" />
 

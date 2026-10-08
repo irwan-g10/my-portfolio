@@ -46,14 +46,14 @@ export default function AboutSection() {
                 /> */}
             </div>
 
-            <section className="h-screen relative z-10 flex items-center justify-center text-white" id="about">
-                <div className=" w-4/5">
-                    <div className="flex mb-5 flex-row gap-5">
+            <section className="h-screen  relative z-10 flex items-center justify-center text-white" id="about">
+                <div className=" md:w-4/5">
+                    <div className="flex mb-5 flex-col-reverse mt-10 md:flex md:flex-row gap-5">
                         <motion.div
-                            className="flex-1 flex flex-col gap-2"
+                            className=""
                             initial={{ opacity: 0, x: -100, y: 0 }}
                             whileInView={{ opacity: 1, x: 0, y: 0 }}
-                            viewport={{ once: false, amount: 1 }} // once: false agar animasi ulang terus saat discroll
+                            viewport={{ once: false, amount: 0.3 }} // once: false agar animasi ulang terus saat discroll
                             transition={{
                                 duration: 0.8,
                                 delay: 0.2,
@@ -61,10 +61,10 @@ export default function AboutSection() {
                             }}
                         >
 
-                            <div className="">
+                            <div className="m-10">
                                 <h3 className="text-3xl font-semibold">Halo Semua,</h3>
                                 <div className="flex items-center">
-                                    <div className=" text-4xl font-bold">Nama Saya Irwan Gumilar</div>
+                                    <div className="text-4xl font-bold">Saya Irwan Gumilar</div>
 
                                 </div>
                                 <label className="text italic">Saya Seorang Frontend Developer</label>
@@ -82,10 +82,10 @@ export default function AboutSection() {
                             </div>
                         </motion.div>
                         <motion.div
-                            className=" profesional-foto flex-1 flex items-center justify-end"
+                            className=" profesional-foto  flex items-center justify-center items-center "
                             initial={{ opacity: 0, x: 0, y: 0 }}
                             whileInView={{ opacity: 1, x: 0, y: 0 }}
-                            viewport={{ once: false, amount: 0.5 }} // once: false agar animasi ulang terus saat discroll
+                            viewport={{ once: false, amount: 0.3 }} // once: false agar animasi ulang terus saat discroll
                             transition={{
                                 duration: 0.8,
                                 delay: 0.2,

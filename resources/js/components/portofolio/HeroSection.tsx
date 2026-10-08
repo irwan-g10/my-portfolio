@@ -38,7 +38,7 @@ export default function HeroSection() {
 
             </div>
 
-            <div className='absolute top-17 z-0 pointer-events-none  flex flex-col justify-center items-center' >
+            <div className='absolute top-20 z-0 pointer-events-none flex flex-col' >
 
                 <StrokeText
                     text="PORTFOLIO"
@@ -56,11 +56,8 @@ export default function HeroSection() {
                     letterSpacing={-4}
                     reverse={false}
                 />
-
-            </div>
-            <div className='absolute top-35 z-0  noto-sans pointer-events-none  flex flex-col justify-center items-center' >
-
-                <StrokeText
+                <div className="noto-sans hidden md:flex">
+                    <StrokeText
                     text="IRWAN GUMILAR"
                     strokeColor="#646464"
                     fillColor="transparent"
@@ -76,12 +73,11 @@ export default function HeroSection() {
                     letterSpacing={-4}
                     reverse={false}
                 />
+                </div>
 
             </div>
-            <div className='absolute inset-x-0 z-20 bottom-0 flex justify-between items-end m-20' >
-                {/* 1. HeroGreetings */}
                 <motion.div
-                    className="pointer-events-auto"
+                    className="pointer-events-auto absolute bottom-0 left-0 z-100 m-10 md:m-20"
                     initial={{ opacity: 0, x: -60, y: 0 }}
                     whileInView={{ opacity: 1, x: 0, y: 0 }}
                     viewport={{ once: false, amount: 0.5 }} // once: false agar animasi ulang terus saat discroll
@@ -94,9 +90,8 @@ export default function HeroSection() {
                     <HeroGreetings />
                 </motion.div>
 
-                {/* 2. CodeCard */}
                 <motion.div
-                    className="pointer-events-auto"
+                    className="pointer-events-auto absolute top-56 md:top-auto md:bottom-0 md:right-0 md:m-20"
                     initial={{ opacity: 0, x: 60, y: 0 }}
                     whileInView={{ opacity: 1, x: 0, y: 0 }}
                     viewport={{ once: false, amount: 0.3 }} // once: false agar animasi ulang terus saat discroll
@@ -108,7 +103,6 @@ export default function HeroSection() {
                 >
                     <CodeCard />
                 </motion.div>
-            </div>
             <div className="absolute z-10 bottom-0 ">
                 {/* <motion.div
                     className=""

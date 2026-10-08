@@ -12,40 +12,24 @@ import ProjectSection from '@/components/portofolio/ProjectSection';
 import ToolsAndSkillSection from '@/components/portofolio/ToolsAndSkillSection';
 import { Link } from '@inertiajs/react';
 import HeroSection from '@/components/portofolio/HeroSection';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function Home() {
+
+    const {theme, toggleTheme} = useTheme();
+
     return (
         <>
-            {/* <div className='w-screen h-screen overflow-x-hidden relative' >
-                <div className=" fixed inset-0 z-0 pointer-events-none" style={{backgroundColor: '#120F16'}}>
-                    <DotField
-                        dotRadius={1.5}
-                        dotSpacing={14}
-                        bulgeStrength={67}
-                        glowRadius={160}
-                        sparkle={false}
-                        waveAmplitude={0}
-                        cursorRadius={500}
-                        cursorForce={0.1}
-                        bulgeOnly
-                        gradientFrom="#A855F7"
-                        gradientTo="#B497CF"
-                        glowColor="#120F17"
-                    />
-                </div> */}
-
-            {/* <div className="relative z-10"> */}
-
-
             <div
-                className="relative text-white"
-                style={{
-                    backgroundColor: '#120F16'
+                className="
+                relative 
+                bg-purple-950
+                text-white dark:bg-[#120F16]
+                "
+                
+                >
 
-                }}
-            >
-
-                <Navbar />
+                <Navbar onClick={toggleTheme} theme={theme}/>
                 <main>
                     <HeroSection />
                     <AboutSection />
@@ -58,9 +42,6 @@ export default function Home() {
                 </main>
                 <Footer />
             </div>
-            {/* </div> */}
-            {/* </div> */}
-
 
         </>
 

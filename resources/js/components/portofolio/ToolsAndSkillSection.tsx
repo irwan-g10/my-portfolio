@@ -1,4 +1,5 @@
 import Card from "../Common/Card"
+import CategoryBadge from "../Common/CategoryBadge";
 import SectionTitle from "../Common/SectionTitle"
 import JellyRadio from "../JellyRadio"
 
@@ -10,13 +11,17 @@ export default function ToolsAndSkillSection() {
         "MySQL", "Laravel", "React.js", "Postman", "Microsoft Office",
         "Claude AI", "Gemini AI", "ChatGPT", "GitHub Copilot"
     ];
+    const categories = [
+        'Programming Language', 'Framework','Database',
+        'Version Control', 'Ai Coding Asistant', 'Tools'
+    ]
 
     return (
         <div className="w-4/5 mx-auto mb-10">
             <SectionTitle title="Tools and Skills" />
             {/* <div className="flex flex-row gap-2 justify-center align-items-center mb-5 flex-wrap"> */}
-            <div className="mb-5 flex justify-center items-center">
-                <JellyRadio
+            <div className="mb-5 flex justify-center items-center flex-wrap gap-1">
+                {/* <JellyRadio
                     items={[
                         { value: 'All', label: 'All' },
                         { value: 'Programming Language', label: 'Programming Language' },
@@ -42,7 +47,12 @@ export default function ToolsAndSkillSection() {
                     bounce={0.25}
                     stagger={22}
                     stiffness={580}
-                />
+                /> */}
+                <CategoryBadge title={'All'} isActive={true}/>
+                {categories.map((category, index) => (
+                    
+                    <CategoryBadge key={index} title={category}/>
+                ))}
                 {/* <div className="btn btn-outline-primary fw-bold">All</div>
                 <div className="btn btn-outline-primary fw-bold">Programming Languages</div>
                 <div className="btn btn-outline-primary fw-bold">Framework</div>

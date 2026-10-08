@@ -9,7 +9,7 @@ export default function ProjectSection() {
             <SectionTitle title="Latest Project"/>
             
             <div className="project-list mt-5 ">
-                <ProjectHeroCard />
+                <div className="hidden md:flex"><ProjectHeroCard /></div>
                 <ProjectList />
             </div>
 

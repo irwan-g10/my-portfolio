@@ -26,7 +26,7 @@ export default function JourneyItem({ left = true }) {
         )
     } else {
         content = (
-            <div className="row gap-2  p-2 ">
+            <div className="row gap-2 p-2 ">
                 <div className="col-auto p-2">
                     <div
                         className="bg-primary rounded-pill d-flex justify-content-center align-items-center"
