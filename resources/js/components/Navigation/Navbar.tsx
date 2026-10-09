@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { usePage } from "@inertiajs/react";
 import NavbarLink from "../Common/NavbarLink";
 import ThemeButton from "../Common/ThemeButton";
+import Button from "../Common/Button";
 
 export default function Navbar({ onClick, theme }) {
     const { url } = usePage();
@@ -55,6 +56,7 @@ export default function Navbar({ onClick, theme }) {
                     </div>
                 </div>
             )}
+            
         </nav>
     )
 }

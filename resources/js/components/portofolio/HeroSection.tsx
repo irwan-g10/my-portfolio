@@ -11,7 +11,7 @@ import { motion } from "motion/react";
 export default function HeroSection() {
     return (
 
-        <div className="relative w-100% h-screen flex justify-center items-center" id="home">
+        <div className="relative w-100% h-screen overflow-x-hidden flex justify-center items-center" id="home">
             <div className='absolute inset-0 z-0 pointer-events-none' >
                 <GradientWaves
                     horizonColor="#212529"
@@ -91,7 +91,7 @@ export default function HeroSection() {
                 </motion.div>
 
                 <motion.div
-                    className="pointer-events-auto absolute top-56 md:top-auto md:bottom-0 md:right-0 md:m-20"
+                    className="pointer-events-auto md:z-100 absolute top-56 md:top-auto md:bottom-0 md:right-0 md:m-20"
                     initial={{ opacity: 0, x: 60, y: 0 }}
                     whileInView={{ opacity: 1, x: 0, y: 0 }}
                     viewport={{ once: false, amount: 0.3 }} // once: false agar animasi ulang terus saat discroll

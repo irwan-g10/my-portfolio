@@ -8,7 +8,7 @@ export default function OfferingSection() {
             <SectionTitle title='What Do I Offer'/>
             <div className="flex flex-col md:flex-row gap-10 items-end ">
                 <OfferingCard />
-                <OfferingCard scale='md:scale-110'/>
+                <OfferingCard/>
                 <OfferingCard />
             </div>
         </div>

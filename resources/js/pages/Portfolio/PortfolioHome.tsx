@@ -13,6 +13,7 @@ import ToolsAndSkillSection from '@/components/portofolio/ToolsAndSkillSection';
 import { Link } from '@inertiajs/react';
 import HeroSection from '@/components/portofolio/HeroSection';
 import { useTheme } from '@/hooks/useTheme';
+import ScrollToTop from '@/components/Common/ScrollToTop';
 
 export default function Home() {
 
@@ -40,6 +41,7 @@ export default function Home() {
                     <JourneySection />
                     <ContactMeSection />
                 </main>
+                <ScrollToTop />
                 <Footer />
             </div>
 

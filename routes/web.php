@@ -11,8 +11,8 @@ use Laravel\Fortify\Features;
 //         'canRegister' => Features::enabled(Features::registration()),
 //     ]);
 // })->name('home');
-// Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
-Route::resource('/', PortfolioController::class);
+Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
+// Route::get('/', [PortfolioController::class, 'index'])->name('home');
 
 // Route::resource('example', ExampleController::class);
 Route::get('/example', [ExampleController::class, 'index'])->name('example');
