@@ -2,10 +2,14 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import Button from "./Button";
 import TechLabel from "./TechLabel";
 import Card from "./Card";
+import { useState } from "react";
 
-export default function ProjectCard() {
+export default function ProjectCard({onClick}) {
+    
+
+
     return (
-        <div className="rounded-2xl border-2 max-w-80 overflow-hidden relative">
+        <div className="rounded-2xl border-2 max-w-80 overflow-hidden relative" onClick={onClick}>
             <img src="/images/website.png" className="card-img-top rounded object-cover" alt="Project Image" />
             <div className="card-body flex flex-col gap-2 p-5">
                 <div className="absolute top-5 right-5  text-xs font-semibold  text-sm">
@@ -24,6 +28,7 @@ export default function ProjectCard() {
                     <TechLabel label="+5" />
                 </div>
             </div>
+            
         </div>
     )
 }
