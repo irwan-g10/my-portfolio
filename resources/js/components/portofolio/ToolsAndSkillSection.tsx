@@ -64,7 +64,7 @@ export default function ToolsAndSkillSection() {
             <div className="flex flex-row gap-2 justify-center items-center flex-wrap">
                 {skills.map((skill, index) => (
 
-                    <Card key={index} content={<div className="">{skill}</div>} className="w-fit p-2 text-sm text-slate-300 bg-slate-500/10 border-slate-400/20 " />
+                    <Card key={index} content={<div className="">{skill}</div>} className="w-fit p-2 text-sm  bg-slate-500/10 border-slate-400/20 " />
                 ))}
             </div>
 

@@ -2,13 +2,13 @@ import Card from "./Card";
 
 export default function OfferingCard({ title = '', image = '', description = '', scale=''}) {
     return (
-        <div className={`text-slate-300/70 transition-transform duration-300 w-full origin-center ${scale}`}>
+        <div className={` transition-transform duration-300 w-full origin-center ${scale}`}>
             <Card 
             content={
 
                 <div className="flex flex-col p-3 gap-5">
 
-                    <h5 className="text-xl  text-white font-bold flex justify-center">Back-End</h5>
+                    <h5 className="text-xl  font-bold flex justify-center">Back-End</h5>
                     <div className="text-sm ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur minima totam iure debitis voluptatum voluptates, quidem inventore earum. Deleniti, ab.</div>
                     <div className="features flex gap-5">
                         <div className="icon flex-1 justify-center items-center flex">

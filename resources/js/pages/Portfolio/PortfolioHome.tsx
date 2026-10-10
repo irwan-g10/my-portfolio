@@ -18,14 +18,16 @@ import ScrollToTop from '@/components/Common/ScrollToTop';
 export default function Home() {
 
     const {theme, toggleTheme} = useTheme();
+    
 
     return (
         <>
             <div
                 className="
                 relative 
-                bg-purple-950
-                text-white dark:bg-[#120F16]
+                bg-slate-400
+                text-slate-950
+                dark:text-slate-100 dark:bg-slate-950
                 "
                 
                 >

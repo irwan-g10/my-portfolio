@@ -20,33 +20,9 @@ export default function AboutSection() {
 
         <div className="relative w-100% h-screen " >
 
-            <div className='absolute inset-0 z-0 pointer-events-none' >
-                {/* <WebThreads
-                    color1="#5227FF"
-                    color2="#FF9FFC"
-                    color3="#FFFFFF"
-                    speed={0.2}
-                    threadCount={6}
-                    frequency={5}
-                    spread={0.18}
-                    taper={1}
-                    position={0.5}
-                    fanMode="center"
-                    glow={0.02}
-                    falloff={0.6}
-                    thickness={1.1}
-                    brightness={0.6}
-                    opacity={1}
-                    mirror
-                    shimmer={false}
-                    grain
-                    grainIntensity={0.05}
-                    mouseInteraction
-                    mouseStrength={0.3}
-                /> */}
-            </div>
 
-            <section className="h-screen  relative z-10 flex items-center justify-center text-white" id="about">
+
+            <section className="h-screen  relative z-10 flex items-center justify-center " id="about">
                 <div className=" md:w-4/5">
                     <div className="flex mb-5 flex-col-reverse mt-10 md:flex md:flex-row gap-5">
                         <motion.div

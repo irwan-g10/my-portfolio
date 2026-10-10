@@ -1,3 +1,4 @@
+import { useTheme } from "@/hooks/useTheme";
 import CodeCard from "../Common/CodeCard";
 import HeroGreetings from "../Common/Herogreetings";
 import HeroPhoto from "../Common/HeroPhoto.";
@@ -9,14 +10,15 @@ import WebThreads from "../WebThreads";
 import { motion } from "motion/react";
 
 export default function HeroSection() {
+
     return (
 
         <div className="relative w-100% h-screen overflow-x-hidden flex justify-center items-center" id="home">
             <div className='absolute inset-0 z-0 pointer-events-none' >
                 <GradientWaves
-                    horizonColor="#212529"
-                    waveColor="#495057"
-                    crestColor="#FFFFFF"
+                    horizonColor="#020617"
+                    waveColor="#334155"
+                    crestColor="#94a3b8"
                     speed={0.4}
                     amplitude={2.5}
                     waveScale={0.6}

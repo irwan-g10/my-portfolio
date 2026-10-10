@@ -14,7 +14,7 @@ export default function Navbar({ onClick, theme }) {
 
     return (
 
-        <nav className="fixed w-4/5 z-50 inset-x-0 mx-auto top-5 rounded-full px-5 md:px-20 flex justify-between shadow-lg p-2 text-white bg-slate-500/10 backdrop-blur-sm ">
+        <nav className="fixed w-4/5 z-50 inset-x-0 mx-auto top-5 rounded-full px-5 md:px-20 flex justify-between shadow-lg p-2 bg-slate-500/10 backdrop-blur-sm ">
 
             <div className="navbar-brand flex flex-column justify-center items-center ">
                 <a href="#" className="navbar-brand md:text-xl font-semibold flex">Vantomic<p className="text-blue-500 font-black italic">Studio</p></a>
@@ -33,9 +33,9 @@ export default function Navbar({ onClick, theme }) {
 
             <div className="flex gap-3 items-center justify-center">
                 <div className="hidden md:flex">
-                    <NavbarLink href="#contact" title="Contact Me" className="border-2 rounded-sm" showHover={false} />
+                    <NavbarLink href="#contact" title="Contact Me" className="border-2 border-slate-950 dark:border-slate-100 rounded-sm" showHover={false} />
                 </div>
-                <ThemeButton className="border p-2 bg-red-500" onClick={onClick} theme={theme} />
+                <ThemeButton className="border p-2 " onClick={onClick} theme={theme} />
                 <div className="md:hidden">
                     <button onClick={toggleExpand}><i className="bi bi-list"></i></button>
                 </div>
@@ -50,7 +50,7 @@ export default function Navbar({ onClick, theme }) {
                             <NavbarLink href="#about" title="About" />
                             <NavbarLink href="#project" title="Project" />
                             <NavbarLink href="#blog" title="Blog" />
-                            <NavbarLink href="#contact" title="Contact Me" className="border-2 rounded-sm" showHover={false} />
+                            <NavbarLink href="#contact" title="Contact Mes" className="border-2 border-slate-950 dark:border-slate-100 rounded-sm" showHover={false} />
 
                         </div>
                     </div>
