@@ -8,6 +8,7 @@ export default function JourneySection() {
   return (
     <div className="w-4/5 mx-auto relative">
       <SectionTitle title="My Journey" />
+      <div></div>
 
       <JourneyItemCard/>
       <ExpandableButton title='Lihat Lebih Banyak'/>
