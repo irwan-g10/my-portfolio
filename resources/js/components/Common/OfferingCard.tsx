@@ -1,8 +1,9 @@
 import Card from "./Card";
+import Motion from "./Motion";
 
 export default function OfferingCard({ title = '', image = '', description = '', scale=''}) {
     return (
-        <div className={` transition-transform duration-300 w-full origin-center ${scale}`}>
+        <Motion >
             <Card 
             content={
 
@@ -27,7 +28,7 @@ export default function OfferingCard({ title = '', image = '', description = '',
             }
             className="bg-purple-500/10 border-purple-400/20 border-3"
             />
-        </div>
+        </Motion>
     )
 
 }

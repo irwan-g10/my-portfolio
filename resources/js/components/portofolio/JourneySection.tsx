@@ -6,7 +6,7 @@ import SectionTitle from "../Common/SectionTitle";
 
 export default function JourneySection() {
   return (
-    <div className="w-4/5 mx-auto">
+    <div className="w-4/5 mx-auto relative">
       <SectionTitle title="My Journey" />
 
       <JourneyItemCard/>

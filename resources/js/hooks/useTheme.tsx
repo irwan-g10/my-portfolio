@@ -15,7 +15,7 @@ export function useTheme() {
             }
         }
 
-        return 'light'
+        return 'dark'
     })
     useEffect(() => {
         const root = window.document.documentElement;

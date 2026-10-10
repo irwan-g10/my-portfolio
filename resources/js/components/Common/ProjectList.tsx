@@ -24,8 +24,11 @@ export default function ProjectList() {
     }, [isVisible]);
 
     return (
-        <div className='m-5 relative overflow-x-hidden' >
+        <div className='m-5 relative' >
             <div className="grid md:grid-cols-4 gap-5 justify-center items-center mb-5">
+                <ProjectCard onClick={toggleShowProject} />
+                <ProjectCard onClick={toggleShowProject} />
+                <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
@@ -34,7 +37,7 @@ export default function ProjectList() {
             {isVisible && (
                 <div className="fixed  top-0 inset-x-0 mx-auto z-70 w-full h-full bg-slate-400/10 backdrop-blur-sm">
                     <div className="w-4/5 h-4/5 bg-slate-950 overflow-y-auto absolute inset-0 m-auto rounded-lg">
-                        <div className="relative h-200 bg-red-500 m-10">
+                        <div className="relative  m-10">
                             <Button title="close" className="w-fit text-slate-950 fixed right-5 top-5" onclick={toggleShowProject}/>
                         </div>
                     </div>

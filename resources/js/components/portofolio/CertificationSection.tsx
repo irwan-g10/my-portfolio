@@ -7,7 +7,7 @@ import Button from "../Common/Button";
 
 export default function CertificationSection() {
     return (
-        <div className="w-4/5 mx-auto mb-10">
+        <div className="w-4/5 mx-auto mb-10 relative">
             <SectionTitle title="My Certification" />
             <div className="grid gap-2  mb-5">
                 <CertificationCard />
@@ -15,9 +15,9 @@ export default function CertificationSection() {
                 <CertificationCard />
 
             </div>
-                <div className="flex justify-center items-center">
-                    <ExpandableButton title='Lihat Lebih Banyak'/>
-                </div>
+            <div className="flex justify-center items-center">
+                <ExpandableButton title='Lihat Lebih Banyak' />
+            </div>
         </div>
     )
 }
