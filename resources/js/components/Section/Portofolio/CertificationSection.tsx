@@ -1,8 +1,7 @@
+import CertificationCard from "@/components/Common/CertificationCard";
+import ExpandableButton from "@/components/ui/ExpandableButton";
+import SectionTitle from "@/components/ui/SectionTitle";
 import { FaArrowRightLong } from "react-icons/fa6";
-import CertificationCard from "../Common/CertificationCard";
-import ExpandableButton from "../Common/ExpandableButton";
-import SectionTitle from "../Common/SectionTitle";
-import Button from "../Common/Button";
 
 
 export default function CertificationSection() {

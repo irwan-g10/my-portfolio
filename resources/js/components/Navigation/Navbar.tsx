@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, usePage } from "@inertiajs/react";
 import NavbarLink from "../Common/NavbarLink";
 import ThemeButton from "../Common/ThemeButton";
-import Button from "../Common/Button";
+import Button from "../ui/Button";
 import { dashboard } from "@/routes";
 
 export default function Navbar({ onClick, theme, auth }) {

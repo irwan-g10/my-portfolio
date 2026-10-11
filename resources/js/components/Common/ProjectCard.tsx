@@ -1,8 +1,9 @@
 import { FaArrowRightLong } from "react-icons/fa6";
-import Button from "./Button";
+import Button from "../ui/Button";
 import TechLabel from "./TechLabel";
-import Card from "./Card";
+import Card from "../ui/Card";
 import { useState } from "react";
+import Badge from "../ui/Badge";
 
 export default function ProjectCard({onClick}) {
     
@@ -21,11 +22,11 @@ export default function ProjectCard({onClick}) {
                 </div>
                 <hr className="w-full my-2"/>
                 <div className="flex flex-wrap gap-2 mb-5 ">
-                    <TechLabel label="React JS" />
-                    <TechLabel label="Laravel" />
-                    <TechLabel label="Inertia.js" />
-                    <TechLabel label="Bootstrap" />
-                    <TechLabel label="+5" />
+                    <Badge label="React JS" />
+                    <Badge label="Laravel" />
+                    <Badge label="Inertia.js" />
+                    <Badge label="Bootstrap" />
+                    <Badge label="+5" />
                 </div>
             </div>
             

@@ -1,6 +1,6 @@
 import { FaArrowRightLong } from "react-icons/fa6";
-import Button from "./Button";
-import ExpandableButton from "./ExpandableButton";
+import Button from "../ui/Button";
+import ExpandableButton from "../ui/ExpandableButton";
 import ProjectCard from "./ProjectCard";
 import { useEffect, useState } from "react";
 

@@ -1,5 +1,5 @@
-import Button from "./Button";
-import Card from "./Card";
+import Button from "../ui/Button";
+import Card from "../ui/Card";
 
 
 export default function HeroGreetings() {
@@ -26,7 +26,7 @@ export default function HeroGreetings() {
                     </div>
                 </div>
             } 
-            className='bg-slate-950/10 border-slate-950/20 dark:bg-slate-100/10 dark:border-slate-100/20 backdrop-blur-xs'
+            className=''
             />
 
             {/* CTA Buttons */}

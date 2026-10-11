@@ -1,4 +1,4 @@
-import Card from "./Card";
+import Card from "../ui/Card";
 import Motion from "./Motion";
 
 export default function OfferingCard({ title = '', image = '', description = '', scale=''}) {

@@ -1,7 +1,8 @@
 import { FaGithub, FaStar } from "react-icons/fa6";
 import ProjectList from "./ProjectList";
 import TechLabel from "./TechLabel";
-import Button from "./Button";
+import Button from "../ui/Button";
+import Badge from "../ui/Badge";
 
 export default function ProjectHeroCard() {
     return (
@@ -18,11 +19,11 @@ export default function ProjectHeroCard() {
                     <h3 className="font-bold text-xl">E-Commerce Web Application</h3 >
                     <div className="text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique aliquam eum adipisci ullam ex, saepe cum atque at aut dolorum officiis pariatur voluptate laudantium. Quod fugiat, placeat est sunt, vel aut sequi nemo eum totam odit ut vero deleniti! Fuga?</div>
                     <div className="flex flex-wrap gap-2 mt-3">
-                        <TechLabel label="React JS" />
-                        <TechLabel label="Laravel" />
-                        <TechLabel label="Inertia.js" />
-                        <TechLabel label="Bootstrap" />
-                        <TechLabel label="+5" />
+                        <Badge label="React JS" />
+                        <Badge label="Laravel" />
+                        <Badge label="Inertia.js" />
+                        <Badge label="Bootstrap" />
+                        <Badge label="+5" />
                     </div>
                     <div className="flex gap-3 mt-3 justify-end align-items-center ">
                         <Button title='Live Demo'/>

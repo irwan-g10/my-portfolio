@@ -1,18 +1,13 @@
-import Button from "../Common/Button";
-import ProjectCountCard from "../Common/ProjectCountCard";
+
 import { TbFileDownload } from "react-icons/tb";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
-import SocialButton from "../Common/SocialButton";
 
 
 import { motion } from "motion/react";
-import TechText from "../TechText";
-import DotField from "../DotField";
-import WebThreads from "../WebThreads";
-import StrokeText from "../StrokeText";
-import ImageBadge from "../Common/ImageBadge";
+import SocialButton from "@/components/Common/SocialButton";
+import ImageBadge from "@/components/Common/ImageBadge";
 
 
 export default function AboutSection() {

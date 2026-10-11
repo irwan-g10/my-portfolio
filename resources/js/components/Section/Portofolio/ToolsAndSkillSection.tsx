@@ -1,7 +1,7 @@
-import Card from "../Common/Card"
-import CategoryBadge from "../Common/CategoryBadge";
-import SectionTitle from "../Common/SectionTitle"
-import JellyRadio from "../JellyRadio"
+import CategoryBadge from "@/components/Common/CategoryBadge";
+import SectionTitle from "@/components/ui/SectionTitle";
+import Card from "@/components/ui/Card";
+
 
 export default function ToolsAndSkillSection() {
 

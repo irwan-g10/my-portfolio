@@ -1,14 +1,12 @@
-import { useTheme } from "@/hooks/useTheme";
-import CodeCard from "../Common/CodeCard";
-import HeroGreetings from "../Common/Herogreetings";
-import HeroPhoto from "../Common/HeroPhoto.";
-import DotField from "../DotField";
-import GradientWaves from "../GradientWaves";
-import ScrollVelocity from "../ScrollVelocity";
-import StrokeText from "../StrokeText";
-import WebThreads from "../WebThreads";
-import { motion } from "motion/react";
-import Motion from "../Common/Motion";
+import CodeCard from "@/components/Common/CodeCard";
+import HeroGreetings from "@/components/Common/Herogreetings";
+import HeroPhoto from "@/components/Common/HeroPhoto.";
+import Motion from "@/components/Common/Motion";
+import GradientWaves from "@/components/GradientWaves";
+import StrokeText from "@/components/StrokeText";
+import {motion} from 'motion/react'
+
+
 
 export default function HeroSection() {
 

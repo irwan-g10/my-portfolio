@@ -1,9 +1,9 @@
 import { FaEnvelope, FaWhatsapp } from "react-icons/fa6"
 import { GrMapLocation } from "react-icons/gr";
-import Button from "../Common/Button"
-import ContactInfo from "../Common/ContactInfo"
-import SectionTitle from "../Common/SectionTitle"
 import ContactInput from "./ContactInput"
+import SectionTitle from "@/components/ui/SectionTitle";
+import ContactInfo from "@/components/Common/ContactInfo";
+import Button from "@/components/ui/Button";
 
 export default function ContactMeSection() {
     return (

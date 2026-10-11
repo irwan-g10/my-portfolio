@@ -1,20 +1,19 @@
 
-import ExpandableButton from '@/components/Common/ExpandableButton';
-import DotField from '@/components/DotField';
+import ExpandableButton from '@/components/ui/ExpandableButton';
 import Footer from '@/components/Navigation/Footer';
 import Navbar from '@/components/Navigation/Navbar';
-import CertificationSection from '@/components/portofolio/CertificationSection';
-import ContactMeSection from '@/components/portofolio/ContactMeSection';
-import AboutSection from '@/components/portofolio/AboutSection';
-import JourneySection from '@/components/portofolio/JourneySection';
-import OfferingSection from '@/components/portofolio/OfferingSection';
-import ProjectSection from '@/components/portofolio/ProjectSection';
-import ToolsAndSkillSection from '@/components/portofolio/ToolsAndSkillSection';
 import { Head, Link, usePage } from '@inertiajs/react';
-import HeroSection from '@/components/portofolio/HeroSection';
 import { useTheme } from '@/hooks/useTheme';
 import ScrollToTop from '@/components/Common/ScrollToTop';
 import { SharedData } from '@/types';
+import HeroSection from '@/components/Section/Portofolio/HeroSection';
+import AboutSection from '@/components/Section/Portofolio/AboutSection';
+import OfferingSection from '@/components/Section/Portofolio/OfferingSection';
+import ToolsAndSkillSection from '@/components/Section/Portofolio/ToolsAndSkillSection';
+import CertificationSection from '@/components/Section/Portofolio/CertificationSection';
+import ProjectSection from '@/components/Section/Portofolio/ProjectSection';
+import JourneySection from '@/components/Section/Portofolio/JourneySection';
+import ContactMeSection from '@/components/Section/Portofolio/ContactMeSection';
 
 export default function Home() {
 

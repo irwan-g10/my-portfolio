@@ -2,8 +2,14 @@ import MenuContent from "@/components/Common/MenuContent";
 import GradientWaves from "@/components/GradientWaves";
 import NavbarMain from "@/components/Navigation/NavbarMain";
 import Dashboard from "./Dashboard/Dashboard";
+import SectionTitle from "@/components/ui/SectionTitle";
+import { usePage } from "@inertiajs/react";
 
 export default function AdminHome({children}) {
+
+    const {url} = usePage();
+        const currentSegment = url.split("/").filter(Boolean).pop();
+        console.log(currentSegment)
     return (
         <>
             <div className=" relative overflow-hidden 
@@ -43,7 +49,8 @@ export default function AdminHome({children}) {
                         <div className="bg-slate-950/20 dark:bg-slate-100/20 backdrop-blur-lg rounded-full w-1 h-4/5"></div>
                         <div className="bg-slate-950/20 dark:bg-slate-100/20 backdrop-blur-lg rounded-full w-1 h-3/5"></div>
                     </div>
-                    <div className="flex-1 p-10 relative">
+                    <div className=" p-5 relative  flex-1">
+                        <SectionTitle title={currentSegment?.toUpperCase()}/>
                         {children}
                     </div>
                 </div>

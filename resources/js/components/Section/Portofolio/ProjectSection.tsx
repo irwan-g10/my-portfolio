@@ -1,7 +1,7 @@
-import ProjectCountCard from "../Common/ProjectCountCard";
-import ProjectHeroCard from "../Common/ProjectHeroCard";
-import ProjectList from "../Common/ProjectList";
-import SectionTitle from "../Common/SectionTitle";
+import ProjectHeroCard from "@/components/Common/ProjectHeroCard";
+import ProjectList from "@/components/Common/ProjectList";
+import SectionTitle from "@/components/ui/SectionTitle";
+
 
 export default function ProjectSection() {
     return (

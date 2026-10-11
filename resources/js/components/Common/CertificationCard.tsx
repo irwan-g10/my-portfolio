@@ -1,4 +1,5 @@
-import Button from "./Button";
+import Badge from "../ui/Badge";
+import Button from "../ui/Button";
 import TechLabel from "./TechLabel";
 import { FaArrowRightLong } from "react-icons/fa6";
 
@@ -15,10 +16,10 @@ export default function CertificationCard() {
                         <h5 className="font-black text-xl">Full Stack Web Developer</h5>
                         <div className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit distinctio unde tenetur. Expedita, quam eligendi! Odit ullam unde officia ipsum!</div>
                         <div className="flex gap-2">
-                            <TechLabel label="Laravel" />
-                            <TechLabel label="Laravel" />
-                            <TechLabel label="Laravel" />
-                            <TechLabel label="Laravel" />
+                            <Badge label="Laravel" />
+                            <Badge label="Laravel" />
+                            <Badge label="Laravel" />
+                            <Badge label="Laravel" />
                         </div>
                 </div>
                 <div className="items-end flex justify-end">

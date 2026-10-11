@@ -1,8 +1,7 @@
-import { FaArrowRightLong } from "react-icons/fa6";
-import Button from "../Common/Button";
-import ExpandableButton from "../Common/ExpandableButton";
-import JourneyItemCard from "../Common/JourneyItem";
-import SectionTitle from "../Common/SectionTitle";
+import ExpandableButton from "@/components/ui/ExpandableButton";
+import JourneyItemCard from "@/components/Common/JourneyItemCard";
+import SectionTitle from "@/components/ui/SectionTitle";
+
 
 export default function JourneySection() {
   return (
