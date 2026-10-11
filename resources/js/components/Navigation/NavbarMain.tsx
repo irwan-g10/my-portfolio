@@ -2,14 +2,18 @@ import { useTheme } from "@/hooks/useTheme";
 import NavbarMainItem from "../Common/NavbarMainItem";
 import ThemeButton from "../Common/ThemeButton";
 import { useState } from "react";
+import { usePage } from "@inertiajs/react";
 
 export default function NavbarMain() {
+    const {url} = usePage();
+    const currentSegment = url.split("/").filter(Boolean).pop();
+    console.log(currentSegment)
 
     const navigationMenus = [
-        { title: "Dashboard", icon: "bi-speedometer2" },
-        { title: "Project", icon: "bi-code-slash" },
-        { title: "Skill", icon: "bi-tools" },
-        { title: "Certificate", icon: "bi-award" },
+        { title: "Dashboard", icon: "bi-speedometer2",href:'/admin/dashboard' },
+        { title: "Project", icon: "bi-code-slash",href:'/admin/project' },
+        { title: "Skill", icon: "bi-tools",href:'/admin/skill' },
+        { title: "Certificate", icon: "bi-award",href:'/admin/certificate' },
     ];
 
     const supportMenus = [
@@ -37,8 +41,8 @@ export default function NavbarMain() {
                         <NavbarMainItem
                             title={menu.title}
                             icon={menu.icon}
-                            onClick={() => setActiveItem(menu.title)}
-                            active={activeItem === menu.title}
+                            href={menu.href}
+                            active={currentSegment === (menu.title).toLowerCase()}
                         />
                     ))}
                 </div>

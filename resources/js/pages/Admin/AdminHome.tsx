@@ -3,7 +3,7 @@ import GradientWaves from "@/components/GradientWaves";
 import NavbarMain from "@/components/Navigation/NavbarMain";
 import Dashboard from "./Dashboard/Dashboard";
 
-export default function AdminHome() {
+export default function AdminHome({children}) {
     return (
         <>
             <div className=" relative overflow-hidden 
@@ -43,8 +43,8 @@ export default function AdminHome() {
                         <div className="bg-slate-950/20 dark:bg-slate-100/20 backdrop-blur-lg rounded-full w-1 h-4/5"></div>
                         <div className="bg-slate-950/20 dark:bg-slate-100/20 backdrop-blur-lg rounded-full w-1 h-3/5"></div>
                     </div>
-                    <div className="flex-1  relative">
-                        <Dashboard/>
+                    <div className="flex-1 p-10 relative">
+                        {children}
                     </div>
                 </div>
             </div>

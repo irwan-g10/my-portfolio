@@ -1,11 +1,10 @@
 import MenuContent from "@/components/Common/MenuContent";
+import AdminHome from "../AdminHome";
 
 export default function Project(){
     return (
-        <MenuContent title="Project">
-            <div>
+        <AdminHome >
                 Ini Project
-            </div>
-        </MenuContent>
+        </AdminHome>
     )
 }

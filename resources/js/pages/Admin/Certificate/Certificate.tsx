@@ -1,11 +1,10 @@
 import MenuContent from "@/components/Common/MenuContent";
+import AdminHome from "../AdminHome";
 
 export default function Certificate(){
     return (
-        <MenuContent title="Certificate">
-            <div>
-                Ini Certificate
-            </div>
-        </MenuContent>
+        <AdminHome>
+            ini adalah certificate
+        </AdminHome>
     )
 }
