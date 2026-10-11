@@ -10,29 +10,33 @@ import JourneySection from '@/components/portofolio/JourneySection';
 import OfferingSection from '@/components/portofolio/OfferingSection';
 import ProjectSection from '@/components/portofolio/ProjectSection';
 import ToolsAndSkillSection from '@/components/portofolio/ToolsAndSkillSection';
-import { Link } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 import HeroSection from '@/components/portofolio/HeroSection';
 import { useTheme } from '@/hooks/useTheme';
 import ScrollToTop from '@/components/Common/ScrollToTop';
+import { SharedData } from '@/types';
 
 export default function Home() {
 
-    const {theme, toggleTheme} = useTheme();
-    
+    const { theme, toggleTheme } = useTheme();
+
+        const { auth } = usePage<SharedData>().props;
+
 
     return (
         <>
+            <Head title='Vantomic Studio' />
             <div
                 className="
                 relative 
-                bg-slate-400
+                bg-slate-100
                 text-slate-950
                 dark:text-slate-100 dark:bg-slate-950
                 "
-                
-                >
 
-                <Navbar onClick={toggleTheme} theme={theme}/>
+            >
+
+                <Navbar onClick={toggleTheme} theme={theme} auth={auth}/>
                 <main>
                     <HeroSection />
                     <AboutSection />

@@ -1,16 +1,18 @@
 import React, { useState } from "react";
-import { usePage } from "@inertiajs/react";
+import { Link, usePage } from "@inertiajs/react";
 import NavbarLink from "../Common/NavbarLink";
 import ThemeButton from "../Common/ThemeButton";
 import Button from "../Common/Button";
+import { dashboard } from "@/routes";
 
-export default function Navbar({ onClick, theme }) {
+export default function Navbar({ onClick, theme, auth }) {
     const { url } = usePage();
     const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
     const toggleExpand = () => {
         setIsNavbarOpen((prev) => !prev)
     }
+    // console.log(auth.user.name)
 
     return (
 
@@ -39,6 +41,11 @@ export default function Navbar({ onClick, theme }) {
                 <div className="md:hidden">
                     <button onClick={toggleExpand}><i className="bi bi-list"></i></button>
                 </div>
+                {auth.user && (
+                    <div className="">
+                    <Link href={dashboard()}><i className="bi bi-grid-1x2-fill"></i></Link>
+                </div>
+                )}
             </div>
 
             {isNavbarOpen && (
