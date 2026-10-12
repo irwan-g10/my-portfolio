@@ -27,10 +27,22 @@ export default function Navbar({ onClick, theme, auth }) {
 
             <div className="hidden md:flex">
                 <div className="navbar-nav flex gap-2 font-bold">
-                    <NavbarLink href="#home" title="Home" />
-                    <NavbarLink href="#about" title="About" />
-                    <NavbarLink href="#project" title="Project" />
-                    <NavbarLink href="#blog" title="Blog" />
+                    <NavbarLink
+                        href="#home"
+                        title="Home"
+                    />
+                    <NavbarLink
+                        href="#about"
+                        title="About"
+                    />
+                    <NavbarLink
+                        href="#project"
+                        title="Project"
+                    />
+                    <NavbarLink
+                        href="#blog"
+                        title="Blog"
+                    />
                 </div>
             </div>
 
@@ -66,10 +78,22 @@ export default function Navbar({ onClick, theme, auth }) {
                 <div className="absolute top-full left-0 w-full">
                     <div className="mt-5 h-full w-full rounded-xl bg-slate-500/50 p-5 shadow-lg backdrop-blur-sm">
                         <div className="navbar-nav flex flex-col gap-2 font-bold">
-                            <NavbarLink href="#home" title="Home" />
-                            <NavbarLink href="#about" title="About" />
-                            <NavbarLink href="#project" title="Project" />
-                            <NavbarLink href="#blog" title="Blog" />
+                            <NavbarLink
+                                href="#home"
+                                title="Home"
+                            />
+                            <NavbarLink
+                                href="#about"
+                                title="About"
+                            />
+                            <NavbarLink
+                                href="#project"
+                                title="Project"
+                            />
+                            <NavbarLink
+                                href="#blog"
+                                title="Blog"
+                            />
                             <NavbarLink
                                 href="#contact"
                                 title="Contact Mes"

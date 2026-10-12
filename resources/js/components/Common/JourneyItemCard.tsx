@@ -9,7 +9,10 @@ export default function JourneyItemCard() {
             <div className="rounded-lg border p-5 shadow-sm">
                 <h5 className="font-bold md:text-xl">Dicoding Indonesia</h5>
                 <div className="my-1 text-xs italic">Front End Developer</div>
-                <p className="text-xs md:text-sm" style={{ maxWidth: '350px' }}>
+                <p
+                    className="text-xs md:text-sm"
+                    style={{ maxWidth: '350px' }}
+                >
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Dicta voluptate nostrum ab animi, eveniet inventore beatae
                     molestias magnam tempore laboriosam.

@@ -48,7 +48,10 @@ export default function ContactMeSection() {
                         <ContactInput label="Alamat Email" />
                     </div>
                     <ContactInput label="Subjek / Topik " />
-                    <ContactInput label="Pesan Anda" type="textarea" />
+                    <ContactInput
+                        label="Pesan Anda"
+                        type="textarea"
+                    />
                     <Button title="Kirim Pesan" />
                 </div>
             </div>

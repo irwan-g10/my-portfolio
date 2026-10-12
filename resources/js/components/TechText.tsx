@@ -893,7 +893,10 @@ const TechText = ({
             role="img"
             aria-label={text}
         >
-            <canvas ref={canvasRef} className="block h-full w-full" />
+            <canvas
+                ref={canvasRef}
+                className="block h-full w-full"
+            />
         </div>
     );
 };

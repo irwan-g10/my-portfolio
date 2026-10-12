@@ -293,7 +293,10 @@ const StrokeText = ({
             >
                 {fillMode === 'wipe' && box && (
                     <defs>
-                        <clipPath id={wipeId} clipPathUnits="userSpaceOnUse">
+                        <clipPath
+                            id={wipeId}
+                            clipPathUnits="userSpaceOnUse"
+                        >
                             <rect
                                 ref={wipeRectRef}
                                 x={box.x}
@@ -318,7 +321,10 @@ const StrokeText = ({
                     style={fontStyle}
                 >
                     {characters.map((char, index) => (
-                        <tspan data-stroke-char key={`s-${index}`}>
+                        <tspan
+                            data-stroke-char
+                            key={`s-${index}`}
+                        >
                             {char}
                         </tspan>
                     ))}
@@ -338,7 +344,10 @@ const StrokeText = ({
                     }
                 >
                     {characters.map((char, index) => (
-                        <tspan data-fill-char key={`f-${index}`}>
+                        <tspan
+                            data-fill-char
+                            key={`f-${index}`}
+                        >
                             {char}
                         </tspan>
                     ))}

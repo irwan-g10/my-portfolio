@@ -41,7 +41,10 @@ export default function ProjectHeroCard() {
                     </div>
                     <div className="align-items-center mt-3 flex justify-end gap-3">
                         <Button title="Live Demo" />
-                        <Button title="GIthub" icon={<FaGithub />} />
+                        <Button
+                            title="GIthub"
+                            icon={<FaGithub />}
+                        />
                     </div>
                 </div>
             </div>

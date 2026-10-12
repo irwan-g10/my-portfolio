@@ -22,7 +22,11 @@ export default function Home() {
         <>
             <Head title="Vantomic Studio" />
             <div className="relative bg-slate-100 text-slate-950 dark:bg-slate-950 dark:text-slate-100">
-                <Navbar onClick={toggleTheme} theme={theme} auth={auth} />
+                <Navbar
+                    onClick={toggleTheme}
+                    theme={theme}
+                    auth={auth}
+                />
                 <main>
                     <HeroSection />
                     <AboutSection />

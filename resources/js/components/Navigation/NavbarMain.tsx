@@ -59,7 +59,10 @@ export default function NavbarMain() {
                         />
                     ))}
                     <div className="flex justify-end">
-                        <ThemeButton theme={theme} onClick={toggleTheme} />
+                        <ThemeButton
+                            theme={theme}
+                            onClick={toggleTheme}
+                        />
                     </div>
                 </div>
             </div>

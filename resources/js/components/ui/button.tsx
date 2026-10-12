@@ -11,11 +11,12 @@ export default function Button({
         <div className={`${width}`}>
             <button
                 className={twMerge(
-                    `flex w-full items-center justify-center gap-2 gap-3 rounded-md border-2 border-blue-500 border-purple-400/80 bg-purple-400/40 px-5 py-1 text-sm font-semibold backdrop-blur-xl transition-all hover:border-slate-200/50 hover:bg-black/40 hover:text-slate-200 ${className}`,
+                    `flex items-center justify-center gap-3 border border-slate-300 bg-white text-sm font-bold text-slate-950 hover:bg-slate-200 ${title ? 'rounded-sm px-5 py-2' : 'h-10 w-10 rounded-full text-sm'} ${className}`,
                 )}
-                onClick={onclick}
+                onClick={onClick}
             >
-                {title} {icon}
+                {title && <div>{title}</div>}
+                {icon && <div className="">{icon}</div>}
             </button>
         </div>
     );

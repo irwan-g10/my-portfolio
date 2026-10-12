@@ -8,11 +8,11 @@ export default function Input({
 }) {
     return (
         <div>
-            <div className="flex flex-col gap-2">
+            <div className="flex min-w-75 flex-col gap-2 text-slate-950">
                 {label && <label htmlFor="">{label}</label>}
                 <div className="flex gap-2 overflow-hidden rounded-md border border-slate-300 bg-white shadow-sm focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20">
                     {icon && (
-                        <div className="flex items-center justify-center border-r border-slate-300 bg-slate-200 px-3 py-2 text-lg">
+                        <div className="flex items-center justify-center border-r border-slate-300 bg-slate-200 px-3 py-1 text-lg">
                             {icon}
                         </div>
                     )}

@@ -65,9 +65,15 @@ export default function ToolsAndSkillSection() {
                     stagger={22}
                     stiffness={580}
                 /> */}
-                <CategoryBadge title={'All'} isActive={true} />
+                <CategoryBadge
+                    title={'All'}
+                    isActive={true}
+                />
                 {categories.map((category, index) => (
-                    <CategoryBadge key={index} title={category} />
+                    <CategoryBadge
+                        key={index}
+                        title={category}
+                    />
                 ))}
                 {/* <div className="btn btn-outline-primary fw-bold">All</div>
                 <div className="btn btn-outline-primary fw-bold">Programming Languages</div>
