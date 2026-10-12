@@ -1,5 +1,7 @@
-export default function Badge({label = ''}) {
+export default function Badge({ label = '' }) {
     return (
-        <div className="text-xs bg-slate-950 dark:bg-slate-100 text-slate-100 dark:text-slate-950 p-1 rounded-sm font-bold">{label}</div>
-    )
+        <div className="rounded-sm bg-slate-950 p-1 text-xs font-bold text-slate-100 dark:bg-slate-100 dark:text-slate-950">
+            {label}
+        </div>
+    );
 }

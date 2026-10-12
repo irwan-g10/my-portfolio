@@ -1,4 +1,4 @@
-import GlareHover from "../GlareHover";
+import GlareHover from '../GlareHover';
 
 export default function ProjectCountCard({ count = 0, label = 'label' }) {
     return (
@@ -13,12 +13,13 @@ export default function ProjectCountCard({ count = 0, label = 'label' }) {
                 transitionDuration={800}
                 playOnce={false}
             >
-                <div className=" flex flex-col items-center justify-center " >
-                    <div className="text-2xl font-bold text-purple-500">{count}</div>
-                    <div className="text-xs absolute bottom-3">{label}</div>
+                <div className="flex flex-col items-center justify-center">
+                    <div className="text-2xl font-bold text-purple-500">
+                        {count}
+                    </div>
+                    <div className="absolute bottom-3 text-xs">{label}</div>
                 </div>
             </GlareHover>
         </div>
-
-    )
+    );
 }

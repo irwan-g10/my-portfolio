@@ -1,21 +1,20 @@
 export default function ImageBadge() {
     return (
-        <div className="relative group">
-
-            <div className=" rounded-full bg-purple-400/40  border-purple-400/80 border-5 w-60 h-60 md:w-90 md:h-90 relative overflow-hidden">
+        <div className="group relative">
+            <div className="relative h-60 w-60 overflow-hidden rounded-full border-5 border-purple-400/80 bg-purple-400/40 md:h-90 md:w-90">
                 <img
                     src="/images/profesional-foto-removebg.png"
                     alt="Foto Profil"
-                    className="absolute z-10 bottom-0 left-1/2  -translate-x-1/2 w-[140%] max-w-none h-auto object-cover"
+                    className="absolute bottom-0 left-1/2 z-10 h-auto w-[140%] max-w-none -translate-x-1/2 object-cover"
                 />
             </div>
 
             <img
                 src="/images/profesional-foto-removebg.png"
                 alt="Foto Profil"
-                className="[clip-path:inset(0_0_40%_0)] absolute z-10 bottom-0 left-1/2  -translate-x-1/2 w-[140%] max-w-none h-auto object-cover"
+                className="absolute bottom-0 left-1/2 z-10 h-auto w-[140%] max-w-none -translate-x-1/2 object-cover [clip-path:inset(0_0_40%_0)]"
             />
-            <div className="transition-transform duration-300 group-hover:scale-120 absolute z-0 -inset-1 rounded-full bg-gradient-to-r from-indigo-500 to-sky-500 opacity-30 blur-3xl"></div>
+            <div className="absolute -inset-1 z-0 rounded-full bg-gradient-to-r from-indigo-500 to-sky-500 opacity-30 blur-3xl transition-transform duration-300 group-hover:scale-120"></div>
         </div>
-    )
+    );
 }

@@ -1,22 +1,19 @@
-import CertificationCard from "@/components/Common/CertificationCard";
-import ExpandableButton from "@/components/ui/ExpandableButton";
-import SectionTitle from "@/components/ui/SectionTitle";
-import { FaArrowRightLong } from "react-icons/fa6";
-
+import CertificationCard from '@/components/Common/CertificationCard';
+import ExpandableButton from '@/components/ui/ExpandableButton';
+import SectionTitle from '@/components/ui/SectionTitle';
 
 export default function CertificationSection() {
     return (
-        <div className="w-4/5 mx-auto mb-10 relative">
+        <div className="relative mx-auto mb-10 w-4/5">
             <SectionTitle title="My Certification" />
-            <div className="grid gap-2  mb-5">
+            <div className="mb-5 grid gap-2">
                 <CertificationCard />
                 <CertificationCard />
                 <CertificationCard />
-
             </div>
-            <div className="flex justify-center items-center">
-                <ExpandableButton title='Lihat Lebih Banyak' />
+            <div className="flex items-center justify-center">
+                <ExpandableButton title="Lihat Lebih Banyak" />
             </div>
         </div>
-    )
+    );
 }

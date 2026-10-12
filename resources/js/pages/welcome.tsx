@@ -1,6 +1,6 @@
 import { Head, Link, usePage } from '@inertiajs/react';
 
-import { dashboard, login, register } from '@/routes';
+import { dashboard, login } from '@/routes';
 import { type SharedData } from '@/types';
 
 export default function Welcome({
@@ -136,7 +136,6 @@ export default function Welcome({
                                 </li>
                             </ul>
                         </div>
-                        
                     </main>
                 </div>
                 <div className="hidden h-14.5 lg:block"></div>

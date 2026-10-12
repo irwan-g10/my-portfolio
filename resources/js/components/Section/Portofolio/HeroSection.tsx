@@ -1,19 +1,18 @@
-import CodeCard from "@/components/Common/CodeCard";
-import HeroGreetings from "@/components/Common/Herogreetings";
-import HeroPhoto from "@/components/Common/HeroPhoto.";
-import Motion from "@/components/Common/Motion";
-import GradientWaves from "@/components/GradientWaves";
-import StrokeText from "@/components/StrokeText";
-import {motion} from 'motion/react'
-
-
+import CodeCard from '@/components/Common/CodeCard';
+import HeroGreetings from '@/components/Common/Herogreetings';
+import HeroPhoto from '@/components/Common/HeroPhoto.';
+import Motion from '@/components/Common/Motion';
+import GradientWaves from '@/components/GradientWaves';
+import StrokeText from '@/components/StrokeText';
+import { motion } from 'motion/react';
 
 export default function HeroSection() {
-
     return (
-
-        <div className="relative w-100% h-screen overflow-x-hidden flex justify-center items-center" id="home">
-            <div className='absolute inset-0 z-0 pointer-events-none' >
+        <div
+            className="w-100% relative flex h-screen items-center justify-center overflow-x-hidden"
+            id="home"
+        >
+            <div className="pointer-events-none absolute inset-0 z-0">
                 <GradientWaves
                     horizonColor="#020617"
                     waveColor="#334155"
@@ -36,11 +35,9 @@ export default function HeroSection() {
                     grain
                     grainIntensity={0.05}
                 />
-
             </div>
 
-            <div className='absolute top-20 z-0 pointer-events-none flex flex-col' >
-
+            <div className="pointer-events-none absolute top-20 z-0 flex flex-col">
                 <StrokeText
                     text="PORTFOLIO"
                     strokeColor="#646464"
@@ -75,7 +72,6 @@ export default function HeroSection() {
                         reverse={false}
                     />
                 </div>
-
             </div>
             <motion.div
                 className="pointer-events-auto absolute bottom-0 left-0 z-100 m-10 md:m-20"
@@ -85,21 +81,21 @@ export default function HeroSection() {
                 transition={{
                     duration: 0.8,
                     delay: 0.2,
-                    ease: [0.25, 0.1, 0.25, 1]
+                    ease: [0.25, 0.1, 0.25, 1],
                 }}
             >
                 <HeroGreetings />
             </motion.div>
 
             <motion.div
-                className="pointer-events-auto md:z-100 absolute top-56 md:top-auto md:bottom-0 md:right-0 md:m-20"
+                className="pointer-events-auto absolute top-56 md:top-auto md:right-0 md:bottom-0 md:z-100 md:m-20"
                 initial={{ opacity: 0, x: 60, y: 0 }}
                 whileInView={{ opacity: 1, x: 0, y: 0 }}
                 viewport={{ once: false, amount: 0.3 }} // once: false agar animasi ulang terus saat discroll
                 transition={{
                     duration: 0.8,
                     delay: 0.4,
-                    ease: [0.25, 0.1, 0.25, 1]
+                    ease: [0.25, 0.1, 0.25, 1],
                 }}
             >
                 <CodeCard />
@@ -114,5 +110,5 @@ export default function HeroSection() {
 
             </section> */}
         </div>
-    )
+    );
 }

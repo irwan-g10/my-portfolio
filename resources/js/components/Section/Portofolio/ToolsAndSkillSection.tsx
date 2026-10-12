@@ -1,26 +1,43 @@
-import CategoryBadge from "@/components/Common/CategoryBadge";
-import SectionTitle from "@/components/ui/SectionTitle";
-import Card from "@/components/ui/Card";
-
+import CategoryBadge from '@/components/Common/CategoryBadge';
+import Card from '@/components/ui/Card';
+import SectionTitle from '@/components/ui/SectionTitle';
 
 export default function ToolsAndSkillSection() {
-
     const skills = [
-        "PHP", "JavaScript", "CSS", "Node.js", "Inertia.js",
-        "Bootstrap", "Express.js", "Hapi.js", "MongoDB", "PostgreSQL",
-        "MySQL", "Laravel", "React.js", "Postman", "Microsoft Office",
-        "Claude AI", "Gemini AI", "ChatGPT", "GitHub Copilot"
+        'PHP',
+        'JavaScript',
+        'CSS',
+        'Node.js',
+        'Inertia.js',
+        'Bootstrap',
+        'Express.js',
+        'Hapi.js',
+        'MongoDB',
+        'PostgreSQL',
+        'MySQL',
+        'Laravel',
+        'React.js',
+        'Postman',
+        'Microsoft Office',
+        'Claude AI',
+        'Gemini AI',
+        'ChatGPT',
+        'GitHub Copilot',
     ];
     const categories = [
-        'Programming Language', 'Framework','Database',
-        'Version Control', 'Ai Coding Asistant', 'Tools'
-    ]
+        'Programming Language',
+        'Framework',
+        'Database',
+        'Version Control',
+        'Ai Coding Asistant',
+        'Tools',
+    ];
 
     return (
-        <div className="w-4/5 mx-auto mb-10">
+        <div className="mx-auto mb-10 w-4/5">
             <SectionTitle title="Tools and Skills" />
             {/* <div className="flex flex-row gap-2 justify-center align-items-center mb-5 flex-wrap"> */}
-            <div className="mb-5 flex justify-center items-center flex-wrap gap-1">
+            <div className="mb-5 flex flex-wrap items-center justify-center gap-1">
                 {/* <JellyRadio
                     items={[
                         { value: 'All', label: 'All' },
@@ -48,10 +65,9 @@ export default function ToolsAndSkillSection() {
                     stagger={22}
                     stiffness={580}
                 /> */}
-                <CategoryBadge title={'All'} isActive={true}/>
+                <CategoryBadge title={'All'} isActive={true} />
                 {categories.map((category, index) => (
-                    
-                    <CategoryBadge key={index} title={category}/>
+                    <CategoryBadge key={index} title={category} />
                 ))}
                 {/* <div className="btn btn-outline-primary fw-bold">All</div>
                 <div className="btn btn-outline-primary fw-bold">Programming Languages</div>
@@ -61,14 +77,15 @@ export default function ToolsAndSkillSection() {
                 <div className="btn btn-outline-primary fw-bold">AI Coding Asistant</div>
                 <div className="btn btn-outline-primary fw-bold">Tools</div> */}
             </div>
-            <div className="flex flex-row gap-2 justify-center items-center flex-wrap">
+            <div className="flex flex-row flex-wrap items-center justify-center gap-2">
                 {skills.map((skill, index) => (
-
-                    <Card key={index} content={<div className="">{skill}</div>} className="w-fit p-2 text-sm  bg-slate-500/10 border-slate-400/20 " />
+                    <Card
+                        key={index}
+                        content={<div className="">{skill}</div>}
+                        className="w-fit border-slate-400/20 bg-slate-500/10 p-2 text-sm"
+                    />
                 ))}
             </div>
-
-
         </div>
-    )
+    );
 }

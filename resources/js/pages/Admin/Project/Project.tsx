@@ -1,12 +1,10 @@
-import MenuContent from "@/components/Common/MenuContent";
-import AdminHome from "../AdminHome";
-    import Table from "@/components/ui/Table";
+import Table from '@/components/ui/Table';
+import AdminHome from '../AdminHome';
 
-
-export default function Project(){
+export default function Project() {
     return (
-        <AdminHome >
-                <Table/>
+        <AdminHome>
+            <Table />
         </AdminHome>
-    )
+    );
 }

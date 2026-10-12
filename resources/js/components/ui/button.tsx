@@ -1,18 +1,22 @@
-import { twMerge } from "tailwind-merge";
+import { twMerge } from 'tailwind-merge';
 
-export default function Button({ icon = '', title = '', className = '', width = '' ,    onClick        }) {
-
-
+export default function Button({
+    icon = '',
+    title = '',
+    className = '',
+    width = '',
+    onClick,
+}) {
     return (
         <div className={`${width}`}>
             <button
-            className={twMerge(
-                `text-sm bg-purple-400/40 border-purple-400/80 backdrop-blur-xl py-1 px-5 rounded-md flex  gap-2 font-semibold  hover:bg-black/40 hover:border-slate-200/50 border-2 transition-all border-blue-500 hover:text-slate-200 flex gap-3 justify-center items-center w-full ${className}`
-            )}
-            onClick={onclick}
-        >
-            {title} {icon}
-        </button>
+                className={twMerge(
+                    `flex w-full items-center justify-center gap-2 gap-3 rounded-md border-2 border-blue-500 border-purple-400/80 bg-purple-400/40 px-5 py-1 text-sm font-semibold backdrop-blur-xl transition-all hover:border-slate-200/50 hover:bg-black/40 hover:text-slate-200 ${className}`,
+                )}
+                onClick={onclick}
+            >
+                {title} {icon}
+            </button>
         </div>
-    )
+    );
 }

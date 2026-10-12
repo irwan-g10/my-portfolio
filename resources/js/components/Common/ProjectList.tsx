@@ -1,49 +1,50 @@
-import { FaArrowRightLong } from "react-icons/fa6";
-import Button from "../ui/Button";
-import ExpandableButton from "../ui/ExpandableButton";
-import ProjectCard from "./ProjectCard";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
+import Button from '../ui/Button';
+import ExpandableButton from '../ui/ExpandableButton';
+import ProjectCard from './ProjectCard';
 
 export default function ProjectList() {
-
     const [isVisible, setIsVisible] = useState(false);
 
     const toggleShowProject = () => {
-        setIsVisible((prev) => !prev)
-    }
+        setIsVisible((prev) => !prev);
+    };
     useEffect(() => {
         if (isVisible) {
-            document.body.style.overflow = "hidden";
+            document.body.style.overflow = 'hidden';
         } else {
-            document.body.style.overflow = "unset";
+            document.body.style.overflow = 'unset';
         }
 
         return () => {
-            document.body.style.overflow = "unset";
+            document.body.style.overflow = 'unset';
         };
     }, [isVisible]);
 
     return (
-        <div className='m-5 relative' >
-            <div className="grid md:grid-cols-4 gap-5 justify-center items-center mb-5">
+        <div className="relative m-5">
+            <div className="mb-5 grid items-center justify-center gap-5 md:grid-cols-4">
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
-
             </div>
             {isVisible && (
-                <div className="fixed  top-0 inset-x-0 mx-auto z-70 w-full h-full bg-slate-400/10 backdrop-blur-sm">
-                    <div className="w-4/5 h-4/5 bg-slate-950 overflow-y-auto absolute inset-0 m-auto rounded-lg">
-                        <div className="relative  m-10">
-                            <Button title="close" className="w-fit text-slate-950 fixed right-5 top-5" onclick={toggleShowProject}/>
+                <div className="fixed inset-x-0 top-0 z-70 mx-auto h-full w-full bg-slate-400/10 backdrop-blur-sm">
+                    <div className="absolute inset-0 m-auto h-4/5 w-4/5 overflow-y-auto rounded-lg bg-slate-950">
+                        <div className="relative m-10">
+                            <Button
+                                title="close"
+                                className="fixed top-5 right-5 w-fit text-slate-950"
+                                onclick={toggleShowProject}
+                            />
                         </div>
                     </div>
                 </div>
             )}
-            <ExpandableButton title='Lihat Lebih Banyak' />
+            <ExpandableButton title="Lihat Lebih Banyak" />
         </div>
-    )
+    );
 }
