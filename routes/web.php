@@ -14,7 +14,7 @@ return Inertia::render('welcome', [
 })->name('home');
 Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
 
-Route::get('/example', [ExampleController::class, 'index'])->name('example');
+    Route::get('/example', [ExampleController::class, 'index'])->name('example');
 
 // Route::middleware(['auth', 'verified'])->group(function () {
 //     Route::get('dashboard', function () {

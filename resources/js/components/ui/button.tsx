@@ -11,7 +11,7 @@ export default function Button({
         <div className={`${width}`}>
             <button
                 className={twMerge(
-                    `flex items-center justify-center gap-3 border border-slate-300 bg-white text-sm font-bold text-slate-950 hover:bg-slate-200 ${title ? 'rounded-sm px-5 py-2' : 'h-10 w-10 rounded-full text-sm'} ${className}`,
+                    `flex items-center justify-center gap-3 border-2 border-blue-900 bg-blue-500 text-sm font-bold text-slate-100 hover:bg-blue-900 ${title ? 'rounded-sm px-5 py-2' : 'h-10 w-10 rounded-full text-sm'} ${className}`,
                 )}
                 onClick={onClick}
             >
