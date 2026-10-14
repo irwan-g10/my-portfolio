@@ -12,7 +12,7 @@ export default function Input({
                 {label && <label htmlFor="">{label}</label>}
                 <div className="flex gap-2 overflow-hidden rounded-md border border-slate-300 bg-white shadow-sm focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20">
                     {icon && (
-                        <div className="flex items-center justify-center border-r border-slate-300 bg-slate-200 px-3 py-1 text-lg">
+                        <div className="flex items-center justify-center px-3 py-1 text-lg">
                             {icon}
                         </div>
                     )}

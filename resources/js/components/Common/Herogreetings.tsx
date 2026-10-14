@@ -38,16 +38,16 @@ export default function HeroGreetings() {
             />
 
             {/* CTA Buttons */}
-            <div className="flex items-center gap-5 pt-1">
+            <div className="flex items-center gap-3 pt-1">
                 <Button
                     title="About me"
-                    width="w-full"
-                    className="border-slate-950/20 bg-slate-950/10 transition-all duration-200 hover:scale-110 dark:border-slate-100/20 dark:bg-slate-100/10"
+                    className="w-full"
+                    icon={<i className="bi bi-person-fill"></i>}
                 />
                 <Button
                     title="Download CV"
-                    width="w-full"
-                    className="border-slate-950/20 bg-slate-950/10 transition-all duration-200 hover:scale-110 dark:border-slate-100/20 dark:bg-slate-100/10"
+                    className="w-full"
+                    icon={<i className="bi bi-file-earmark-arrow-down"></i>}
                 />
             </div>
         </div>

@@ -1,7 +1,6 @@
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
-
+import GithubContributions from '@/components/Common/GIthubContributions';
 import ImageBadge from '@/components/Common/ImageBadge';
-import SocialButton from '@/components/Common/SocialButton';
+import Button from '@/components/ui/Button';
 import { motion } from 'motion/react';
 
 export default function AboutSection() {
@@ -14,7 +13,7 @@ export default function AboutSection() {
                 <div className="md:w-4/5">
                     <div className="mt-10 mb-5 flex flex-col-reverse gap-5 md:flex md:flex-row">
                         <motion.div
-                            className=""
+                            className="flex-1"
                             initial={{ opacity: 0, x: -100, y: 0 }}
                             whileInView={{ opacity: 1, x: 0, y: 0 }}
                             viewport={{ once: false, amount: 0.3 }} // once: false agar animasi ulang terus saat discroll
@@ -24,7 +23,7 @@ export default function AboutSection() {
                                 ease: [0.25, 0.1, 0.25, 1],
                             }}
                         >
-                            <div className="m-10">
+                            <div className="">
                                 <h3 className="text-3xl font-semibold">
                                     Halo Semua,
                                 </h3>
@@ -46,17 +45,33 @@ export default function AboutSection() {
                                     quaerat maiores doloremque, necessitatibus
                                     rerum neque magnam.
                                 </p>
+                                <div className="my-5">
+                                    <GithubContributions />
+                                </div>
                                 <div className="flex items-center justify-end gap-3">
                                     <div className="flex gap-3">
-                                        <SocialButton icon={<FaInstagram />} />
-                                        <SocialButton icon={<FaLinkedin />} />
-                                        <SocialButton icon={<FaGithub />} />
+                                        <Button
+                                            icon={
+                                                <i class="bi bi-instagram"></i>
+                                            }
+                                            className="scale-110 text-xl"
+                                        />
+                                        <Button
+                                            icon={
+                                                <i class="bi bi-linkedin"></i>
+                                            }
+                                            className="scale-110 text-xl"
+                                        />
+                                        <Button
+                                            icon={<i class="bi bi-github"></i>}
+                                            className="scale-110 text-xl"
+                                        />
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
                         <motion.div
-                            className="profesional-foto flex items-center justify-center"
+                            className="profesional-foto flex flex-1 items-center justify-center"
                             initial={{ opacity: 0, x: 50, y: 0 }}
                             whileInView={{ opacity: 1, x: 0, y: 0 }}
                             viewport={{ once: false, amount: 0.3 }} // once: false agar animasi ulang terus saat discroll
