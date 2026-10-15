@@ -18,6 +18,10 @@ class AdminController extends Controller
     {
         return Inertia::render('Admin/Project/Project');
     }
+    public function addProject()
+    {
+        return Inertia::render('Admin/Project/AddProject');
+    }
 
     public function skill()
     {
