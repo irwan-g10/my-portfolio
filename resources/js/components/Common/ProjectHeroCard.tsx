@@ -4,7 +4,7 @@ import Button from '../ui/Button';
 
 export default function ProjectHeroCard() {
     return (
-        <div className="rounded-2xl border p-5 py-10 shadow-sm">
+        <div className="rounded-2xl border border-slate-100 p-5 py-10 shadow-sm">
             <div className="flex">
                 <div className="gambar flex flex-3 items-center justify-start">
                     <img

@@ -1,10 +1,8 @@
 import CodeCard from '@/components/Common/CodeCard';
 import HeroGreetings from '@/components/Common/Herogreetings';
 import HeroPhoto from '@/components/Common/HeroPhoto.';
-import Motion from '@/components/Common/Motion';
 import GradientWaves from '@/components/GradientWaves';
 import StrokeText from '@/components/StrokeText';
-import { motion } from 'motion/react';
 
 export default function HeroSection() {
     return (
@@ -73,37 +71,15 @@ export default function HeroSection() {
                     />
                 </div>
             </div>
-            <motion.div
-                className="pointer-events-auto absolute bottom-0 left-0 z-100 m-10 md:m-20"
-                initial={{ opacity: 0, x: -60, y: 0 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: false, amount: 0.5 }} // once: false agar animasi ulang terus saat discroll
-                transition={{
-                    duration: 0.8,
-                    delay: 0.2,
-                    ease: [0.25, 0.1, 0.25, 1],
-                }}
-            >
+            <div className="pointer-events-auto absolute bottom-0 left-0 z-100 m-10 md:m-20">
                 <HeroGreetings />
-            </motion.div>
+            </div>
 
-            <motion.div
-                className="pointer-events-auto absolute top-56 md:top-auto md:right-0 md:bottom-0 md:z-100 md:m-20"
-                initial={{ opacity: 0, x: 60, y: 0 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: false, amount: 0.3 }} // once: false agar animasi ulang terus saat discroll
-                transition={{
-                    duration: 0.8,
-                    delay: 0.4,
-                    ease: [0.25, 0.1, 0.25, 1],
-                }}
-            >
+            <div className="pointer-events-auto absolute top-56 md:top-auto md:right-0 md:bottom-0 md:z-100 md:m-20">
                 <CodeCard />
-            </motion.div>
+            </div>
             <div className="absolute z-10 md:bottom-0">
-                <Motion>
-                    <HeroPhoto />
-                </Motion>
+                <HeroPhoto />
             </div>
 
             {/* <section className="h-screen relative z-10 flex items-center justify-center text-white" id="about">

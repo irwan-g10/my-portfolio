@@ -1,4 +1,5 @@
 import Button from './Button';
+import Card from './Card';
 import Input from './Input';
 
 export default function Table() {
@@ -55,24 +56,28 @@ export default function Table() {
 
     return (
         <div className="flex flex-col gap-5">
-            <div className="flex justify-between">
-                <div className="flex items-center gap-2">
-                    <Input
-                        icon={<i className="bi bi-filter"></i>}
-                        placeholder="Filter by Project name"
-                    />
-                    <Button
-                        title="View"
-                        icon={<i className="bi bi-view-list"></i>}
-                    />
-                </div>
-                <Button
-                    title="Add Project"
-                    icon={<i className="bi bi-plus-lg"></i>}
-                />
-            </div>
+            <Card
+                content={
+                    <div className="flex justify-between">
+                        <div className="flex items-center gap-2">
+                            <Input
+                                icon={<i className="bi bi-filter"></i>}
+                                placeholder="Filter by Project name"
+                            />
+                            <Button
+                                title="View"
+                                icon={<i className="bi bi-view-list"></i>}
+                            />
+                        </div>
+                        <Button
+                            title="Add Project"
+                            icon={<i className="bi bi-plus-lg"></i>}
+                        />
+                    </div>
+                }
+            />
 
-            <div className="overflow-hidden rounded-xl border border-gray-400 bg-slate-100 text-slate-950">
+            <div className="overflow-hidden rounded-xl border border-gray-400 bg-slate-100/20 text-slate-100 backdrop-blur-sm">
                 <table className="w-full border-collapse overflow-x-auto text-left">
                     <thead>
                         <tr className="border-b border-slate-100 bg-slate-500 text-xs font-semibold tracking-wider text-white uppercase">
@@ -89,7 +94,7 @@ export default function Table() {
                         {dummyProjects.map((project, index) => (
                             <tr
                                 key={project.id}
-                                className="transition-colors hover:bg-slate-200"
+                                className="transition-colors hover:bg-slate-200 hover:text-slate-950"
                             >
                                 <td className="px-6 py-2">{index + 1}</td>
                                 <td className="px-6 py-2">{project.title}</td>
@@ -150,34 +155,48 @@ export default function Table() {
                 </table>
             </div>
 
-            <div className="flex justify-between">
-                <div className="flex items-center gap-2">
-                    <div>Rows Per Page</div>
-                    <div>
-                        <Button
-                            title="10"
-                            icon={<i className="bi bi-chevron-down"></i>}
-                        ></Button>
+            <Card
+                content={
+                    <div className="flex justify-between">
+                        <div className="flex items-center gap-2">
+                            <div>Rows Per Page</div>
+                            <div>
+                                <Button
+                                    title="10"
+                                    icon={
+                                        <i className="bi bi-chevron-down"></i>
+                                    }
+                                ></Button>
+                            </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <div>0-1 of 0</div>
+                            <div className="flex gap-2">
+                                <Button
+                                    icon={
+                                        <i className="bi bi-chevron-bar-left"></i>
+                                    }
+                                ></Button>
+                                <Button
+                                    icon={
+                                        <i className="bi bi-chevron-left"></i>
+                                    }
+                                ></Button>
+                                <Button
+                                    icon={
+                                        <i className="bi bi-chevron-right"></i>
+                                    }
+                                ></Button>
+                                <Button
+                                    icon={
+                                        <i className="bi bi-chevron-bar-right"></i>
+                                    }
+                                ></Button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className="flex items-center gap-2">
-                    <div>0-1 of 0</div>
-                    <div className="flex gap-2">
-                        <Button
-                            icon={<i className="bi bi-chevron-bar-left"></i>}
-                        ></Button>
-                        <Button
-                            icon={<i className="bi bi-chevron-left"></i>}
-                        ></Button>
-                        <Button
-                            icon={<i className="bi bi-chevron-right"></i>}
-                        ></Button>
-                        <Button
-                            icon={<i className="bi bi-chevron-bar-right"></i>}
-                        ></Button>
-                    </div>
-                </div>
-            </div>
+                }
+            />
         </div>
     );
 }

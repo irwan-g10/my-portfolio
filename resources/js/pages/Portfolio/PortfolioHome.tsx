@@ -1,4 +1,3 @@
-import ScrollToTop from '@/components/Common/ScrollToTop';
 import Footer from '@/components/Navigation/Footer';
 import Navbar from '@/components/Navigation/Navbar';
 import AboutSection from '@/components/Section/Portofolio/AboutSection';
@@ -9,6 +8,7 @@ import JourneySection from '@/components/Section/Portofolio/JourneySection';
 import OfferingSection from '@/components/Section/Portofolio/OfferingSection';
 import ProjectSection from '@/components/Section/Portofolio/ProjectSection';
 import ToolsAndSkillSection from '@/components/Section/Portofolio/ToolsAndSkillSection';
+import ScrollToTop from '@/components/ui/ScrollToTop';
 import { useTheme } from '@/hooks/useTheme';
 import { SharedData } from '@/types';
 import { Head, usePage } from '@inertiajs/react';
@@ -21,7 +21,7 @@ export default function Home() {
     return (
         <>
             <Head title="Vantomic Studio" />
-            <div className="relative bg-slate-100 text-slate-950 dark:bg-slate-950 dark:text-slate-100">
+            <div className="relative bg-slate-950 text-slate-100 dark:bg-slate-950 dark:text-slate-100">
                 <Navbar
                     onClick={toggleTheme}
                     theme={theme}

@@ -14,7 +14,7 @@ export default function Navbar({ onClick, theme, auth }) {
     // console.log(auth.user.name)
 
     return (
-        <nav className="fixed inset-x-0 top-5 z-50 mx-auto flex w-4/5 justify-between rounded-full bg-slate-500/10 p-2 px-5 shadow-lg backdrop-blur-sm md:px-20">
+        <nav className="fixed inset-x-0 top-5 z-100 mx-auto flex w-4/5 justify-between rounded-full bg-slate-500/10 p-2 px-5 shadow-lg backdrop-blur-sm md:px-20">
             <div className="navbar-brand flex-column flex items-center justify-center">
                 <a
                     href="#"

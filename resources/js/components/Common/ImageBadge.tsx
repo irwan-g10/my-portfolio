@@ -1,7 +1,7 @@
 export default function ImageBadge() {
     return (
-        <div className="group relative">
-            <div className="relative h-60 w-60 overflow-hidden rounded-full border-5 border-purple-400/80 bg-purple-400/40 md:h-90 md:w-90">
+        <div className="group relative scale-70">
+            <div className="relative h-60 w-60 overflow-hidden rounded-full border-5 border-purple-400/80 bg-purple-400/40 md:h-100 md:w-100">
                 <img
                     src="/images/profesional-foto-removebg.png"
                     alt="Foto Profil"

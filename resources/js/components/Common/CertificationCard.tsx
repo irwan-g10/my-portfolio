@@ -29,7 +29,7 @@ export default function CertificationCard() {
                     <Button title="Lihat Sertifikat" />
                 </div>
             </div>
-            <hr className="my-3 w-full rounded-full border-2 md:w-3/5" />
+            <hr className="my-3 w-full rounded-full border-2 border-slate-100 md:w-3/5" />
         </div>
     );
 }

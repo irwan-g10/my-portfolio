@@ -4,7 +4,7 @@ import Card from '../ui/Card';
 export default function ProjectCard({ onClick }) {
     return (
         <div
-            className="relative max-w-80 overflow-hidden rounded-2xl border-2"
+            className="relative max-w-80 overflow-hidden rounded-2xl border-2 border-slate-100"
             onClick={onClick}
         >
             <img

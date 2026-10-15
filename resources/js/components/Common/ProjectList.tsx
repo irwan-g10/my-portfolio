@@ -5,6 +5,11 @@ import ProjectCard from './ProjectCard';
 
 export default function ProjectList() {
     const [isVisible, setIsVisible] = useState(false);
+    const [expandVisible, setExpandVisible] = useState(false);
+
+    const onExpandClick = () => {
+        setExpandVisible((prev) => !prev);
+    };
 
     const toggleShowProject = () => {
         setIsVisible((prev) => !prev);
@@ -23,7 +28,7 @@ export default function ProjectList() {
 
     return (
         <div className="relative m-5">
-            <div className="mb-5 grid items-center justify-center gap-5 md:grid-cols-4">
+            <div className="mb-5 grid items-center justify-center gap-5 md:grid-cols-3">
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
@@ -44,7 +49,13 @@ export default function ProjectList() {
                     </div>
                 </div>
             )}
-            <ExpandableButton title="Lihat Lebih Banyak" />
+            <div className="flex items-center justify-center">
+                <ExpandableButton
+                    title="Lihat Lebih Banyak"
+                    onClick={onExpandClick}
+                    isVisible={expandVisible}
+                />
+            </div>
         </div>
     );
 }

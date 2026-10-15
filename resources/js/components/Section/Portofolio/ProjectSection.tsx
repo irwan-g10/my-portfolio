@@ -1,4 +1,3 @@
-import ProjectHeroCard from '@/components/Common/ProjectHeroCard';
 import ProjectList from '@/components/Common/ProjectList';
 import SectionTitle from '@/components/ui/SectionTitle';
 
@@ -12,7 +11,7 @@ export default function ProjectSection() {
 
             <div className="project-list relative mt-5">
                 <div className="hidden md:flex">
-                    <ProjectHeroCard />
+                    {/* <ProjectHeroCard /> */}
                 </div>
                 <ProjectList />
             </div>
