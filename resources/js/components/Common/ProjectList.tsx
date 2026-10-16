@@ -49,7 +49,7 @@ export default function ProjectList() {
                     </div>
                 </div>
             )}
-            <div className="flex items-center justify-center">
+            <div className="mx-auto my-10 flex w-4/5 items-center justify-center">
                 <ExpandableButton
                     title="Lihat Lebih Banyak"
                     onClick={onExpandClick}

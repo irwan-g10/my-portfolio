@@ -10,7 +10,7 @@ export default function Button({
     return (
         <button
             className={twMerge(
-                `group border-2 border-blue-500 bg-blue-500 text-sm font-bold text-slate-100 hover:bg-slate-100 hover:text-blue-500 ${title ? 'rounded-sm px-5 py-2' : 'h-10 w-10 scale-110 rounded-full text-xl'} ${className}`,
+                `group border-2 border-amber-500 bg-amber-500 text-sm font-bold text-slate-100 hover:bg-slate-100 hover:text-blue-500 ${title ? 'rounded-sm px-5 py-2' : 'h-10 w-10 scale-110 rounded-full text-xl'} ${className}`,
             )}
             onClick={onClick}
         >
