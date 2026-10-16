@@ -4,7 +4,7 @@ import SectionTitle from '@/components/ui/SectionTitle';
 export default function ProjectSection() {
     return (
         <div
-            className="mx-auto mt-10 w-4/5"
+            className="mx-auto mt-10"
             id="project"
         >
             <SectionTitle title="Latest Project" />

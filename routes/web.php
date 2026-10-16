@@ -30,7 +30,7 @@ Route::middleware(['auth', 'verified']) ->group(function() {
     Route::get('/admin/certificate',[AdminController::class, 'certificate'])->name('certificate');
 });
 
-Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/projects', [ProjectController::class, 'create'])->name('projects.create');
 
 
 require __DIR__.'/settings.php';

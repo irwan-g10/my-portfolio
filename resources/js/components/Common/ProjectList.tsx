@@ -43,7 +43,7 @@ export default function ProjectList() {
                             <Button
                                 title="close"
                                 className="fixed top-5 right-5 w-fit text-slate-950"
-                                onclick={toggleShowProject}
+                                onClick={toggleShowProject}
                             />
                         </div>
                     </div>

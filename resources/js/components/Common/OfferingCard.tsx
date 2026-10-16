@@ -10,27 +10,21 @@ export default function OfferingCard({
         // <Motion>
         <Card
             content={
-                <div className="flex flex-col gap-5 p-3">
-                    <h5 className="flex justify-center text-xl font-bold">
-                        Back-End
-                    </h5>
+                <div className="relative flex flex-col gap-5 p-3">
+                    <div className="flex gap-2">
+                        <Card
+                            className="flex h-10 w-10 items-center justify-center rounded-sm bg-slate-950"
+                            content={<i className="bi bi-server"></i>}
+                        />
+                        <h5 className="flex flex-1 items-center justify-center text-xl font-bold">
+                            Back-End
+                        </h5>
+                    </div>
                     <div className="text-sm">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Consectetur minima totam iure debitis voluptatum
-                        voluptates, quidem inventore earum. Deleniti, ab.
+                        Consectetur minima totam iure de.
                     </div>
-                    <div className="features flex gap-5">
-                        <div className="icon flex flex-1 items-center justify-center">
-                            <i className="bi bi-server text-whitfeature ke-e text-6xl"></i>
-                        </div>
-                        <div className="flex flex-2 flex-col justify-center text-xs">
-                            <div>feature ke-1</div>
-                            <div>feature ke-2</div>
-                            <div>feature ke-3</div>
-                            <div>feature ke-4</div>
-                            <div>feature ke-5</div>
-                        </div>
-                    </div>
+                    <div className="absolute right-0 bottom-0 h-10 w-20 rounded-br-xl border-r-3 border-b-3 border-slate-950"></div>
                 </div>
             }
             className=""

@@ -14,7 +14,7 @@ export default function Button({
             )}
             onClick={onClick}
         >
-            <div className="flex w-full items-center justify-center gap-3 transition-all duration-300 group-hover:scale-110">
+            <div className="flex w-full items-center justify-center gap-3 transition-all duration-300 group-hover:scale-120">
                 {title && <div>{title}</div>}
                 {icon && <div className="">{icon}</div>}
             </div>
