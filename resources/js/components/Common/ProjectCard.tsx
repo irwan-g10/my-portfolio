@@ -12,7 +12,7 @@ export default function ProjectCard({ onClick }) {
                 className="card-img-top h-full w-full rounded object-cover transition-all duration-500 group-hover:scale-110"
                 alt="Project Image"
             />
-            <div className="cardbody absolute inset-0 flex flex-col items-center justify-end gap-2 bg-gradient-to-t from-slate-950 to-slate-950/50 p-5 backdrop-blur-xs group-hover:backdrop-blur-none">
+            <div className="cardbody absolute inset-0 flex flex-col items-center justify-end gap-2 bg-gradient-to-t from-slate-950 to-slate-950/50 p-5 backdrop-blur-[1px] group-hover:backdrop-blur-none">
                 <div className="text-xl font-black">Project Title</div>
                 <div className="card-text mb-2 text-sm">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.

@@ -15,6 +15,20 @@ export default function ImageBadge() {
                 className="absolute bottom-0 left-1/2 z-10 h-auto w-[140%] max-w-none -translate-x-1/2 object-cover [clip-path:inset(0_0_40%_0)]"
             />
             <div className="absolute -inset-1 z-0 rounded-full bg-gradient-to-r from-indigo-500 to-sky-500 opacity-30 blur-3xl transition-transform duration-300 group-hover:scale-120"></div>
+            {/* <div className="flex gap-3">
+                <Button
+                    icon={<i className="bi bi-instagram"></i>}
+                    className="h-20 w-20 text-3xl"
+                />
+                <Button
+                    icon={<i className="bi bi-linkedin"></i>}
+                    className="h-20 w-20 text-3xl"
+                />
+                <Button
+                    icon={<i className="bi bi-github"></i>}
+                    className="h-20 w-20 text-3xl"
+                />
+            </div> */}
         </div>
     );
 }

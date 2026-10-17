@@ -39,15 +39,19 @@ export default function AboutSection() {
                             <div className="flex items-center justify-end gap-3">
                                 <div className="flex gap-3">
                                     <Button
-                                        icon={<i class="bi bi-instagram"></i>}
+                                        icon={
+                                            <i className="bi bi-instagram"></i>
+                                        }
                                         className=""
                                     />
                                     <Button
-                                        icon={<i class="bi bi-linkedin"></i>}
+                                        icon={
+                                            <i className="bi bi-linkedin"></i>
+                                        }
                                         className=""
                                     />
                                     <Button
-                                        icon={<i class="bi bi-github"></i>}
+                                        icon={<i className="bi bi-github"></i>}
                                         className=""
                                     />
                                 </div>
