@@ -14,22 +14,18 @@ export default function JourneyItemCard({
     };
     return (
         <div
-            className=""
+            className="flex flex-col items-center"
             onClick={handleDetailClick}
         >
             <div
                 className={`relative flex gap-2 ${position === 'left' ? 'flex-row-reverse' : ''} w-full`}
             >
-                {/* <div
-                    className={`absolute -bottom-12 h-20 w-20 ${position === 'left' ? 'left-2 border-b-[5px] border-l-5' : 'right-2 border-r-5 border-b-5'} border-amber-500`}
-                ></div>
-                <div
-                    className={`absolute -top-16 h-20 w-20 ${position === 'left' ? 'left-2 border-t-5 border-l-5' : 'right-2 border-t-5 border-r-5'} border-amber-500`}
-                ></div> */}
-                <div className="mb-5 flex-10">
+                <div className="flex-10">
                     {detailActive && (
                         <div className="px-10">
-                            <p className="text-xs md:text-sm">
+                            <p
+                                className={`text-xs md:text-sm ${position === 'left' ? 'text-left' : 'text-right'}`}
+                            >
                                 Lorem, ipsum dolor sit amet consectetur
                                 adipisicing elit. Perspiciatis earum saepe sunt
                                 alias voluptates porro iusto, totam deleniti
@@ -54,7 +50,7 @@ export default function JourneyItemCard({
                     className={`timeline top-0 bottom-0 ${position === 'left' ? 'left-104' : 'right-104'} w-[5px] bg-amber-500`}
                 ></div>
 
-                <div className="mb-5 flex h-fit flex-8">
+                <div className="flex h-fit flex-8">
                     <div
                         className={`flex gap-2 ${position === 'left' ? '' : 'flex-row-reverse'}`}
                     >
@@ -84,26 +80,7 @@ export default function JourneyItemCard({
                     </div>
                 </div>
             </div>
-            {/* <div className="relative">
-                <div className="my-10 h-[5px] bg-amber-500"></div>
-            </div> */}
-            {/* <div className="relative">
-                <svg
-                    className="h-20 w-20 bg-red-500 fill-none stroke-amber-500"
-                    viewBox="0 0 100 100"
-                    preserveAspectRatio="none"
-                >
-                    // Dari Kartu Kiri (titik X=25 atau sesuai lebar card) ke
-                    Kartu Kanan (X=75) // M 30 0 = Mulai dari agak ke
-                    tengah-kiri atas // C 30 50, 70 50, 70 100 = Melengkung ke
-                    arah kanan bawah
-                    <path
-                        d="M 40 0 C 30 50, 70 50, 70 100"
-                        strokeWidth="1"
-                        strokeLinecap="round"
-                    />
-                </svg>
-            </div> */}
+            {/* <div className="h-10 w-30 bg-amber-500"></div> */}
         </div>
     );
 }
