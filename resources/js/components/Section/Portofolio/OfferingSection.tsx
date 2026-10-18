@@ -12,9 +12,15 @@ export default function OfferingSection() {
                 Perspiciatis?
             </div> */}
             <div className="flex flex-col items-end gap-10 md:flex-row">
-                <OfferingCard />
-                <OfferingCard />
-                <OfferingCard />
+                <div className="transition-transform duration-300 hover:-translate-y-5 hover:scale-105 hover:-rotate-5">
+                    <OfferingCard />
+                </div>
+                <div className="transition-transform duration-300 hover:-translate-y-5 hover:scale-105">
+                    <OfferingCard />
+                </div>
+                <div className="transition-transform duration-300 hover:-translate-y-5 hover:scale-105 hover:rotate-5">
+                    <OfferingCard />
+                </div>
             </div>
         </div>
     );

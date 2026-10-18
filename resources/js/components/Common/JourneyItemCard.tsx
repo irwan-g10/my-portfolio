@@ -1,31 +1,109 @@
+import { useState } from 'react';
 import Card from '../ui/Card';
 
-export default function JourneyItemCard() {
+export default function JourneyItemCard({
+    position = 'left',
+    title = 'DIcoing Indonesia',
+    job = 'Front End Develope',
+    year = '2026',
+    description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sit omnis hic? Dolore atque ratione exercitationem eligendi, magnam nostrum aliquam!',
+}) {
+    const [detailActive, setDetailActive] = useState(false);
+    const handleDetailClick = () => {
+        setDetailActive((prev) => !prev);
+    };
     return (
-        <div className="mb-5 flex items-center gap-2">
-            <div className="buletan h-10 w-10 rounded-full bg-amber-500"></div>
-            <div className="font-bold">2025</div>
-            <Card
-                content={
-                    <div>
-                        <h5 className="font-bold md:text-xl">
-                            Dicoding Indonesia
-                        </h5>
-                        <div className="my-1 text-xs italic">
-                            Front End Developer
+        <div
+            className=""
+            onClick={handleDetailClick}
+        >
+            <div
+                className={`relative flex gap-2 ${position === 'left' ? 'flex-row-reverse' : ''} w-full`}
+            >
+                {/* <div
+                    className={`absolute -bottom-12 h-20 w-20 ${position === 'left' ? 'left-2 border-b-[5px] border-l-5' : 'right-2 border-r-5 border-b-5'} border-amber-500`}
+                ></div>
+                <div
+                    className={`absolute -top-16 h-20 w-20 ${position === 'left' ? 'left-2 border-t-5 border-l-5' : 'right-2 border-t-5 border-r-5'} border-amber-500`}
+                ></div> */}
+                <div className="mb-5 flex-10">
+                    {detailActive && (
+                        <div className="px-10">
+                            <p className="text-xs md:text-sm">
+                                Lorem, ipsum dolor sit amet consectetur
+                                adipisicing elit. Perspiciatis earum saepe sunt
+                                alias voluptates porro iusto, totam deleniti
+                                ipsam unde eius, eum repudiandae tempore. Sunt
+                                saepe, minima facere officia illo doloremque
+                                temporibus. Doloribus, fuga quasi. Eveniet,
+                                consequatur expedita aut nemo sunt debitis
+                                soluta ipsam. Aspernatur officiis, quos id animi
+                                enim cum non, magni sed blanditiis labore, nulla
+                                eius? Laudantium non, voluptate ex repellat
+                                facere nam ad architecto optio voluptas amet
+                                necessitatibus quas unde nisi sint esse,
+                                inventore, porro magnam cupiditate saepe earum.
+                                Repellat atque optio quo ad quaerat! Iste in,
+                                debitis repellendus odit corporis ipsum animi
+                                numquam laborum? Optio, praesentium.
+                            </p>
                         </div>
-                        <p
-                            className="text-xs md:text-sm"
-                            style={{ maxWidth: '350px' }}
+                    )}
+                </div>
+                <div
+                    className={`timeline top-0 bottom-0 ${position === 'left' ? 'left-104' : 'right-104'} w-[5px] bg-amber-500`}
+                ></div>
+
+                <div className="mb-5 flex h-fit flex-8">
+                    <div
+                        className={`flex gap-2 ${position === 'left' ? '' : 'flex-row-reverse'}`}
+                    >
+                        <Card
+                            content={
+                                <div>
+                                    <h5 className="font-bold md:text-xl">
+                                        {title}
+                                    </h5>
+                                    <div className="my-1 text-xs italic">
+                                        {job}
+                                    </div>
+                                    <p className="text-xs md:text-sm">
+                                        {description}
+                                    </p>
+                                </div>
+                            }
+                            className=""
+                        />
+                        <div
+                            className={`flex items-center gap-5 ${position === 'left' ? 'flex-row-reverse' : ''}`}
                         >
-                            Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Dicta voluptate nostrum ab animi, eveniet
-                            inventore beatae molestias magnam tempore
-                            laboriosam.
-                        </p>
+                            <div className="h-5 w-5 rounded-full bg-amber-500"></div>
+
+                            <div className="flex h-fit font-bold">{year}</div>
+                        </div>
                     </div>
-                }
-            />
+                </div>
+            </div>
+            {/* <div className="relative">
+                <div className="my-10 h-[5px] bg-amber-500"></div>
+            </div> */}
+            {/* <div className="relative">
+                <svg
+                    className="h-20 w-20 bg-red-500 fill-none stroke-amber-500"
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
+                >
+                    // Dari Kartu Kiri (titik X=25 atau sesuai lebar card) ke
+                    Kartu Kanan (X=75) // M 30 0 = Mulai dari agak ke
+                    tengah-kiri atas // C 30 50, 70 50, 70 100 = Melengkung ke
+                    arah kanan bawah
+                    <path
+                        d="M 40 0 C 30 50, 70 50, 70 100"
+                        strokeWidth="1"
+                        strokeLinecap="round"
+                    />
+                </svg>
+            </div> */}
         </div>
     );
 }
