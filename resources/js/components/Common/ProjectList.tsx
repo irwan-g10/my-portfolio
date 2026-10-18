@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Button from '../ui/Button';
-import ExpandableButton from '../ui/ExpandableButton';
 import ProjectCard from './ProjectCard';
 
 export default function ProjectList() {
@@ -49,13 +48,6 @@ export default function ProjectList() {
                     </div>
                 </div>
             )}
-            <div className="mx-auto my-10 flex w-4/5 items-center justify-center">
-                <ExpandableButton
-                    title="Lihat Lebih Banyak"
-                    onClick={onExpandClick}
-                    isVisible={expandVisible}
-                />
-            </div>
         </div>
     );
 }

@@ -1,7 +1,6 @@
 import ContactInfo from '@/components/Common/ContactInfo';
 import Button from '@/components/ui/Button';
 import SectionTitle from '@/components/ui/SectionTitle';
-import { FaEnvelope, FaWhatsapp } from 'react-icons/fa6';
 import { GrMapLocation } from 'react-icons/gr';
 import ContactInput from './ContactInput';
 
@@ -27,12 +26,12 @@ export default function ContactMeSection() {
                         <ContactInfo
                             label="Email"
                             value="irwangumilar111@gmail.com"
-                            icon={<FaEnvelope />}
+                            icon={<i className="bi bi-envelope"></i>}
                         />
                         <ContactInfo
                             label="WhatsApp"
                             value="+62 822-9536-5106"
-                            icon={<FaWhatsapp />}
+                            icon={<i class="bi bi-envelope"></i>}
                         />
                         <ContactInfo
                             label="Location"
@@ -43,11 +42,20 @@ export default function ContactMeSection() {
                 </div>
                 <div className="p-5">
                     <div className="gap-2 md:flex">
-                        <ContactInput label="Nama Lengkap" />
+                        <ContactInput
+                            label="Nama Lengkap"
+                            icon={<i className="bi bi-person"></i>}
+                        />
 
-                        <ContactInput label="Alamat Email" />
+                        <ContactInput
+                            label="Alamat Email"
+                            icon={<i className="bi bi-envelope"></i>}
+                        />
                     </div>
-                    <ContactInput label="Subjek / Topik " />
+                    <ContactInput
+                        label="Subjek / Topik "
+                        icon={<i className="bi bi-lightbulb"></i>}
+                    />
                     <ContactInput
                         label="Pesan Anda"
                         type="textarea"

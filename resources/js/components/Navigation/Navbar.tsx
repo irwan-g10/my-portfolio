@@ -14,7 +14,7 @@ export default function Navbar({ onClick, theme, auth }) {
     // console.log(auth.user.name)
 
     return (
-        <nav className="fixed inset-x-0 top-5 z-100 mx-auto flex w-4/5 justify-between rounded-full bg-slate-500/10 p-2 px-5 shadow-lg backdrop-blur-sm md:px-20">
+        <nav className="fixed inset-x-0 top-3 z-150 mx-auto flex w-3/5 justify-between rounded-full bg-slate-500/10 p-2 px-5 shadow-lg backdrop-blur-sm md:px-15">
             <div className="navbar-brand flex-column flex items-center justify-center">
                 <a
                     href="#"
@@ -26,7 +26,7 @@ export default function Navbar({ onClick, theme, auth }) {
             </div>
 
             <div className="hidden md:flex">
-                <div className="navbar-nav flex gap-2 font-bold">
+                <div className="navbar-nav flex font-bold">
                     <NavbarLink
                         href="#home"
                         title="Home"
@@ -43,18 +43,14 @@ export default function Navbar({ onClick, theme, auth }) {
                         href="#blog"
                         title="Blog"
                     />
+                    <NavbarLink
+                        href="#contact"
+                        title="Contact Me"
+                    />
                 </div>
             </div>
 
             <div className="flex items-center justify-center gap-3">
-                <div className="hidden md:flex">
-                    <NavbarLink
-                        href="#contact"
-                        title="Contact Me"
-                        className="rounded-sm border-2 border-slate-950 dark:border-slate-100"
-                        showHover={false}
-                    />
-                </div>
                 <ThemeButton
                     className="border p-2"
                     onClick={onClick}
@@ -96,9 +92,7 @@ export default function Navbar({ onClick, theme, auth }) {
                             />
                             <NavbarLink
                                 href="#contact"
-                                title="Contact Mes"
-                                className="rounded-sm border-2 border-slate-950 dark:border-slate-100"
-                                showHover={false}
+                                title="Contact Me"
                             />
                         </div>
                     </div>

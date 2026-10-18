@@ -30,7 +30,7 @@ export default function ScrollToTop() {
             <Button
                 icon={<i className="bi bi-arrow-up"></i>}
                 onClick={scrollToTop}
-                className="h-13 w-13"
+                className="h-13 w-13 border-slate-100/20 bg-slate-100/10"
             />
         </div>
     );

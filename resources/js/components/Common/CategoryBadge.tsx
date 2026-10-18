@@ -5,7 +5,7 @@ export default function CategoryBadge({ title, isActive = false, onClick }) {
 
     return (
         <button
-            className={`rounded rounded-full p-2 px-5 shadow-xs ${style} transition-all`}
+            className={`rounded rounded-full p-2 px-5 shadow-xs duration-300 ${style} transform transition`}
             onClick={onClick}
         >
             {title}

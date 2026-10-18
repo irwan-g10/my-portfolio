@@ -12,7 +12,7 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Portfolio/PortfolioHome');
+        return Inertia::render('Portfolio/PortfolioLayout');
     }
 
     /**

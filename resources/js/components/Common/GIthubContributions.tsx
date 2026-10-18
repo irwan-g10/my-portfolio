@@ -4,7 +4,7 @@ export default function GithubContributions({ username = 'irwan-g10' }) {
             <img
                 src={`https://ghchart.rshah.org/${username}`}
                 alt="GitHub Contributions Chart"
-                className=""
+                className="dark:invert"
             />
         </div>
     );

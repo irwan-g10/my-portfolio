@@ -5,7 +5,7 @@ export default function ExpandableButton({ title = '', isVisible, onClick }) {
     return (
         <div className="w-full">
             {!isVisible && (
-                <div className="backdrop-blur- absolute inset-x-0 bottom-0 flex h-50 items-end justify-center bg-linear-to-t from-slate-950 via-slate-950/90 to-slate-950/10">
+                <div className="backdrop-blur- absolute inset-x-0 bottom-0 flex h-50 items-end justify-center bg-linear-to-t from-slate-950 via-slate-950/90 to-slate-950/10 p-10">
                     {/* Lihat Lebih Banyak */}
                     <Button
                         title={title}

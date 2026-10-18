@@ -43,7 +43,7 @@ export default function ToolsAndSkillSection() {
         <div className="mx-auto mb-10 w-4/5">
             <SectionTitle title="Tools and Skills" />
 
-            <div className="mb-5 flex flex-wrap items-center justify-center gap-1">
+            <div className="mb-10 flex flex-wrap items-center justify-center gap-1">
                 <CategoryBadge
                     title={'All'}
                     onClick={() => handleCategoryClick('All')}
@@ -68,7 +68,7 @@ export default function ToolsAndSkillSection() {
                                 <div className="">{skill}</div>
                             </div>
                         }
-                        className="w-fit rounded border-slate-400/20 bg-slate-500/10 p-4 text-sm"
+                        className="w-fit transform rounded border-slate-400/20 bg-slate-500/10 p-4 text-sm transition-all duration-300 hover:mx-2 hover:-translate-y-5 hover:scale-105 hover:rotate-5"
                     />
                 ))}
             </div>

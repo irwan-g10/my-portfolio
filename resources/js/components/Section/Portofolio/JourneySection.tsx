@@ -103,10 +103,17 @@
 // }
 
 import JourneyItemCard from '@/components/Common/JourneyItemCard';
+import ExpandableButton from '@/components/ui/ExpandableButton';
 
 import SectionTitle from '@/components/ui/SectionTitle';
+import { useState } from 'react';
 
 export default function JourneySection() {
+    const [expandVisible, setExpandVisible] = useState(false);
+
+    const onExpandClick = () => {
+        setExpandVisible((prev) => !prev);
+    };
     const journeyData = [
         {
             year: '2025',
@@ -165,15 +172,15 @@ export default function JourneySection() {
     ];
 
     return (
-        <div className="mx-auto w-4/5">
+        <div
+            className={`relative mx-auto mt-10 w-4/5 ${expandVisible ? '' : 'h-screen overflow-hidden'}`}
+        >
             <SectionTitle title="My Journey" />
 
             <div className="flex">
                 {/* <div className="flex-1"></div> */}
 
                 <div className="relative flex w-full justify-center">
-                    {/* <div className="absolute top-20 bottom-20 w-1 rounded-full bg-amber-500"></div> */}
-
                     <div className="flex w-full flex-col">
                         {journeyData.map((item, index) => {
                             const position = index % 2 === 0 ? 'left' : 'right';
@@ -191,8 +198,13 @@ export default function JourneySection() {
                     </div>
                 </div>
             </div>
-
-            {/* <ExpandableButton title="Lihat Lebih Banyak" /> */}
+            <div className="mx-auto flex w-4/5 items-center justify-center py-10">
+                <ExpandableButton
+                    title="Lihat Lebih Banyak"
+                    onClick={onExpandClick}
+                    isVisible={expandVisible}
+                />
+            </div>
         </div>
     );
 }

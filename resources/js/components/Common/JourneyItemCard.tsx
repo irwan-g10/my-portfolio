@@ -50,7 +50,7 @@ export default function JourneyItemCard({
                     className={`timeline top-0 bottom-0 ${position === 'left' ? 'left-104' : 'right-104'} w-[5px] bg-amber-500`}
                 ></div>
 
-                <div className="flex h-fit flex-8">
+                <div className="flex h-fit flex-10">
                     <div
                         className={`flex gap-2 ${position === 'left' ? '' : 'flex-row-reverse'}`}
                     >
