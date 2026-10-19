@@ -16,7 +16,7 @@ export default function JourneyItemCard({
     };
     return (
         <div
-            className="flex flex-col items-center transition-all duration-300"
+            className="flex flex-col items-center"
             onClick={handleDetailClick}
         >
             <div
@@ -25,37 +25,60 @@ export default function JourneyItemCard({
                 <div
                     className={`flex flex-10 gap-5 pb-10 ${position === 'left' ? '' : 'flex-row-reverse'}`}
                 >
-                    <div className="mt-18 flex flex-col items-center text-sm font-bold whitespace-nowrap text-amber-500 md:text-sm">
+                    {/* <div className="flex flex-col items-center text-sm font-bold whitespace-nowrap text-amber-500 md:text-sm">
                         <div>{fromMonth}</div>
                         <div>.s.d</div>
                         <div>{toMonth}</div>
-                    </div>
+                    </div> */}
                     {detailActive && (
                         <Card
                             className=""
                             content={
-                                <p
-                                    className={`text-xs md:text-sm ${position === 'left' ? 'text-left' : 'text-right'}`}
-                                >
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Perspiciatis earum saepe
-                                    sunt alias voluptates porro iusto, totam
-                                    deleniti ipsam unde eius, eum repudiandae
-                                    tempore. Sunt saepe, minima facere officia
-                                    illo doloremque temporibus. Doloribus, fuga
-                                    quasi. Eveniet, consequatur expedita aut
-                                    nemo sunt debitis soluta ipsam. Aspernatur
-                                    officiis, quos id animi enim cum non, magni
-                                    sed blanditiis labore, nulla eius?
-                                    Laudantium non, voluptate ex repellat facere
-                                    nam ad architecto optio voluptas amet
-                                    necessitatibus quas unde nisi sint esse,
-                                    inventore, porro magnam cupiditate saepe
-                                    earum. Repellat atque optio quo ad quaerat!
-                                    Iste in, debitis repellendus odit corporis
-                                    ipsum animi numquam laborum? Optio,
-                                    praesentium.
-                                </p>
+                                <div className={`flex flex-col gap-3`}>
+                                    <div
+                                        className={`text-xs md:text-sm ${position === 'left' ? 'text-left' : 'flex-row-reverse text-right'} flex gap-5`}
+                                    >
+                                        <Card className="h-5 w-5 rounded-full bg-slate-950 p-0" />
+                                        <p>
+                                            Lorem, ipsum dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Perspiciatis earum Lorem ipsum dolor
+                                            sit amet consectetur, adipisicing
+                                            elit. Neque quo perferendis
+                                            consectetur repellendus quas saepe
+                                            ipsum, nemo recusandae fugit beatae
+                                            doloribus sequi deserunt magnam
+                                            architecto rem illo voluptates iure
+                                            laudantium eum exercitationem
+                                            impedit! Facilis commodi eveniet
+                                            neque cupiditate sed non, quaerat
+                                            quibusdam expedita! Cupiditate, quas
+                                            accusamus laboriosam numquam
+                                            voluptatibus sit?
+                                        </p>
+                                    </div>
+                                    <div
+                                        className={`text-xs md:text-sm ${position === 'left' ? 'text-left' : 'flex-row-reverse text-right'} flex gap-5`}
+                                    >
+                                        <Card className="h-5 w-5 rounded-full bg-slate-950 p-0" />
+                                        <p>
+                                            Lorem, ipsum dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Perspiciatis earum consectetur
+                                            adipisicing elit. Perspiciatis earum
+                                        </p>
+                                    </div>
+                                    <div
+                                        className={`text-xs md:text-sm ${position === 'left' ? 'text-left' : 'flex-row-reverse text-right'} flex gap-5`}
+                                    >
+                                        <Card className="h-5 w-5 rounded-full bg-slate-950 p-0" />
+                                        <p>
+                                            Lorem, ipsum dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Perspiciatis earum
+                                        </p>
+                                    </div>
+                                </div>
                             }
                         />
                     )}
@@ -91,8 +114,8 @@ export default function JourneyItemCard({
                             }
                             className="h-50 w-100"
                         />
-                        <Card className="h-30 w-4 p-0" />
-                        <Card className="h-20 w-4 p-0" />
+                        <Card className="h-30 w-3 p-0" />
+                        <Card className="h-20 w-3 p-0" />
                     </div>
                 </div>
             </div>

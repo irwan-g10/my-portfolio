@@ -167,7 +167,7 @@ export default function JourneySection() {
                 {/* <div className="flex-1"></div> */}
 
                 <div className="relative flex w-full justify-center">
-                    <div className="absolute top-25 bottom-25 left-1/2 z-10 w-[4px] -translate-x-1/2 bg-amber-500"></div>
+                    <div className="absolute top-25 bottom-25 left-1/2 z-0 w-[4px] -translate-x-1/2 bg-amber-500"></div>
                     <div className="flex w-full flex-col">
                         {journeyData.map((item, index) => {
                             const position = index % 2 === 0 ? 'left' : 'right';

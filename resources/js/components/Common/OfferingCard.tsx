@@ -13,7 +13,7 @@ export default function OfferingCard({
                 <div className="relative flex flex-col gap-5 p-3">
                     <div className="flex gap-2">
                         <Card
-                            className="flex h-10 w-10 items-center justify-center rounded-sm bg-slate-100 dark:bg-slate-950"
+                            className="flex h-10 w-10 items-center justify-center rounded-sm bg-slate-950"
                             content={<i className="bi bi-server"></i>}
                         />
                         <h5 className="flex flex-1 items-center justify-center text-xl font-bold">
