@@ -1,4 +1,3 @@
-import GradientWaves from '@/components/GradientWaves';
 import NavbarMain from '@/components/Navigation/NavbarMain';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { usePage } from '@inertiajs/react';
@@ -11,7 +10,7 @@ export default function AdminHome({ children }) {
         <>
             <div className="relative overflow-hidden bg-slate-100 text-slate-950 dark:bg-slate-950 dark:text-slate-100">
                 <div className="pointer-events-none absolute inset-0 z-0">
-                    <GradientWaves
+                    {/* <GradientWaves
                         horizonColor="#020617"
                         waveColor="#334155"
                         crestColor="#94a3b8"
@@ -33,6 +32,7 @@ export default function AdminHome({ children }) {
                         grain
                         grainIntensity={0.05}
                     />
+                    */}
                 </div>
                 <div className="relative z-50 flex">
                     <NavbarMain />

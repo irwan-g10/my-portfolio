@@ -22,15 +22,16 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
 //         return Inertia::render('Admin/AdminHome');
 //     })->name('dashboard');
 // });
-Route::middleware(['auth', 'verified']) ->group(function() {
+// Route::middleware(['auth', 'verified']) ->group(function() {
     Route::get('/admin/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/admin/project',[AdminController::class, 'project'])->name('project');
-    Route::get('/admin/project/add',[AdminController::class, 'addProject'])->name('addProject');
+    // Route::get('/admin/project/add',[AdminController::class, 'addProject'])->name('addProject');
     Route::get('/admin/skill',[AdminController::class, 'skill'])->name('skill');
     Route::get('/admin/certificate',[AdminController::class, 'certificate'])->name('certificate');
-});
+// });
 
-Route::get('/projects', [ProjectController::class, 'create'])->name('projects.create');
+Route::get('/admin/project/add', [ProjectController::class, 'create'])->name('projects.create');
+Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
 
 
 require __DIR__.'/settings.php';

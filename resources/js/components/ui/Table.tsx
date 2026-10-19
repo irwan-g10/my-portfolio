@@ -1,6 +1,5 @@
 import Button from './Button';
 import Card from './Card';
-import Input from './Input';
 
 export default function Table() {
     const dummyProjects = [
@@ -56,27 +55,6 @@ export default function Table() {
 
     return (
         <div className="flex flex-col gap-5">
-            <Card
-                content={
-                    <div className="flex justify-between">
-                        <div className="flex items-center gap-2">
-                            <Input
-                                icon={<i className="bi bi-filter"></i>}
-                                placeholder="Filter by Project name"
-                            />
-                            <Button
-                                title="View"
-                                icon={<i className="bi bi-view-list"></i>}
-                            />
-                        </div>
-                        <Button
-                            title="Add Project"
-                            icon={<i className="bi bi-plus-lg"></i>}
-                        />
-                    </div>
-                }
-            />
-
             <div className="overflow-hidden rounded-xl border border-gray-400 bg-slate-100/20 text-slate-100 backdrop-blur-sm">
                 <table className="w-full border-collapse overflow-x-auto text-left">
                     <thead>

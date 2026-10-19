@@ -19,7 +19,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        
+        return Inertia::render('Admin/Project/AddProject');
     }
 
     /**
@@ -38,7 +38,7 @@ class ProjectController extends Controller
 
        Project::create($validate);
 
-        return redirect()->route('projects.index')->with('success', 'Project berhasil ditambahkan!');
+        return redirect()->route('projects.create')->with('success', 'Project berhasil ditambahkan!');
     }
 
     /**
