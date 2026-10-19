@@ -8,7 +8,7 @@ export default function AdminHome({ children }) {
     console.log(currentSegment);
     return (
         <>
-            <div className="relative overflow-hidden bg-slate-100 text-slate-950 dark:bg-slate-950 dark:text-slate-100">
+            <div className="relative overflow-hidden bg-slate-950 text-slate-100">
                 <div className="pointer-events-none absolute inset-0 z-0">
                     {/* <GradientWaves
                         horizonColor="#020617"
