@@ -5,9 +5,13 @@ import { useState } from 'react';
 
 export default function ToolsAndSkillSection() {
     const [categoryActive, setCategoryActive] = useState('All');
+    const [hoverCategoryActive, setHoverCategoryActive] = useState(null);
 
     const handleCategoryClick = (value) => {
         setCategoryActive(value);
+    };
+    const handleCategoryHover = (value) => {
+        setHoverCategoryActive(value);
     };
     const skills = [
         'PHP',
@@ -43,17 +47,29 @@ export default function ToolsAndSkillSection() {
         <div className="mx-auto mb-10 w-4/5">
             <SectionTitle title="Tools and Skills" />
 
-            <div className="mb-10 flex flex-wrap items-center justify-center gap-1">
+            <div className="mb-10 flex flex-wrap items-center justify-center gap-2">
                 <CategoryBadge
                     title={'All'}
                     onClick={() => handleCategoryClick('All')}
-                    isActive={'All' === categoryActive}
+                    onMouseLeave={() => handleCategoryHover(null)}
+                    onMouseEnter={() => handleCategoryHover('All')}
+                    isActive={
+                        hoverCategoryActive
+                            ? hoverCategoryActive === 'All'
+                            : 'All' === categoryActive
+                    }
                 />
                 {categories.map((category, index) => (
                     <CategoryBadge
                         key={index}
                         onClick={() => handleCategoryClick(category)}
-                        isActive={categoryActive === category}
+                        onMouseLeave={() => handleCategoryHover(null)}
+                        onMouseEnter={() => handleCategoryHover(category)}
+                        isActive={
+                            hoverCategoryActive
+                                ? hoverCategoryActive === category
+                                : categoryActive === category
+                        }
                         title={category}
                     />
                 ))}

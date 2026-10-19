@@ -116,56 +116,42 @@ export default function JourneySection() {
     };
     const journeyData = [
         {
-            year: '2025',
-
+            fromMonth: 'Agustus 2025',
+            toMonth: 'September 2026',
             title: 'Dicoding Indonesia',
-
             job: 'Front End Developer',
-
             description:
                 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sit omnis hic? Dolore atque ratione exercitationem eligendi, magnam nostrum aliquam!',
         },
-
         {
-            year: '2025',
-
+            fromMonth: 'Januari 2025',
+            toMonth: 'Juli 2025',
             title: 'PT Badjatex',
-
             job: 'Production Operator',
-
             description:
                 'Menangani proses produksi tekstil, memastikan kualitas kain sesuai standar perusahaan, dan mengelola operasional mesin secara efisien.',
         },
-
         {
-            year: '2025',
-
+            fromMonth: 'Juni 2024',
+            toMonth: 'Desember 2024',
             title: 'AJE Elektronik',
-
             job: 'Store Crew',
-
             description:
                 'Melayani pelanggan, mengelola inventaris stok barang elektronik, serta mencatat transaksi harian toko dengan akurat dan rapi.',
         },
-
         {
-            year: '2024',
-
+            fromMonth: 'Januari 2024',
+            toMonth: 'Mei 2024',
             title: 'PT Idar Buana',
-
             job: 'Printing Operator',
-
             description:
                 'Mengoperasikan mesin cetak industri, melakukan kalibrasi warna, serta merawat perangkat cetak agar berjalan tanpa hambatan.',
         },
-
         {
-            year: '2023',
-
+            fromMonth: 'Januari 2023',
+            toMonth: 'Desember 2023',
             title: 'Freelance Developer',
-
             job: 'Full-Stack Web Developer',
-
             description:
                 'Membangun dan mengembangkan aplikasi web modern menggunakan Laravel, React, Tailwind CSS, serta mengelola deployment server mandiri.',
         },
@@ -181,18 +167,25 @@ export default function JourneySection() {
                 {/* <div className="flex-1"></div> */}
 
                 <div className="relative flex w-full justify-center">
+                    <div className="absolute top-25 bottom-25 left-1/2 z-10 w-[4px] -translate-x-1/2 bg-amber-500"></div>
                     <div className="flex w-full flex-col">
                         {journeyData.map((item, index) => {
                             const position = index % 2 === 0 ? 'left' : 'right';
 
                             return (
-                                <JourneyItemCard
-                                    position={position}
-                                    title={item.title}
-                                    year={item.year}
-                                    description={item.description}
-                                    job={item.job}
-                                />
+                                <div
+                                    key={index}
+                                    className="w-full"
+                                >
+                                    <JourneyItemCard
+                                        position={position}
+                                        title={item.title}
+                                        fromMonth={item.fromMonth}
+                                        toMonth={item.toMonth}
+                                        description={item.description}
+                                        job={item.job}
+                                    />
+                                </div>
                             );
                         })}
                     </div>

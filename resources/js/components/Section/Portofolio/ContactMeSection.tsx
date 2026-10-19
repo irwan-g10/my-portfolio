@@ -9,7 +9,7 @@ export default function ContactMeSection() {
         <div className="mx-auto mb-5 w-4/5">
             <SectionTitle title="Contact Me" />
             <div className="md:flex">
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-3 flex-col gap-4">
                     <div className="mb-2 flex w-50 gap-2 rounded-full border border-blue-500 p-2 px-3 font-bold text-blue-500">
                         <i className="bi bi-record-circle"></i>
                         <div className="">Available for work</div>
@@ -40,21 +40,27 @@ export default function ContactMeSection() {
                         />
                     </div>
                 </div>
-                <div className="p-5">
-                    <div className="gap-2 md:flex">
-                        <ContactInput
-                            label="Nama Lengkap"
-                            icon={<i className="bi bi-person"></i>}
-                        />
-
-                        <ContactInput
-                            label="Alamat Email"
-                            icon={<i className="bi bi-envelope"></i>}
-                        />
+                <div className="flex flex-2 flex-col p-5">
+                    <div className="flex gap-2">
+                        <div className="flex-1">
+                            <ContactInput
+                                placeholder="Masukan Nama Lengkap anda"
+                                label="Nama Lengkap"
+                                icon={<i className="bi bi-person"></i>}
+                            />
+                        </div>
+                        <div className="flex-1">
+                            <ContactInput
+                                label="Alamat Email"
+                                placeholder="Masukan Email Anda"
+                                icon={<i className="bi bi-envelope"></i>}
+                            />
+                        </div>
                     </div>
                     <ContactInput
                         label="Subjek / Topik "
                         icon={<i className="bi bi-lightbulb"></i>}
+                        placeholder="Subjek / Topik Pembahasan"
                     />
                     <ContactInput
                         label="Pesan Anda"

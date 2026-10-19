@@ -21,7 +21,7 @@ export default function PortfolioLayout() {
     return (
         <>
             <Head title="Vantomic Studio" />
-            <div className="relative z-10 bg-slate-100 text-slate-950 dark:bg-slate-950 dark:text-slate-100">
+            <div className="relative z-10 bg-slate-950 text-slate-100 dark:bg-slate-950 dark:text-slate-100">
                 <Navbar
                     onClick={toggleTheme}
                     theme={theme}

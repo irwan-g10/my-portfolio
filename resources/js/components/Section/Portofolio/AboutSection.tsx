@@ -18,7 +18,10 @@ export default function AboutSection() {
                             </h3>
                             <div className="flex items-center">
                                 <div className="text-4xl font-bold">
-                                    Saya Irwan Gumilar
+                                    Saya{' '}
+                                    <span className="text-amber-500">
+                                        Irwan Gumilar
+                                    </span>
                                 </div>
                             </div>
                             <label className="text italic">

@@ -3,6 +3,7 @@ import Input from '@/components/ui/Input';
 export default function ContactInput({
     label = 'label',
     value = 'value',
+    placeholder = 'placeholder',
     icon = '',
     type = 'text',
     rows = 4,
@@ -15,14 +16,14 @@ export default function ContactInput({
                 <textarea
                     className="form-control rounded-sm border bg-slate-100 p-2"
                     rows={rows}
-                    placeholder={value}
+                    placeholder={placeholder}
                 ></textarea>
             ) : (
                 <Input
                     type={type}
                     className="form-control rounded-sm border p-2"
                     icon={icon}
-                    placeholder={value}
+                    placeholder={placeholder}
                 />
             )}
         </div>
