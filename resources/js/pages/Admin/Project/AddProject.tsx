@@ -1,6 +1,7 @@
 import { useForm } from '@inertiajs/react';
 import AdminHome from '../AdminHome';
 import FeatureProjectForm from './Components/FeatureProjectForm';
+import FooterProjectForm from './Components/FooterProjectForm';
 import MainProjectForm from './Components/MainProjectForm';
 import SkillProjectForm from './Components/SkillProjectForm';
 import StatusProjectForm from './Components/StatusProjectForm';
@@ -25,21 +26,23 @@ export default function AddProject() {
     };
     return (
         <AdminHome>
-            <form onSubmit={handleSubmit}>
-                <div className="flex gap-2 text-xs">
-                    <div className="flex flex-10 flex-col gap-2">
-                        <MainProjectForm />
-                        <FeatureProjectForm />
-                        <TechStackProjectForm />
-                        <SkillProjectForm />
+            <div className="flex flex-col gap-2">
+                <form onSubmit={handleSubmit}>
+                    <div className="flex gap-2 text-xs">
+                        <div className="flex flex-10 flex-col gap-2">
+                            <MainProjectForm />
+                            <StatusProjectForm />
+                            <ThumbnailProjectForm />
+                        </div>
+                        <div className="flex flex-8 flex-col gap-2">
+                            <FeatureProjectForm />
+                            <TechStackProjectForm />
+                            <SkillProjectForm />
+                        </div>
                     </div>
-                    <div className="flex flex-8 flex-col gap-2">
-                        <StatusProjectForm />
-                        <ThumbnailProjectForm />
-                    </div>
-                </div>
-            </form>
-            <div className="flex flex-col gap-2"></div>
+                    <FooterProjectForm />
+                </form>
+            </div>
         </AdminHome>
     );
 }

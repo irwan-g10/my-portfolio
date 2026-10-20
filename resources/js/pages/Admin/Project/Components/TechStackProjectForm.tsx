@@ -27,7 +27,7 @@ export default function TechStackProjectForm() {
                     />
                 </div>
             </div>
-            <div className="flex flex-wrap justify-end gap-2">
+            <div className="flex flex-wrap justify-start gap-2">
                 {dummyTechs.map((tech, index) => (
                     <Input
                         type="radio"

@@ -27,7 +27,7 @@ export default function SkillProjectForm() {
                     />
                 </div>
             </div>
-            <div className="flex flex-wrap justify-end gap-2">
+            <div className="flex flex-wrap justify-start gap-2">
                 {dummySkills.map((skill, index) => (
                     <Input
                         type="checkbox"
