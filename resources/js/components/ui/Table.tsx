@@ -133,48 +133,40 @@ export default function Table() {
                 </table>
             </div>
 
-            <Card
-                content={
-                    <div className="flex justify-between">
-                        <div className="flex items-center gap-2">
-                            <div>Rows Per Page</div>
-                            <div>
-                                <Button
-                                    title="10"
-                                    icon={
-                                        <i className="bi bi-chevron-down"></i>
-                                    }
-                                ></Button>
-                            </div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <div>0-1 of 0</div>
-                            <div className="flex gap-2">
-                                <Button
-                                    icon={
-                                        <i className="bi bi-chevron-bar-left"></i>
-                                    }
-                                ></Button>
-                                <Button
-                                    icon={
-                                        <i className="bi bi-chevron-left"></i>
-                                    }
-                                ></Button>
-                                <Button
-                                    icon={
-                                        <i className="bi bi-chevron-right"></i>
-                                    }
-                                ></Button>
-                                <Button
-                                    icon={
-                                        <i className="bi bi-chevron-bar-right"></i>
-                                    }
-                                ></Button>
-                            </div>
+            <Card>
+                <div className="flex justify-between">
+                    <div className="flex items-center gap-2">
+                        <div>Rows Per Page</div>
+                        <div>
+                            <Button
+                                title="10"
+                                icon={<i className="bi bi-chevron-down"></i>}
+                            ></Button>
                         </div>
                     </div>
-                }
-            />
+                    <div className="flex items-center gap-2">
+                        <div>0-1 of 0</div>
+                        <div className="flex gap-2">
+                            <Button
+                                icon={
+                                    <i className="bi bi-chevron-bar-left"></i>
+                                }
+                            ></Button>
+                            <Button
+                                icon={<i className="bi bi-chevron-left"></i>}
+                            ></Button>
+                            <Button
+                                icon={<i className="bi bi-chevron-right"></i>}
+                            ></Button>
+                            <Button
+                                icon={
+                                    <i className="bi bi-chevron-bar-right"></i>
+                                }
+                            ></Button>
+                        </div>
+                    </div>
+                </div>
+            </Card>
         </div>
     );
 }

@@ -7,26 +7,24 @@ import AdminHome from '../AdminHome';
 export default function Project() {
     return (
         <AdminHome>
-            <Card
-                content={
-                    <div className="flex justify-between">
-                        <div className="flex items-center gap-2">
-                            <Input
-                                icon={<i className="bi bi-filter"></i>}
-                                placeholder="Filter by Project name"
-                            />
-                            <Button
-                                title="View"
-                                icon={<i className="bi bi-view-list"></i>}
-                            />
-                        </div>
+            <Card>
+                <div className="flex justify-between">
+                    <div className="flex items-center gap-2">
+                        <Input
+                            icon={<i className="bi bi-filter"></i>}
+                            placeholder="Filter by Project name"
+                        />
                         <Button
-                            title="Add Project"
-                            icon={<i className="bi bi-plus-lg"></i>}
+                            title="View"
+                            icon={<i className="bi bi-view-list"></i>}
                         />
                     </div>
-                }
-            />
+                    <Button
+                        title="Add Project"
+                        icon={<i className="bi bi-plus-lg"></i>}
+                    />
+                </div>
+            </Card>
             <Table />
         </AdminHome>
     );

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export default function Input({
-    icon = null,
+    icon,
     label = '',
     type = 'text',
     className = '',
@@ -33,7 +33,7 @@ export default function Input({
         );
     } else if (type === 'radio') {
         content = (
-            <label className="flex w-full cursor-pointer items-center gap-2 font-semibold text-slate-100">
+            <label className="flex w-full cursor-pointer items-center gap-2 text-[9px] font-semibold text-slate-100">
                 <input
                     type="radio"
                     // checked={radioChecked}
@@ -48,7 +48,7 @@ export default function Input({
         );
     } else if (type === 'checkbox') {
         content = (
-            <label className="flex items-center gap-2 font-semibold text-slate-100">
+            <label className="flex items-center gap-2 text-[9px] font-semibold text-slate-100">
                 <input
                     type="checkbox"
                     checked={checkboxChecked}

@@ -17,25 +17,22 @@ export default function HeroGreetings() {
                     tinggi, dan UI/UX yang responsif.
                 </div>
             </div>
-            <Card
-                content={
-                    <div className="flex">
-                        <div className="flex-1">
-                            <div className="text-xl font-extrabold text-purple-500">
-                                2+
-                            </div>
-                            <div className="text-xs">Tahun Pengalaman</div>
+            <Card>
+                <div className="flex">
+                    <div className="flex-1">
+                        <div className="text-xl font-extrabold text-purple-500">
+                            2+
                         </div>
-                        <div className="flex-1">
-                            <div className="text-xl font-extrabold text-purple-500">
-                                10+
-                            </div>
-                            <div className="text-xs">Proyek Selesai</div>
-                        </div>
+                        <div className="text-xs">Tahun Pengalaman</div>
                     </div>
-                }
-                className=""
-            />
+                    <div className="flex-1">
+                        <div className="text-xl font-extrabold text-purple-500">
+                            10+
+                        </div>
+                        <div className="text-xs">Proyek Selesai</div>
+                    </div>
+                </div>
+            </Card>
 
             {/* CTA Buttons */}
             <div className="flex items-center gap-3 pt-1">
