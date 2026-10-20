@@ -27,7 +27,7 @@ export default function AddProject() {
                     <div className="0 flex-10">
                         <Card
                             content={
-                                <div>
+                                <div className="flex flex-col gap-3">
                                     <div className="flex gap-2">
                                         <div className="flex-1">
                                             <Input
@@ -126,15 +126,54 @@ export default function AddProject() {
                                         </div>
                                     </div>
 
-                                    <div className="flex">
-                                        <Input
-                                            label="Fitur Proyek"
-                                            value={data.title}
-                                            onChange={(e) =>
-                                                setData('title', e.target.value)
-                                            }
-                                        />
-                                        <Button title="Tambahkan fitur" />
+                                    <div className="flex-1 text-xs font-semibold">
+                                        Fitur Proyek
+                                    </div>
+                                    <div className="flex flex-wrap justify-end gap-2">
+                                        <div className="flex items-center justify-between gap-5 rounded-full border-2 border-blue-500/20 bg-blue-500/10 p-2 px-4 text-xs font-semibold text-blue-500">
+                                            <div>using oauth2 auth</div>
+                                            <div className="cursor-pointer">
+                                                x
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center justify-between gap-5 rounded-full border-2 border-blue-500/20 bg-blue-500/10 p-2 px-4 text-xs font-semibold text-blue-500">
+                                            <div>implement login page</div>
+                                            <div className="cursor-pointer">
+                                                x
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center justify-between gap-5 rounded-full border-2 border-blue-500/20 bg-blue-500/10 p-2 px-4 text-xs font-semibold text-blue-500">
+                                            <div>
+                                                integration payment gateway
+                                            </div>
+                                            <div className="cursor-pointer">
+                                                x
+                                            </div>
+                                        </div>
+                                        <div className="flex items-center justify-between gap-5 rounded-full border-2 border-blue-500/20 bg-blue-500/10 p-2 px-4 text-xs font-semibold text-blue-500">
+                                            <div>dashboard analytics view</div>
+                                            <div className="cursor-pointer">
+                                                x
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <div className="flex-1">
+                                            <Input
+                                                placeholder="tambah data Fitur Proyek"
+                                                icon={
+                                                    <i className="bi bi-stars"></i>
+                                                }
+                                            />
+                                        </div>
+                                        <div>
+                                            <Button
+                                                title="Tambah"
+                                                icon={
+                                                    <i className="bi bi-node-plus"></i>
+                                                }
+                                            />
+                                        </div>
                                     </div>
                                     <Input
                                         label="Deskripsi"
@@ -147,39 +186,102 @@ export default function AddProject() {
                                             )
                                         }
                                     />
-                                    <Input
-                                        label="Tech Stack"
-                                        value={data.tech_stack}
-                                        onChange={(e) =>
-                                            setData(
-                                                'tech_stack',
-                                                e.target.value,
-                                            )
-                                        }
-                                    />
+                                    <div className="flex-1 text-xs font-semibold">
+                                        Tech Stack
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <div className="flex-1">
+                                            <Input
+                                                placeholder="Cari Tech Stack atau tambah data Tech Stack"
+                                                icon={
+                                                    <i className="bi bi-search"></i>
+                                                }
+                                            />
+                                        </div>
+                                        <div>
+                                            <Button
+                                                title="Tambah"
+                                                icon={
+                                                    <i className="bi bi-node-plus"></i>
+                                                }
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-wrap justify-end gap-2">
+                                        <Input
+                                            type="radio"
+                                            label="Fullstack"
+                                            name="tech"
+                                        />
+                                        <Input
+                                            type="radio"
+                                            label="Backend"
+                                            name="tech"
+                                        />
+                                        <Input
+                                            type="radio"
+                                            label="Frontend"
+                                            name="tech"
+                                        />
+                                        <Input
+                                            type="radio"
+                                            label="Mobile"
+                                            name="tech"
+                                        />
+                                        <Input
+                                            type="radio"
+                                            label="Devops"
+                                            name="tech"
+                                        />
+                                    </div>
 
-                                    <Input
-                                        label="Skill"
-                                        value={data.skill}
-                                        onChange={(e) =>
-                                            setData('skill', e.target.value)
-                                        }
-                                    />
-
-                                    <Input
-                                        label="Status"
-                                        value={data.status}
-                                        onChange={(e) =>
-                                            setData('status', e.target.value)
-                                        }
-                                    />
-                                    <Input
-                                        label="Thumvnail"
-                                        value={data.status}
-                                        onChange={(e) =>
-                                            setData('thumbnail', e.target.value)
-                                        }
-                                    />
+                                    <div className="flex-1 text-xs font-semibold">
+                                        Skill
+                                    </div>
+                                    <div className="flex gap-2">
+                                        <div className="flex-1">
+                                            <Input
+                                                placeholder="Cari skill atau tambah data skill"
+                                                icon={
+                                                    <i className="bi bi-search"></i>
+                                                }
+                                            />
+                                        </div>
+                                        <div>
+                                            <Button
+                                                title="Tambah"
+                                                icon={
+                                                    <i className="bi bi-node-plus"></i>
+                                                }
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="flex flex-wrap justify-end gap-2">
+                                        <Input
+                                            type="checkbox"
+                                            label="React"
+                                        />
+                                        <Input
+                                            type="checkbox"
+                                            label="Next.js"
+                                        />
+                                        <Input
+                                            type="checkbox"
+                                            label="Tailwind CSS"
+                                        />
+                                        <Input
+                                            type="checkbox"
+                                            label="JavaScript"
+                                        />
+                                        <Input
+                                            type="checkbox"
+                                            label="TypeScript"
+                                        />
+                                        <Input
+                                            type="checkbox"
+                                            label="Node.js"
+                                        />
+                                    </div>
 
                                     <button
                                         type="submit"

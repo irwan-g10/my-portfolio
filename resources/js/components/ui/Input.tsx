@@ -1,18 +1,79 @@
+import { useState } from 'react';
+
 export default function Input({
     icon = null,
     label = '',
     type = 'text',
     className = '',
     onChange,
+    checked = false,
+    name = '',
     value = '',
     rows = 4,
-    placeholder = 'input text here',
+    placeholder = 'Input text here',
 }) {
-    const isTextArea = type === 'textarea';
-
+    const [checkboxChecked, setCheckboxChecked] = useState(false);
+    const [radioChecked, setradioChecked] = useState(false);
+    const handleCheckbox = () => {
+        setCheckboxChecked((prev) => !prev);
+    };
+    const handleRadio = () => {
+        setradioChecked((prev) => !prev);
+    };
+    let content;
+    if (type === 'textarea') {
+        content = (
+            <textarea
+                className="w-full outline-none"
+                rows={rows}
+                placeholder={placeholder}
+            >
+                {value}
+            </textarea>
+        );
+    } else if (type === 'radio') {
+        content = (
+            <label className="flex w-full cursor-pointer items-center gap-2 font-semibold text-slate-100">
+                <input
+                    type="radio"
+                    // checked={radioChecked}
+                    // onClick={handr}
+                    onChange={onChange}
+                    name={name} // Penting untuk radio button agar bisa berkelompok
+                    value={value}
+                    className="cursor-pointer accent-blue-500"
+                />
+                {label}
+            </label>
+        );
+    } else if (type === 'checkbox') {
+        content = (
+            <label className="flex items-center gap-2 font-semibold text-slate-100">
+                <input
+                    type="checkbox"
+                    checked={checkboxChecked}
+                    onClick={handleCheckbox}
+                    onChange={onChange}
+                    className="accent-blue-500"
+                />
+                {label}
+            </label>
+        );
+    } else {
+        content = (
+            <input
+                type={type}
+                className="w-full outline-none"
+                placeholder={placeholder}
+                onChange={onChange}
+            />
+        );
+    }
     return (
-        <div className="mb-5 flex flex-col gap-2 text-xs">
-            {label && (
+        <div
+            className={`flex flex-col gap-2 text-xs ${type === 'checkbox' && `w-fit`}`}
+        >
+            {label && type !== 'checkbox' && type !== 'radio' && (
                 <label
                     htmlFor=""
                     className="font-semibold text-slate-100"
@@ -20,28 +81,15 @@ export default function Input({
                     {label}
                 </label>
             )}
-            <div className="flex items-center justify-center overflow-hidden rounded-md border-2 border-slate-600 bg-slate-950 shadow-sm focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20">
-                {icon && (
-                    <div className="ms-3 flex items-center justify-center text-lg text-slate-500">
+            <div
+                className={`flex ${type !== 'textarea' ? 'h-10' : 'py-3'} items-center justify-center gap-2 overflow-hidden rounded-md border-2 px-3 ${checkboxChecked ? 'border-blue-500 ring-2 ring-blue-500/20' : 'border-slate-600'} bg-slate-950 shadow-sm focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20`}
+            >
+                {icon && type !== 'checkbox' && (
+                    <div className="flex items-center justify-center text-lg text-slate-500">
                         {icon}
                     </div>
                 )}
-                {isTextArea ? (
-                    <textarea
-                        className="m-3 w-full outline-none"
-                        rows={4}
-                        placeholder={placeholder}
-                    >
-                        {value}
-                    </textarea>
-                ) : (
-                    <input
-                        type={type}
-                        className="m-2 ms-3 w-full outline-none"
-                        placeholder={placeholder}
-                        onChange={onChange}
-                    />
-                )}
+                {content}
             </div>
         </div>
     );
