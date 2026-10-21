@@ -1,8 +1,12 @@
 import NavbarMain from '@/components/Navigation/NavbarMain';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { usePage } from '@inertiajs/react';
+interface AdminHomeProps {
+    children?: React.ReactNode;
+    title?: string;
+}
 
-export default function AdminHome({ children }) {
+export default function AdminHome({ children, title }: AdminHomeProps) {
     const { url } = usePage();
     const currentSegment = url.split('/').filter(Boolean).pop();
     console.log(currentSegment);
@@ -42,7 +46,7 @@ export default function AdminHome({ children }) {
                         <div className="h-3/5 w-1 rounded-full bg-slate-950/20 backdrop-blur-lg dark:bg-slate-100/20"></div>
                     </div>
                     <div className="relative flex-1 p-5">
-                        <SectionTitle title={currentSegment?.toUpperCase()} />
+                        <SectionTitle title={title} />
                         {children}
                     </div>
                 </div>

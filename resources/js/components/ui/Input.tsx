@@ -1,17 +1,28 @@
 import { useState } from 'react';
 
+interface InputProps {
+    icon?: React.ReactNode;
+    label?: string;
+    type?: string;
+    className?: string;
+    checked?: boolean;
+    name?: string;
+    value?: string | number;
+    rows?: number;
+    placeholder?: string;
+}
+
 export default function Input({
     icon,
-    label = '',
+    label,
     type = 'text',
-    className = '',
-    onChange,
+    className,
     checked = false,
-    name = '',
-    value = '',
+    name,
+    value,
     rows = 4,
-    placeholder = 'Input text here',
-}) {
+    placeholder = 'Input your text here',
+}: InputProps) {
     const [checkboxChecked, setCheckboxChecked] = useState(false);
     const [radioChecked, setradioChecked] = useState(false);
     const handleCheckbox = () => {
@@ -38,7 +49,7 @@ export default function Input({
                     type="radio"
                     // checked={radioChecked}
                     // onClick={handr}
-                    onChange={onChange}
+                    // onChange={onChange}
                     name={name} // Penting untuk radio button agar bisa berkelompok
                     value={value}
                     className="cursor-pointer accent-blue-500"
@@ -53,7 +64,7 @@ export default function Input({
                     type="checkbox"
                     checked={checkboxChecked}
                     onClick={handleCheckbox}
-                    onChange={onChange}
+                    // onChange={onChange}
                     className="accent-blue-500"
                 />
                 {label}
@@ -65,7 +76,7 @@ export default function Input({
                 type={type}
                 className="w-full outline-none"
                 placeholder={placeholder}
-                onChange={onChange}
+                // onChange={onChange}
             />
         );
     }

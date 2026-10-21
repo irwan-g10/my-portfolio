@@ -1,5 +1,5 @@
-import Card from '@/components/ui/Card';
 import Input from '@/components/ui/Input';
+import FormLayout from './FormLayout';
 
 export default function MainProjectForm() {
     const dummyFeatures = [
@@ -10,7 +10,7 @@ export default function MainProjectForm() {
         'dark mode support',
     ];
     return (
-        <Card className="rounded-lg">
+        <FormLayout addForm={false}>
             <div className="flex flex-col gap-3">
                 <div className="flex gap-2">
                     <div className="flex-1">
@@ -77,6 +77,6 @@ export default function MainProjectForm() {
                     // onChange={(e) => setData('description', e.target.value)}
                 />
             </div>
-        </Card>
+        </FormLayout>
     );
 }

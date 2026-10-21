@@ -3,6 +3,7 @@
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ExampleController;
+use App\Http\Controllers\JourneyController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -23,15 +24,20 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
 //     })->name('dashboard');
 // });
 // Route::middleware(['auth', 'verified']) ->group(function() {
-    Route::get('/admin/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
-    Route::get('/admin/project',[AdminController::class, 'project'])->name('project');
+    Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
+    // Route::get('/admin/project',[AdminController::class, 'index'])->name('projects.index');
     // Route::get('/admin/project/add',[AdminController::class, 'addProject'])->name('addProject');
-    Route::get('/admin/skill',[AdminController::class, 'skill'])->name('skill');
-    Route::get('/admin/certificate',[AdminController::class, 'certificate'])->name('certificate');
+    Route::get('/skills',[AdminController::class, 'skill'])->name('skill');
+    Route::get('/certificates',[AdminController::class, 'certificate'])->name('certificate');
 // });
 
-Route::get('/admin/project/add', [ProjectController::class, 'create'])->name('projects.create');
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
+Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
+
+route::get('/journey', [JourneyController::class, 'index'])->name('journey.index');
+route::get('/journey/create', [JourneyController::class, 'create'])->name('journey.create');
+
 
 
 require __DIR__.'/settings.php';

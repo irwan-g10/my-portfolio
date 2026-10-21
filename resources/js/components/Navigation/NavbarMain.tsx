@@ -13,11 +13,16 @@ export default function NavbarMain() {
         {
             title: 'Dashboard',
             icon: 'bi-speedometer2',
-            href: '/admin/dashboard',
+            href: '/dashboard',
         },
-        { title: 'Project', icon: 'bi-code-slash', href: '/admin/project' },
-        { title: 'Skill', icon: 'bi-tools', href: '/admin/skill' },
-        { title: 'Certificate', icon: 'bi-award', href: '/admin/certificate' },
+        { title: 'Project', icon: 'bi-code-slash', href: '/projects' },
+        { title: 'Skill', icon: 'bi-tools', href: '/skills' },
+        { title: 'Certificate', icon: 'bi-award', href: '/certificates' },
+        {
+            title: 'Journey',
+            icon: 'bi-briefcase-fill',
+            href: '/journey',
+        },
     ];
 
     const supportMenus = [

@@ -6,7 +6,7 @@ import AdminHome from '../AdminHome';
 
 export default function Project() {
     return (
-        <AdminHome>
+        <AdminHome title="Project">
             <Card>
                 <div className="flex justify-between">
                     <div className="flex items-center gap-2">
