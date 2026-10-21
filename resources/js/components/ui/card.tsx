@@ -13,7 +13,7 @@ export default function Card({ children, className }: CardProps) {
             ></div> */}
             <div
                 className={twMerge(
-                    `relative w-full gap-3 rounded-2xl border border-slate-100/20 bg-slate-100/10 p-5 shadow-sm shadow-slate-200/20 backdrop-blur-xs ${className} `,
+                    `relative w-full gap-3 rounded-2xl border border-slate-100/20 bg-slate-100/10 p-5 backdrop-blur-xs ${className} `,
                 )}
             >
                 {children}

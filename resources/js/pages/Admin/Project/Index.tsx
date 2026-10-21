@@ -1,31 +1,63 @@
-import Button from '@/components/ui/Button';
-import Card from '@/components/ui/Card';
-import Input from '@/components/ui/Input';
 import Table from '@/components/ui/Table';
-import AdminHome from '../AdminHome';
+import AdminLayout from '../AdminLayout';
 
 export default function Project() {
+    const dummyProjects = [
+        {
+            id: 1,
+            title: 'Vantomic Studio',
+            category: 'Full-Stack Web',
+            thumbnail: '/images/projects/vantomic.png',
+            tech: 'Laravel, React, Tailwind',
+            status: 'Completed',
+        },
+        {
+            id: 2,
+            title: 'SILAMPAH Garbage System',
+            category: 'Information System',
+            thumbnail: '/images/projects/silampah.png',
+            tech: 'PHP, MySQL, Bootstrap',
+            status: 'Active',
+        },
+        {
+            id: 3,
+            title: 'Point of Sale App',
+            category: 'Desktop / Web',
+            thumbnail: '/images/projects/pos.png',
+            tech: 'Inertia.js, PostgreSQL',
+            status: 'In Progress',
+        },
+        {
+            id: 1,
+            title: 'Vantomic Studio',
+            category: 'Full-Stack Web',
+            thumbnail: '/images/projects/vantomic.png',
+            tech: 'Laravel, React, Tailwind',
+            status: 'Completed',
+        },
+        {
+            id: 2,
+            title: 'SILAMPAH Garbage System',
+            category: 'Information System',
+            thumbnail: '/images/projects/silampah.png',
+            tech: 'PHP, MySQL, Bootstrap',
+            status: 'Active',
+        },
+        {
+            id: 3,
+            title: 'Point of Sale App',
+            category: 'Desktop / Web',
+            thumbnail: '/images/projects/pos.png',
+            tech: 'Inertia.js, PostgreSQL',
+            status: 'In Progress',
+        },
+    ];
     return (
-        <AdminHome title="Project">
-            <Card>
-                <div className="flex justify-between">
-                    <div className="flex items-center gap-2">
-                        <Input
-                            icon={<i className="bi bi-filter"></i>}
-                            placeholder="Filter by Project name"
-                        />
-                        <Button
-                            title="View"
-                            icon={<i className="bi bi-view-list"></i>}
-                        />
-                    </div>
-                    <Button
-                        title="Add Project"
-                        icon={<i className="bi bi-plus-lg"></i>}
-                    />
-                </div>
-            </Card>
-            <Table />
-        </AdminHome>
+        <AdminLayout title="Project ">
+            <Table
+                href="/projects/create"
+                // data={dummyProjects}
+            />
+        </AdminLayout>
     );
 }

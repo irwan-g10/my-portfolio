@@ -1,5 +1,5 @@
-import AdminHome from '../AdminHome';
+import AdminLayout from '../AdminLayout';
 
 export default function Dashboard() {
-    return <AdminHome title="Dashboard">Ini adalah Dashboard</AdminHome>;
+    return <AdminLayout title="Dashboard">Ini adalah Dashboard</AdminLayout>;
 }

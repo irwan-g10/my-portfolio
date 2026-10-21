@@ -1,4 +1,4 @@
-import AdminHome from '../AdminHome';
+import AdminLayout from '../AdminLayout';
 import FormLayout from '../Project/Components/FormLayout';
 import SkillProjectForm from '../Project/Components/SkillProjectForm';
 import TechStackProjectForm from '../Project/Components/TechStackProjectForm';
@@ -14,7 +14,7 @@ export default function Create() {
         'Mengelola deployment aplikasi web ke server produksi menggunakan cPanel dan memastikan struktur kode bersih sesuai prinsip *clean code*',
     ];
     return (
-        <AdminHome title="Tambah Data Journey">
+        <AdminLayout title="Tambah Data Journey">
             <form>
                 <div className="flex gap-2">
                     <div className="grid flex-10 gap-2">
@@ -31,6 +31,6 @@ export default function Create() {
                     </div>
                 </div>
             </form>
-        </AdminHome>
+        </AdminLayout>
     );
 }

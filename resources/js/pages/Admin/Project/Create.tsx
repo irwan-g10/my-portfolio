@@ -1,5 +1,5 @@
 import { useForm } from '@inertiajs/react';
-import AdminHome from '../AdminHome';
+import AdminLayout from '../AdminLayout';
 import FeatureProjectForm from './Components/FeatureProjectForm';
 import FooterProjectForm from './Components/FooterProjectForm';
 import MainProjectForm from './Components/MainProjectForm';
@@ -25,7 +25,7 @@ export default function Create() {
     //     // });
     // };
     return (
-        <AdminHome title="Tambah Data Project">
+        <AdminLayout title="Tambah Data Project">
             <form>
                 <div className="grid grid-cols-2 gap-2 text-xs">
                     <div className="flex flex-1 flex-col gap-2">
@@ -41,6 +41,6 @@ export default function Create() {
                 </div>
                 <FooterProjectForm />
             </form>
-        </AdminHome>
+        </AdminLayout>
     );
 }

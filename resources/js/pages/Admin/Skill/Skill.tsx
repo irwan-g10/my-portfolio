@@ -1,5 +1,10 @@
-import AdminHome from '../AdminHome';
+import Table from '@/components/ui/Table';
+import AdminLayout from '../AdminLayout';
 
 export default function Skill() {
-    return <AdminHome title="Skill">ini skill</AdminHome>;
+    return (
+        <AdminLayout title="Skill">
+            <Table href="/skills/create" />
+        </AdminLayout>
+    );
 }

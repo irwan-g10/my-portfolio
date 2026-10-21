@@ -1,12 +1,12 @@
 import NavbarMain from '@/components/Navigation/NavbarMain';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { usePage } from '@inertiajs/react';
-interface AdminHomeProps {
+interface AdminLayoutProps {
     children?: React.ReactNode;
     title?: string;
 }
 
-export default function AdminHome({ children, title }: AdminHomeProps) {
+export default function AdminLayout({ children, title }: AdminLayoutProps) {
     const { url } = usePage();
     const currentSegment = url.split('/').filter(Boolean).pop();
     console.log(currentSegment);
@@ -38,14 +38,16 @@ export default function AdminHome({ children, title }: AdminHomeProps) {
                     />
                     */}
                 </div>
-                <div className="relative z-50 flex">
-                    <NavbarMain />
-                    <div className="ms-5 flex items-center justify-start gap-2">
+                <div className="relative z-50 grid h-screen w-screen grid-cols-20">
+                    <div className="col-span-6">
+                        <NavbarMain />
+                    </div>
+                    {/* <div className="col-span-1 ms-5 flex items-center justify-start gap-2">
                         <div className="h-3/5 w-1 rounded-full bg-slate-950/20 backdrop-blur-lg dark:bg-slate-100/20"></div>
                         <div className="h-4/5 w-1 rounded-full bg-slate-950/20 backdrop-blur-lg dark:bg-slate-100/20"></div>
                         <div className="h-3/5 w-1 rounded-full bg-slate-950/20 backdrop-blur-lg dark:bg-slate-100/20"></div>
-                    </div>
-                    <div className="relative flex-1 p-5">
+                    </div> */}
+                    <div className="relative col-span-14 overflow-auto p-10">
                         <SectionTitle title={title} />
                         {children}
                     </div>
