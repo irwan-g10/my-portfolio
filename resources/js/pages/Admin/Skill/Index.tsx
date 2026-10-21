@@ -6,7 +6,7 @@ interface Skill {
     title: string;
 }
 
-export default function Skill() {
+export default function Index() {
     const skills: Skill[] = [
         { id: 1, title: 'PHP' },
         { id: 2, title: 'Laravel' },

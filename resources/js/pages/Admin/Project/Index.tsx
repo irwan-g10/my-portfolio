@@ -1,3 +1,4 @@
+import Card from '@/components/ui/Card';
 import Table from '@/components/ui/Table';
 import { Column } from '@/types/table';
 import AdminLayout from '../AdminLayout';
@@ -63,6 +64,56 @@ export default function Project() {
     ];
     return (
         <AdminLayout title="Project ">
+            <div className="mb-5 grid grid-cols-4 gap-2">
+                <Card className="flex flex-col justify-between text-xs">
+                    <div className="flex justify-between border-b-2 border-slate-950 pb-2">
+                        <div className="text-lg font-semibold">Project</div>
+                        <Card className="h-7 w-7 rounded-full bg-slate-950 p-0" />
+                    </div>
+                    <div className="flex items-end gap-2">
+                        <span className="text-4xl font-bold">28</span>
+                        <span className="text-[10px]">
+                            Total Project Terdaftar
+                        </span>
+                    </div>
+                </Card>
+                <Card className="flex flex-col justify-between text-xs">
+                    <div className="flex justify-between border-b-2 border-slate-950 pb-2">
+                        <div className="text-lg font-semibold">Skill</div>
+                        <Card className="h-7 w-7 rounded-full bg-slate-950 p-0" />
+                    </div>
+                    <div className="flex items-end gap-2">
+                        <span className="text-4xl font-bold">28</span>
+                        <span className="text-[10px]">
+                            Total Skill Terdaftar
+                        </span>
+                    </div>
+                </Card>
+                <Card className="flex flex-col justify-between text-xs">
+                    <div className="flex justify-between border-b-2 border-slate-950 pb-2">
+                        <div className="text-lg font-semibold">Category</div>
+                        <Card className="h-7 w-7 rounded-full bg-slate-950 p-0" />
+                    </div>
+                    <div className="flex items-end gap-2">
+                        <span className="text-4xl font-bold">28</span>
+                        <span className="text-[10px]">
+                            Total Category Terdaftar
+                        </span>
+                    </div>
+                </Card>
+                <Card className="flex flex-col justify-between text-xs">
+                    <div className="flex justify-between border-b-2 border-slate-950 pb-2">
+                        <div className="text-lg font-semibold">Status</div>
+                        <Card className="h-7 w-7 rounded-full bg-slate-950 p-0" />
+                    </div>
+                    <div className="flex items-end gap-2">
+                        <span className="text-4xl font-bold">28</span>
+                        <span className="text-[10px]">
+                            Total Status Terdaftar
+                        </span>
+                    </div>
+                </Card>
+            </div>
             <Table
                 href="/projects/create"
                 data={projects}
