@@ -3,9 +3,9 @@ import { twMerge } from 'tailwind-merge';
 
 export default function Button({
     icon,
-    title = '',
-    className = '',
-    width = '',
+    title,
+    className,
+    width,
     onClick,
     href,
 }) {

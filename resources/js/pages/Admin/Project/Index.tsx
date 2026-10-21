@@ -1,13 +1,21 @@
 import Table from '@/components/ui/Table';
+import { Column } from '@/types/table';
 import AdminLayout from '../AdminLayout';
 
+interface Project {
+    id: number;
+    title: string;
+    category: string;
+    tech: string;
+    status: string;
+}
+
 export default function Project() {
-    const dummyProjects = [
+    const projects: Project[] = [
         {
             id: 1,
             title: 'Vantomic Studio',
             category: 'Full-Stack Web',
-            thumbnail: '/images/projects/vantomic.png',
             tech: 'Laravel, React, Tailwind',
             status: 'Completed',
         },
@@ -15,7 +23,6 @@ export default function Project() {
             id: 2,
             title: 'SILAMPAH Garbage System',
             category: 'Information System',
-            thumbnail: '/images/projects/silampah.png',
             tech: 'PHP, MySQL, Bootstrap',
             status: 'Active',
         },
@@ -23,7 +30,6 @@ export default function Project() {
             id: 3,
             title: 'Point of Sale App',
             category: 'Desktop / Web',
-            thumbnail: '/images/projects/pos.png',
             tech: 'Inertia.js, PostgreSQL',
             status: 'In Progress',
         },
@@ -31,7 +37,6 @@ export default function Project() {
             id: 1,
             title: 'Vantomic Studio',
             category: 'Full-Stack Web',
-            thumbnail: '/images/projects/vantomic.png',
             tech: 'Laravel, React, Tailwind',
             status: 'Completed',
         },
@@ -39,7 +44,6 @@ export default function Project() {
             id: 2,
             title: 'SILAMPAH Garbage System',
             category: 'Information System',
-            thumbnail: '/images/projects/silampah.png',
             tech: 'PHP, MySQL, Bootstrap',
             status: 'Active',
         },
@@ -47,16 +51,22 @@ export default function Project() {
             id: 3,
             title: 'Point of Sale App',
             category: 'Desktop / Web',
-            thumbnail: '/images/projects/pos.png',
             tech: 'Inertia.js, PostgreSQL',
             status: 'In Progress',
         },
+    ];
+    const projectColumn: Column<Project>[] = [
+        { header: 'Title', accessor: 'title' },
+        { header: 'Category', accessor: 'category' },
+        { header: 'Tech', accessor: 'tech' },
+        { header: 'Status', accessor: 'status' },
     ];
     return (
         <AdminLayout title="Project ">
             <Table
                 href="/projects/create"
-                // data={dummyProjects}
+                data={projects}
+                columns={projectColumn}
             />
         </AdminLayout>
     );

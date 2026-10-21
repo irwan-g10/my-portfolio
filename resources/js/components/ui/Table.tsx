@@ -1,63 +1,16 @@
+import { TableProps } from '@/types/table';
 import Button from './Button';
 import Card from './Card';
 import Input from './Input';
 
-interface TableProps {
-    href?: string;
-}
-
-export default function Table({ href }: TableProps) {
-    const dummyProjects = [
-        {
-            id: 1,
-            title: 'Vantomic Studio',
-            category: 'Full-Stack Web',
-            thumbnail: '/images/projects/vantomic.png',
-            tech: 'Laravel, React, Tailwind',
-            status: 'Completed',
-        },
-        {
-            id: 2,
-            title: 'SILAMPAH Garbage System',
-            category: 'Information System',
-            thumbnail: '/images/projects/silampah.png',
-            tech: 'PHP, MySQL, Bootstrap',
-            status: 'Active',
-        },
-        {
-            id: 3,
-            title: 'Point of Sale App',
-            category: 'Desktop / Web',
-            thumbnail: '/images/projects/pos.png',
-            tech: 'Inertia.js, PostgreSQL',
-            status: 'In Progress',
-        },
-        {
-            id: 1,
-            title: 'Vantomic Studio',
-            category: 'Full-Stack Web',
-            thumbnail: '/images/projects/vantomic.png',
-            tech: 'Laravel, React, Tailwind',
-            status: 'Completed',
-        },
-        {
-            id: 2,
-            title: 'SILAMPAH Garbage System',
-            category: 'Information System',
-            thumbnail: '/images/projects/silampah.png',
-            tech: 'PHP, MySQL, Bootstrap',
-            status: 'Active',
-        },
-        {
-            id: 3,
-            title: 'Point of Sale App',
-            category: 'Desktop / Web',
-            thumbnail: '/images/projects/pos.png',
-            tech: 'Inertia.js, PostgreSQL',
-            status: 'In Progress',
-        },
-    ];
-
+export default function Table<T extends { id: string | number }>({
+    href,
+    data,
+    columns,
+}: TableProps<T>) {
+    const getNestedValue = (obj: any, path: string) => {
+        return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+    };
     return (
         <div className="flex flex-col gap-5 text-xs">
             <Card className="rounded-lg">
@@ -92,72 +45,52 @@ export default function Table({ href }: TableProps) {
                         <thead>
                             <tr className="border-b-2 border-slate-100 uppercase">
                                 <th className="px-6 py-4"></th>
-                                <th className="px-6 py-4">No</th>
-                                {/* <th className="px-6 py-4">Thumbnail</th> */}
-                                <th className="px-6 py-4">Title</th>
-                                <th className="px-6 py-4">Category</th>
-                                <th className="px-6 py-4">Tech Stack</th>
-                                <th className="px-6 py-4">Status</th>
-                                <th className="px-6 py-4 text-right">Aksi</th>
+                                {columns.map((column, index) => (
+                                    <th
+                                        key={index}
+                                        className="px-6 py-4 font-semibold"
+                                    >
+                                        {column.header}
+                                    </th>
+                                ))}
+                                <th className="px-6 py-4 font-semibold">
+                                    Action
+                                </th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-600">
-                            {dummyProjects.map((project, index) => (
+                            {data.map((item) => (
                                 <tr
-                                    key={project.id}
+                                    key={item.id}
                                     className="transition-colors hover:bg-slate-100/20"
                                 >
                                     <td className="px-6 py-2">
                                         <input type="checkbox" />
                                     </td>
-                                    <td className="px-6 py-2">{index + 1}</td>
-                                    {/* <td className="px-6 py-2">
-                                        {project.thumbnail ? (
-                                            <div className="h-25 w-50 overflow-hidden rounded-lg border">
-                                                <img
-                                                    src="/images/website.png"
-                                                    alt={project.title}
-                                                    className="h-full w-full object-cover invert hover:scale-110"
-                                                />
-                                            </div>
-                                        ) : (
-                                            <div className="flex h-12 w-16 items-center justify-center rounded-lg border border-dashed border-slate-300 text-slate-400 italic dark:border-slate-700">
-                                                No Image
-                                            </div>
-                                        )}
-                                    </td> */}
-                                    <td className="px-6 py-2">
-                                        {project.title}
-                                    </td>
-                                    <td className="px-6 py-2">
-                                        {project.category}
-                                    </td>
-                                    <td className="px-6 py-2 font-mono">
-                                        {project.tech}
-                                    </td>
-                                    <td className="px-6 py-2">
-                                        <span
-                                            className={`inline-flex items-center rounded-full px-2.5 py-1 font-semibold ${
-                                                project.status ===
-                                                    'Completed' ||
-                                                project.status === 'Active'
-                                                    ? 'border border-emerald-500/20 bg-emerald-500/10 text-emerald-500'
-                                                    : 'border border-amber-500/20 bg-amber-500/10 text-amber-500'
-                                            }`}
+                                    {columns.map((column, colIndex) => (
+                                        <td
+                                            key={colIndex}
+                                            className="px-6 py-2"
                                         >
-                                            {project.status}
-                                        </span>
-                                    </td>
-                                    <td className="px-6 py-2 text-right">
-                                        <div className="flex items-center justify-end gap-2">
+                                            {column.render
+                                                ? column.render(item) // Jika ada custom render function
+                                                : String(
+                                                      getNestedValue(
+                                                          item,
+                                                          column.accessor as string,
+                                                      ) ?? '-',
+                                                  )}
+                                        </td>
+                                    ))}
+
+                                    <td className="px-6 py-2">
+                                        <div className="flex items-center gap-2">
                                             <button className="flex h-8 w-8 items-center justify-center rounded-lg border-2 border-yellow-500/50 bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20">
                                                 <i className="bi bi-pencil-square"></i>
                                             </button>
                                             <button
                                                 onClick={() =>
-                                                    alert(
-                                                        `Hapus project: ${project.title}`,
-                                                    )
+                                                    alert(`Hapus project`)
                                                 }
                                                 className="flex h-8 w-8 items-center justify-center rounded-lg border-2 border-red-500/50 bg-red-500/10 text-red-500 hover:bg-red-500/20"
                                                 title="Hapus"
