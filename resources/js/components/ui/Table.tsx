@@ -12,7 +12,7 @@ export default function Table<T extends { id: string | number }>({
         return path.split('.').reduce((acc, part) => acc && acc[part], obj);
     };
     return (
-        <div className="flex flex-col gap-5 text-xs">
+        <div className="flex flex-col gap-2 text-xs">
             <Card className="rounded-lg">
                 <div className="flex justify-between">
                     <div className="flex items-center gap-2">
@@ -84,7 +84,7 @@ export default function Table<T extends { id: string | number }>({
                                     ))}
 
                                     <td className="px-6 py-2">
-                                        <div className="flex items-center gap-2">
+                                        <div className="flex gap-2">
                                             <button className="flex h-8 w-8 items-center justify-center rounded-lg border-2 border-yellow-500/50 bg-yellow-500/10 text-yellow-500 hover:bg-yellow-500/20">
                                                 <i className="bi bi-pencil-square"></i>
                                             </button>

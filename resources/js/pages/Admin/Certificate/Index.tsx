@@ -1,4 +1,4 @@
-import Table from '@/components/ui/Table';
+import Button from '@/components/ui/Button';
 import AdminLayout from '../AdminLayout';
 
 interface Certificate {}
@@ -6,7 +6,10 @@ interface Certificate {}
 export default function Certificate() {
     return (
         <AdminLayout title="Certificate">
-            <Table href="/certificates/create" />
+            <Button
+                title={'tambah'}
+                href="/certificates/create"
+            />
         </AdminLayout>
     );
 }

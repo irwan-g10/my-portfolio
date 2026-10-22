@@ -1,10 +1,14 @@
-import Table from '@/components/ui/Table';
+import Button from '@/components/ui/Button';
 import AdminLayout from '../AdminLayout';
 
-export default function index() {
+export default function Journey() {
     return (
         <AdminLayout title="Journey">
-            <Table href="/journey/create" />
+            {/* <Table href="/journey/create" /> */}
+            <Button
+                title={'tambah'}
+                href={'/journey/create'}
+            />
         </AdminLayout>
     );
 }
