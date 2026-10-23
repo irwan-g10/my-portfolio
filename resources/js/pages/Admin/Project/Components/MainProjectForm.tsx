@@ -1,7 +1,7 @@
 import Input from '@/components/ui/Input';
 import FormLayout from './FormLayout';
 
-export default function MainProjectForm() {
+export default function MainProjectForm({ data, setData }) {
     const dummyFeatures = [
         'using oauth2 auth',
         'implement login page',
@@ -16,36 +16,40 @@ export default function MainProjectForm() {
                     <div className="flex-1">
                         <Input
                             label="Nama Project"
-                            // value={data.title}
+                            value={data.projectName}
                             icon={<i className="bi bi-terminal"></i>}
-                            // onChange={(e) => setData('title', e.target.value)}
+                            onChange={(e) =>
+                                setData('projectName', e.target.value)
+                            }
                         />
                     </div>
                     <div className="flex-1">
                         <Input
                             label="Role/Peran Anda"
-                            // value={data.title}
+                            value={data.role}
                             icon={<i className="bi bi-person-vcard"></i>}
-                            // onChange={(e) => setData('title', e.target.value)}
+                            onChange={(e) => setData('role', e.target.value)}
                         />
                     </div>
                 </div>
                 <div className="flex gap-2">
                     <div className="flex-1">
-                        <Input
+                        {/* <Input
                             label="Tanggal Pembuatan"
                             type="date"
-                            // value={data.title}
+                            // value={data.createdDate}
                             icon={<i className="bi bi-calendar2-date"></i>}
-                            // onChange={(e) => setData('title', e.target.value)}
-                        />
+                            // onChange={(e) => setData('date', e.target.value)}
+                        /> */}
                     </div>
                     <div className="flex-1">
                         <Input
                             label="Kontributor/Client"
-                            // value={data.title}
+                            value={data.contributor}
                             icon={<i className="bi bi-people"></i>}
-                            // onChange={(e) => setData('title', e.target.value)}
+                            onChange={(e) =>
+                                setData('contributor', e.target.value)
+                            }
                         />
                     </div>
                 </div>
@@ -53,17 +57,19 @@ export default function MainProjectForm() {
                     <div className="flex-1">
                         <Input
                             label="Demo URL"
-                            // value={data.title}
+                            value={data.demoUrl}
                             icon={<i className="bi bi-browser-chrome"></i>}
-                            // onChange={(e) => setData('title', e.target.value)}
+                            onChange={(e) => setData('demoUrl', e.target.value)}
                         />
                     </div>
                     <div className="flex-1">
                         <Input
                             label="Github URL"
-                            // value={data.title}
+                            value={data.githubUrl}
                             icon={<i className="bi bi-github"></i>}
-                            // onChange={(e) => setData('title', e.target.value)}
+                            onChange={(e) =>
+                                setData('githubUrl', e.target.value)
+                            }
                         />
                     </div>
                 </div>
@@ -73,8 +79,8 @@ export default function MainProjectForm() {
                 <Input
                     label="Deskripsi"
                     type="textarea"
-                    // value={data.description}
-                    // onChange={(e) => setData('description', e.target.value)}
+                    value={data.description}
+                    onChange={(e) => setData('description', e.target.value)}
                 />
             </div>
         </FormLayout>

@@ -1,7 +1,7 @@
 import Input from '@/components/ui/Input';
 import FormLayout from './FormLayout';
 
-export default function TechStackProjectForm() {
+export default function TechStackProjectForm({ data, setData }) {
     const dummyTechs = [
         'Frontend Development',
         'UI/UX Design',
@@ -16,7 +16,10 @@ export default function TechStackProjectForm() {
                     <Input
                         type="radio"
                         label={tech}
-                        name="tech"
+                        name="techStack"
+                        value={tech}
+                        checked={data.techStack === tech}
+                        onChange={(e) => setData('techStack', e.target.value)}
                     />
                 ))}
             </div>

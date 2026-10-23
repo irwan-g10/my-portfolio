@@ -10,33 +10,50 @@ import ThumbnailProjectForm from './Components/ThumbnailProjectForm';
 
 export default function Create() {
     const { data, setData, post, processing, errors, reset } = useForm({
-        title: '',
+        projectName: '',
+        role: '',
+        createdDate: '',
+        contributor: '',
+        demoUrl: '',
+        githubUrl: '',
         description: '',
-        tech_stack: '',
-        skill: '',
-        status: '',
+        statusProject: '',
+        techStack: '',
+        features: [] as string[],
+        skill: [] as string[],
         thumbnail: '',
+        images: [] as string[],
     });
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     // post('/projects', {
-    //     //     onSuccess: () => reset(),
-    //     // });
-    // };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // post('/projects', {
+        //     onSuccess: () => reset(),
+        // });
+        console.log(data);
+    };
     return (
         <AdminLayout title="Tambah Data Project">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-2 gap-2 text-xs">
                     <div className="flex flex-1 flex-col gap-2">
-                        <MainProjectForm />
-                        <StatusProjectForm />
-                        <ThumbnailProjectForm />
+                        <MainProjectForm
+                            data={data}
+                            setData={setData}
+                        />
+                        <StatusProjectForm
+                            data={data}
+                            setData={setData}
+                        />
+                        <TechStackProjectForm
+                            data={data}
+                            setData={setData}
+                        />
                     </div>
                     <div className="flex flex-1 flex-col gap-2">
                         <FeatureProjectForm />
-                        <TechStackProjectForm />
                         <SkillProjectForm />
+                        <ThumbnailProjectForm />
                     </div>
                 </div>
                 <FooterProjectForm />

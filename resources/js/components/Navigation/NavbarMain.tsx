@@ -7,7 +7,7 @@ import ThemeButton from '../Common/ThemeButton';
 export default function NavbarMain() {
     const { url } = usePage();
     const currentSegment = url.split('/').filter(Boolean).pop();
-    console.log(currentSegment);
+    // console.log(currentSegment);
 
     const navigationMenus = [
         {

@@ -9,7 +9,7 @@ interface AdminLayoutProps {
 export default function AdminLayout({ children, title }: AdminLayoutProps) {
     const { url } = usePage();
     const currentSegment = url.split('/').filter(Boolean).pop();
-    console.log(currentSegment);
+    // console.log(currentSegment);
     return (
         <>
             <div className="relative overflow-hidden bg-slate-950 text-slate-100">

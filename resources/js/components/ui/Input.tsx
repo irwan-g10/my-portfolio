@@ -10,6 +10,7 @@ interface InputProps {
     value?: string | number;
     rows?: number;
     placeholder?: string;
+    onChange?: () => any;
 }
 
 export default function Input({
@@ -19,10 +20,11 @@ export default function Input({
     className,
     checked = false,
     name,
+    onChange,
     value,
     rows = 4,
-    placeholder = 'Input your text here',
-}: InputProps) {
+    placeholder = 'Input text here',
+}) {
     const [checkboxChecked, setCheckboxChecked] = useState(false);
     const [radioChecked, setradioChecked] = useState(false);
     const handleCheckbox = () => {
@@ -47,9 +49,9 @@ export default function Input({
             <label className="flex w-full cursor-pointer items-center gap-2 text-[9px] font-semibold text-slate-100">
                 <input
                     type="radio"
-                    // checked={radioChecked}
+                    checked={checked}
                     // onClick={handr}
-                    // onChange={onChange}
+                    onChange={onChange}
                     name={name} // Penting untuk radio button agar bisa berkelompok
                     value={value}
                     className="cursor-pointer accent-blue-500"
@@ -75,8 +77,10 @@ export default function Input({
             <input
                 type={type}
                 className="w-full outline-none"
+                value={value}
+                name={name}
                 placeholder={placeholder}
-                // onChange={onChange}
+                onChange={onChange}
             />
         );
     }
