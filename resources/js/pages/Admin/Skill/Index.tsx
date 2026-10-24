@@ -1,63 +1,26 @@
 import CategoryBadge from '@/components/Common/CategoryBadge';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
+import Dropdown from '@/components/ui/Dropdown';
 import Input from '@/components/ui/Input';
+import { Link, useForm } from '@inertiajs/react';
 import AdminLayout from '../AdminLayout';
 import FormLayout from '../Project/Components/FormLayout';
 
-export default function Index() {
-    const dummySkills = [
-        {
-            id: 1,
-            title: 'PHP',
-            category: 'Programming Language',
-        },
-        {
-            id: 2,
-            title: 'TypeScript',
-            category: 'Programming Language',
-        },
-        {
-            id: 3,
-            title: 'Laravel',
-            category: 'Framework',
-        },
-        {
-            id: 4,
-            title: 'React.js',
-            category: 'Framework',
-        },
-        {
-            id: 5,
-            title: 'Tailwind CSS',
-            category: 'Framework',
-        },
-        {
-            id: 6,
-            title: 'MySQL',
-            category: 'Database',
-        },
-        {
-            id: 7,
-            title: 'Git',
-            category: 'Version Control',
-        },
-        {
-            id: 8,
-            title: 'GitHub',
-            category: 'Version Control',
-        },
-        {
-            id: 9,
-            title: 'GitHub Copilot',
-            category: 'AI Coding Assistant',
-        },
-        {
-            id: 10,
-            title: 'Docker',
-            category: 'Tools',
-        },
-    ];
+export default function Index({ skills }) {
+    const { data, setData, post, processing, errors, reset } = useForm({
+        name: '',
+        category: '',
+    });
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // post('/skills', {
+        //     onSuccess: () => reset(),
+        //     onError: (erors) => console.log(erors),
+        // });
+        console.log(skills);
+    };
     return (
         <AdminLayout title="Skill">
             <div className="grid gap-2">
@@ -96,15 +59,42 @@ export default function Index() {
                             </div>
                         </div>
                     </div>
-                    <FormLayout addForm={false}>
-                        <Input label="Nama Skill" />
-                        <Input label="Kategori" />
-                        <Button
-                            title="Add Skill"
-                            icon={<i className="bi bi-plus"></i>}
-                            href={'skills/create'}
-                        />
-                    </FormLayout>
+                    <form onSubmit={handleSubmit}>
+                        <FormLayout addForm={false}>
+                            <Input
+                                label="Nama Skill"
+                                value={data.name}
+                                onChange={(e) =>
+                                    setData('name', e.target.value)
+                                }
+                            />
+                            <div className="grid">
+                                <Dropdown
+                                    label="Kategori"
+                                    icon={<i className="bi bi-tags-fill"></i>}
+                                    options={[
+                                        'Programming Language',
+                                        'Framework',
+                                        'Database',
+                                        'Version Control',
+                                        'AI Coding Assistant',
+                                        'Tools',
+                                    ]}
+                                    value={data.category}
+                                    onChange={(e) =>
+                                        setData('category', e.target.value)
+                                    }
+                                />
+                            </div>
+
+                            <Button
+                                type="submit"
+                                title="Add Skill"
+                                icon={<i className="bi bi-plus"></i>}
+                                // href={'skills/create'}
+                            />
+                        </FormLayout>
+                    </form>
                 </div>
                 <Card className="relative grid gap-5 text-xs">
                     <div className="flex w-full items-center gap-2">
@@ -134,38 +124,72 @@ export default function Index() {
                         <table className="w-full border-collapse text-left">
                             <thead>
                                 <tr>
-                                    <th className="">
+                                    <th className="p-2">
                                         <input type="checkbox" />
                                     </th>
-                                    <th className="">No</th>
-                                    <th className="">Skill Name</th>
-                                    <th className="">Category</th>
-                                    <th className="">Action</th>
+                                    <th className="p-2">No</th>
+                                    <th className="p-2">Skill Name</th>
+                                    <th className="p-2">Category</th>
+                                    <th className="p-2">Action</th>
                                 </tr>
                             </thead>
                             <tbody className="divide-y divide-slate-600">
-                                {dummySkills.map((skill, index) => (
-                                    <tr
-                                        key={skill.id}
-                                        className=""
-                                    >
-                                        <td className="py-3">
-                                            <input type="checkbox" />
-                                        </td>
-                                        <td className="py-3">{index + 1}</td>
-                                        <td className="py-3">{skill.title}</td>
-                                        <td className="py-3">
-                                            {skill.category}
-                                        </td>
-                                        <td className="py-3whitespace-nowrap">
-                                            edit hapus
+                                {/* Cek apakah data skills ada dan tidak kosong */}
+                                {skills ? (
+                                    skills.data.map((skill, index) => (
+                                        <tr key={skill.id}>
+                                            <td className="p-2">
+                                                {' '}
+                                                <input type="checkbox" />
+                                            </td>
+                                            <td className="p-2">{skill.id}</td>
+                                            <td className="p-2">
+                                                {skill.name}
+                                            </td>
+                                            <td className="p-2">
+                                                {skill.category}
+                                            </td>
+                                            <td>hapus | Ubah</td>
+                                        </tr>
+                                    ))
+                                ) : (
+                                    <tr>
+                                        <td className="p-4 text-center text-gray-500">
+                                            Belum ada data skill.
                                         </td>
                                     </tr>
-                                ))}
+                                )}
                             </tbody>
                         </table>
                     </div>
-                    <div className="flex justify-between">
+                    <div className="mt-4 flex items-center justify-between">
+                        <div className="flex items-center gap-1 text-slate-400">
+                            <div>Menampilkan</div>
+                            <div>
+                                {skills.from || 0} - {skills.to || 0}
+                            </div>
+                            <div>dari {skills.total} data</div>
+                        </div>
+
+                        <div className="flex items-center gap-1">
+                            {skills.links &&
+                                skills.links.map((link, idx) => (
+                                    <Link
+                                        key={idx}
+                                        href={link.url || '#'}
+                                        className={`rounded-lg px-3 py-1 text-xs font-semibold transition-colors ${
+                                            link.active
+                                                ? 'bg-amber-500 text-slate-950'
+                                                : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
+                                        } ${!link.url ? 'cursor-not-allowed opacity-40' : ''}`}
+                                        dangerouslySetInnerHTML={{
+                                            __html: link.label,
+                                        }}
+                                    />
+                                ))}
+                        </div>
+                    </div>
+                    {/* <div className="flex justify-between">
                         <div className="flex items-center gap-2">
                             <div>Rows Per Page</div>
                             <div>5</div>
@@ -193,7 +217,7 @@ export default function Index() {
                                 Next <i className="bi bi-chevron-right"></i>
                             </button>
                         </div>
-                    </div>
+                    </div> */}
                 </Card>
             </div>
         </AdminLayout>

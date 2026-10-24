@@ -43,6 +43,7 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
     Route::get('/certificates/create',[CertificateController::class, 'create'])->name('certificates.create');
     
     Route::get('/skills',[SkillController::class, 'index'])->name('skills.index');
+    Route::post('/skills',[SkillController::class, 'store'])->name('skills.store');
     Route::get('/skills/create',[SkillController::class, 'create'])->name('skills.create');
     
 require __DIR__.'/settings.php';

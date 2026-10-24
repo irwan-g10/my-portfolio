@@ -1,5 +1,6 @@
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
+import Dropdown from '@/components/ui/Dropdown';
 import Input from '@/components/ui/Input';
 import AdminLayout from '../AdminLayout';
 import StatisticCard from './Components/StatisticCard';
@@ -63,10 +64,11 @@ export default function Project() {
                 </div>
                 <Card className="relative grid gap-5 text-xs">
                     <div className="flex w-full items-center gap-2">
-                        <div className="">Cari data :</div>
                         <div className="flex-1">
                             <Input
                                 icon={<i className="bi bi-search"></i>}
+                                inline
+                                label={'Cari data :'}
                                 placeholder="Filter by Project name"
                             />
                         </div>
@@ -75,17 +77,49 @@ export default function Project() {
                                 title="View"
                                 icon={<i className="bi bi-view-list"></i>}
                             />
-                            <Button
-                                title="Sort By"
+                            <Dropdown
+                                label="Sort By"
                                 icon={<i className="bi bi-sort-down"></i>}
+                                options={[
+                                    'Terbaru',
+                                    'Terlama',
+                                    'Nama (A-Z)',
+                                    'Nama (Z-A)',
+                                ]}
+                                // value={data.sortBy}
+                                // onChange={(e) =>
+                                //     setData('sortBy', e.target.value)
+                                // }
                             />
-                            <Button
-                                title="Tech Stack"
-                                icon={<i className="bi bi-sort-down"></i>}
+
+                            <Dropdown
+                                label="Tech Stack"
+                                icon={<i className="bi bi-code-slash"></i>}
+                                options={[
+                                    'React.js',
+                                    'Laravel',
+                                    'Tailwind CSS',
+                                    'Vue.js',
+                                    'Node.js',
+                                ]}
+                                // value={data.techStack}
+                                // onChange={(e) =>
+                                //     setData('techStack', e.target.value)
+                                // }
                             />
-                            <Button
-                                title="Status"
-                                icon={<i className="bi bi-sort-down"></i>}
+
+                            <Dropdown
+                                label="Status"
+                                icon={<i className="bi bi-check2-all"></i>}
+                                options={[
+                                    'Selesai',
+                                    'Dalam Proses',
+                                    'Tertunda',
+                                ]}
+                                // value={data.statusProject}
+                                // onChange={(e) =>
+                                //     setData('statusProject', e.target.value)
+                                // }
                             />
                         </div>
                     </div>
