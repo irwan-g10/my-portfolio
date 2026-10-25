@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Skill;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -19,7 +20,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Admin/Project/Create');
+        return Inertia::render('Admin/Project/Create', ['skills' => Skill::all()]);
     }
 
     /**

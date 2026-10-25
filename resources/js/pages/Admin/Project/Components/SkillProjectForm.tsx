@@ -1,21 +1,17 @@
 import Input from '@/components/ui/Input';
 import FormLayout from './FormLayout';
 
-export default function SkillProjectForm() {
-    const dummySkills = [
-        'React.js',
-        'Next.js',
-        'Tailwind CSS',
-        'Node.js',
-        'TypeScript',
-    ];
+export default function SkillProjectForm({ skills }) {
     return (
-        <FormLayout title="Skill">
+        <FormLayout
+            title="Skill"
+            addForm
+        >
             <div className="flex flex-wrap justify-start gap-2">
-                {dummySkills.map((skill, index) => (
+                {skills.map((skill, index) => (
                     <Input
                         type="checkbox"
-                        label={skill}
+                        label={skill.name}
                     />
                 ))}
             </div>

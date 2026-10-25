@@ -8,7 +8,7 @@ import StatusProjectForm from './Components/StatusProjectForm';
 import TechStackProjectForm from './Components/TechStackProjectForm';
 import ThumbnailProjectForm from './Components/ThumbnailProjectForm';
 
-export default function Create() {
+export default function Create({ skills }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         projectName: '',
         role: '',
@@ -52,7 +52,7 @@ export default function Create() {
                     </div>
                     <div className="flex flex-1 flex-col gap-2">
                         <FeatureProjectForm />
-                        <SkillProjectForm />
+                        <SkillProjectForm skills={skills} />
                         <ThumbnailProjectForm />
                     </div>
                 </div>

@@ -15,11 +15,11 @@ export default function Index({ skills }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // post('/skills', {
-        //     onSuccess: () => reset(),
-        //     onError: (erors) => console.log(erors),
-        // });
-        console.log(skills);
+        post('/skills', {
+            onSuccess: () => reset(),
+            onError: (erors) => console.log(erors),
+        });
+        // console.log(skills);
     };
     return (
         <AdminLayout title="Skill">

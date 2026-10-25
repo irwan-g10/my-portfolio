@@ -64,7 +64,7 @@ export default function Input({
                         {icon}
                         <input
                             type={type}
-                            className="w-full text-xs outline-none"
+                            className="w-full text-xs text-slate-100 outline-none"
                             value={value}
                             name={name}
                             placeholder={placeholder}
