@@ -34,13 +34,15 @@ export default function MainProjectForm({ data, setData }) {
                 </div>
                 <div className="flex gap-2">
                     <div className="flex-1">
-                        {/* <Input
+                        <Input
                             label="Tanggal Pembuatan"
                             type="date"
-                            // value={data.createdDate}
+                            value={data.createdDate}
                             icon={<i className="bi bi-calendar2-date"></i>}
-                            // onChange={(e) => setData('date', e.target.value)}
-                        /> */}
+                            onChange={(e) =>
+                                setData('createdDate', e.target.value)
+                            }
+                        />
                     </div>
                     <div className="flex-1">
                         <Input

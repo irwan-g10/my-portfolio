@@ -36,7 +36,7 @@ export default function Input({
         setradioChecked((prev) => !prev);
     };
     let content;
-    if (type === 'text') {
+    if (type === 'text' || type === 'date') {
         // <div
         //     className={`flex items-center justify-center gap-2 overflow-hidden rounded-md border-2 px-3 ${checkboxChecked ? 'border-blue-500 ring-2 ring-blue-500/20' : 'border-slate-600'} bg-slate-950 shadow-sm focus-within:border-blue-500 focus-within:ring-2 focus-within:ring-blue-500/20`}
         // >
@@ -121,7 +121,8 @@ export default function Input({
                     type="checkbox"
                     checked={checkboxChecked}
                     onClick={handleCheckbox}
-                    // onChange={onChange}
+                    value={value}
+                    onChange={onChange}
                     className="accent-blue-500"
                 />
                 {label}

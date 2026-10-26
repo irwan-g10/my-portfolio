@@ -51,8 +51,15 @@ export default function Create({ skills }) {
                         />
                     </div>
                     <div className="flex flex-1 flex-col gap-2">
-                        <FeatureProjectForm />
-                        <SkillProjectForm skills={skills} />
+                        <FeatureProjectForm
+                            data={data}
+                            setData={setData}
+                        />
+                        <SkillProjectForm
+                            skills={skills}
+                            data={data}
+                            setData={setData}
+                        />
                         <ThumbnailProjectForm />
                     </div>
                 </div>
