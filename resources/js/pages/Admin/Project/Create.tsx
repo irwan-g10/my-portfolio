@@ -10,15 +10,15 @@ import ThumbnailProjectForm from './Components/ThumbnailProjectForm';
 
 export default function Create({ skills }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        projectName: '',
+        title: '',
         role: '',
-        createdDate: '',
+        created_date: '',
         contributor: '',
-        demoUrl: '',
-        githubUrl: '',
+        demo_url: '',
+        github_url: '',
         description: '',
-        statusProject: '',
-        techStack: '',
+        status: '',
+        tech_stack: '',
         features: [] as string[],
         skills: [] as string[],
         thumbnail: '',
@@ -27,10 +27,10 @@ export default function Create({ skills }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // post('/projects', {
-        //     onSuccess: () => reset(),
-        // });
-        console.log(data);
+        post('/projects', {
+            onSuccess: () => reset(),
+        });
+        // console.log(data);
     };
     return (
         <AdminLayout title="Tambah Data Project">

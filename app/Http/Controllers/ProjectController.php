@@ -12,7 +12,7 @@ class ProjectController extends Controller
     
     public function index()
     {
-        return Inertia::render('Admin/Project/Index');
+        return Inertia::render('Admin/Project/Index', ['projects' => Project::paginate(5)]);
     }
 
     /**
@@ -30,16 +30,22 @@ class ProjectController extends Controller
     {
         $validate = $request->validate([
             'title' => 'required|string|max:255',
+            'role' => 'nullable|string',
+            'created_date' => 'nullable|string',
+            'contributor' => 'nullable|string',
+            'demo_url' => 'nullable|string',
+            'github_url' => 'nullable|string',
             'description' => 'nullable|string',
-            'tech_stack' => 'nullable|string',
-            'skills' => 'nullable|string',
             'status' => 'nullable|string',
+            'tech_stack' => 'nullable|string',
+            'features' => 'nullable|array',
             'thumbnail' => 'nullable|string',
+            'galery' => 'nullable|array',
         ]);
 
        Project::create($validate);
 
-        return redirect()->route('projects.create')->with('success', 'Project berhasil ditambahkan!');
+        return redirect()->route('projects.index')->with('success', 'Project berhasil ditambahkan!');
     }
 
     /**

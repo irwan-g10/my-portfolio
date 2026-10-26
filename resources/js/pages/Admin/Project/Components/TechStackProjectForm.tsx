@@ -16,10 +16,10 @@ export default function TechStackProjectForm({ data, setData }) {
                     <Input
                         type="radio"
                         label={tech}
-                        name="techStack"
+                        name="tech_stack"
                         value={tech}
-                        checked={data.techStack === tech}
-                        onChange={(e) => setData('techStack', e.target.value)}
+                        checked={data.tech_stack === tech}
+                        onChange={(e) => setData('tech_stack', e.target.value)}
                     />
                 ))}
             </div>

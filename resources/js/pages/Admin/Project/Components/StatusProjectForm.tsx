@@ -7,12 +7,10 @@ export default function StatusProjectForm({ data, setData }) {
                 <label className="flex flex-col items-center gap-2 rounded-lg border-2 border-emerald-500/50 bg-slate-950 p-2 hover:bg-emerald-500/10 has-[:checked]:border-emerald-500 has-[:checked]:bg-emerald-500/10">
                     <input
                         type="radio"
-                        name="statusProject"
+                        name="status"
                         value={'Selesai'}
-                        checked={data.statusProject === 'Selesai'}
-                        onChange={(e) =>
-                            setData('statusProject', e.target.value)
-                        }
+                        checked={data.status === 'Selesai'}
+                        onChange={(e) => setData('status', e.target.value)}
                         className="mt-3 h-4 w-4 cursor-pointer rounded-full border-2 border-emerald-500/50 bg-slate-900 checked:border-emerald-500 checked:bg-emerald-500"
                     />
                     Selesai
@@ -20,12 +18,10 @@ export default function StatusProjectForm({ data, setData }) {
                 <label className="flex flex-col items-center gap-2 rounded-lg border-2 border-amber-500/50 bg-slate-950 p-2 hover:bg-amber-500/10 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-500/10">
                     <input
                         type="radio"
-                        name="statusProject"
-                        checked={data.statusProject === 'Dalam Proses'}
+                        name="status"
+                        checked={data.status === 'Dalam Proses'}
                         value={'Dalam Proses'}
-                        onChange={(e) =>
-                            setData('statusProject', e.target.value)
-                        }
+                        onChange={(e) => setData('status', e.target.value)}
                         className="mt-3 h-4 w-4 cursor-pointer rounded-full border-2 border-amber-500/50 bg-slate-900 checked:border-amber-500 checked:bg-amber-500"
                     />
                     Dalam Proses
@@ -33,12 +29,10 @@ export default function StatusProjectForm({ data, setData }) {
                 <label className="flex flex-col items-center gap-2 rounded-lg border-2 border-indigo-500/50 bg-slate-950 p-2 hover:bg-indigo-500/10 has-[:checked]:border-indigo-500 has-[:checked]:bg-indigo-500/10">
                     <input
                         type="radio"
-                        name="statusProject"
+                        name="status"
                         value={'Tertunda'}
-                        checked={data.statusProject === 'Tertunda'}
-                        onChange={(e) =>
-                            setData('statusProject', e.target.value)
-                        }
+                        checked={data.status === 'Tertunda'}
+                        onChange={(e) => setData('status', e.target.value)}
                         className="mt-3 h-4 w-4 cursor-pointer rounded-full border-2 border-indigo-500/50 bg-slate-900 checked:border-indigo-500 checked:bg-indigo-500"
                     />
                     Tertunda

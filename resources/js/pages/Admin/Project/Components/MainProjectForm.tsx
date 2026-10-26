@@ -16,11 +16,9 @@ export default function MainProjectForm({ data, setData }) {
                     <div className="flex-1">
                         <Input
                             label="Nama Project"
-                            value={data.projectName}
+                            value={data.title}
                             icon={<i className="bi bi-terminal"></i>}
-                            onChange={(e) =>
-                                setData('projectName', e.target.value)
-                            }
+                            onChange={(e) => setData('title', e.target.value)}
                         />
                     </div>
                     <div className="flex-1">
@@ -37,10 +35,10 @@ export default function MainProjectForm({ data, setData }) {
                         <Input
                             label="Tanggal Pembuatan"
                             type="date"
-                            value={data.createdDate}
+                            value={data.created_date}
                             icon={<i className="bi bi-calendar2-date"></i>}
                             onChange={(e) =>
-                                setData('createdDate', e.target.value)
+                                setData('created_date', e.target.value)
                             }
                         />
                     </div>
@@ -59,18 +57,20 @@ export default function MainProjectForm({ data, setData }) {
                     <div className="flex-1">
                         <Input
                             label="Demo URL"
-                            value={data.demoUrl}
+                            value={data.demo_url}
                             icon={<i className="bi bi-browser-chrome"></i>}
-                            onChange={(e) => setData('demoUrl', e.target.value)}
+                            onChange={(e) =>
+                                setData('demo_url', e.target.value)
+                            }
                         />
                     </div>
                     <div className="flex-1">
                         <Input
                             label="Github URL"
-                            value={data.githubUrl}
+                            value={data.github_url}
                             icon={<i className="bi bi-github"></i>}
                             onChange={(e) =>
-                                setData('githubUrl', e.target.value)
+                                setData('github_url', e.target.value)
                             }
                         />
                     </div>

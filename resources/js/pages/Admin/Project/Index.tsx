@@ -2,7 +2,7 @@ import AdminLayout from '../AdminLayout';
 import ProjectTable from './Components/ProjectTable';
 import StatisticCard from './Components/StatisticCard';
 
-export default function Project() {
+export default function Project({ projects }) {
     const dummyProjects = [
         {
             id: 1,
@@ -59,7 +59,7 @@ export default function Project() {
                         total="10"
                     />
                 </div>
-                <ProjectTable data={dummyProjects} />
+                <ProjectTable data={projects?.data} />
             </div>
         </AdminLayout>
     );
