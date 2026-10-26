@@ -32,7 +32,7 @@ export default function SkillProjectForm({ skills, data, setData }) {
                     <Input
                         type="checkbox"
                         label={skill.name}
-                        value={skill.name}
+                        value={skill.id}
                         onChange={handleCheckboxChange}
                     />
                 ))}

@@ -1,7 +1,7 @@
-import ContactInfo from '@/components/Common/ContactInfo';
 import ContactInput from '@/components/Section/Portofolio/ContactInput';
 import Button from '@/components/ui/Button';
 import SectionTitle from '@/components/ui/SectionTitle';
+import ContactInfo from '@/pages/Portfolio/ContactMe/Components/ContactInfo';
 import { GrMapLocation } from 'react-icons/gr';
 
 export default function ContactMeSection() {

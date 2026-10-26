@@ -41,7 +41,11 @@ class ProjectController extends Controller
             'features' => 'nullable|array',
             'thumbnail' => 'nullable|string',
             'galery' => 'nullable|array',
+            'skills' => 'array', // Pastikan berupa array ID
+            'skills.*' => 'exists:skills,id', // Pastikan ID skill valid di database
         ]);
+
+        
 
        Project::create($validate);
 
