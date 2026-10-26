@@ -1,5 +1,5 @@
-import OfferingCard from '@/components/Common/OfferingCard';
 import SectionTitle from '@/components/ui/SectionTitle';
+import OfferingCard from '@/pages/Portfolio/Offering/Components/OfferingCard';
 
 export default function OfferingSection() {
     return (

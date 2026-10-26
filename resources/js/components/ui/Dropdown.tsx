@@ -10,12 +10,12 @@ export default function Dropdown({
 }) {
     const [optionShow, setOptionShow] = useState(false);
     return (
-        <div className="relative">
+        <div className="group relative">
             <select
                 name={name}
                 value={value}
                 onChange={onChange}
-                className="flex h-10 w-full cursor-pointer appearance-none justify-center rounded-sm bg-amber-500 p-3 pr-9 text-xs font-semibold outline-none"
+                className="flex h-10 w-full cursor-pointer appearance-none justify-center rounded-sm border-2 border-amber-500 bg-slate-950 p-3 pr-9 text-xs font-semibold text-amber-500 outline-none hover:bg-amber-500 hover:text-slate-100"
             >
                 <option
                     value=""
@@ -32,7 +32,9 @@ export default function Dropdown({
                     </option>
                 ))}
             </select>
-            <div className="absolute top-3 right-3 font-extrabold">{icon}</div>
+            <div className="absolute top-3 right-3 font-extrabold text-amber-500 hover:text-slate-100">
+                {icon}
+            </div>
         </div>
     );
 }

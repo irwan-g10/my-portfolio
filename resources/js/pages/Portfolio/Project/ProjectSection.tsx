@@ -1,6 +1,6 @@
-import ProjectList from '@/components/Common/ProjectList';
 import ExpandableButton from '@/components/ui/ExpandableButton';
 import SectionTitle from '@/components/ui/SectionTitle';
+import ProjectList from '@/pages/Portfolio/Project/Components/ProjectList';
 import { useState } from 'react';
 
 export default function ProjectSection() {

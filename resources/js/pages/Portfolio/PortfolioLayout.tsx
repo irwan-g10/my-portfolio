@@ -1,18 +1,18 @@
 import Footer from '@/components/Navigation/Footer';
 import Navbar from '@/components/Navigation/Navbar';
-import AboutSection from '@/components/Section/Portofolio/AboutSection';
-import CertificationSection from '@/components/Section/Portofolio/CertificationSection';
-import ContactMeSection from '@/components/Section/Portofolio/ContactMeSection';
-import HeroSection from '@/components/Section/Portofolio/HeroSection';
-import JourneySection from '@/components/Section/Portofolio/JourneySection';
-import OfferingSection from '@/components/Section/Portofolio/OfferingSection';
-import ProjectSection from '@/components/Section/Portofolio/ProjectSection';
-import ToolsAndSkillSection from '@/components/Section/Portofolio/ToolsAndSkillSection';
 import ShapeGrid from '@/components/ShapeGrid';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import { useTheme } from '@/hooks/useTheme';
+import AboutSection from '@/pages/Portfolio/About/AboutSection';
+import CertificationSection from '@/pages/Portfolio/Certificate/CertificationSection';
+import HeroSection from '@/pages/Portfolio/Hero/HeroSection';
+import JourneySection from '@/pages/Portfolio/Journey/JourneySection';
+import OfferingSection from '@/pages/Portfolio/Offering/OfferingSection';
+import ProjectSection from '@/pages/Portfolio/Project/ProjectSection';
+import ToolsAndSkillSection from '@/pages/Portfolio/ToolsAndSkill/ToolsAndSkillSection';
 import { SharedData } from '@/types';
 import { Head, usePage } from '@inertiajs/react';
+import ContactMeSection from './ContactMe/ContactMeSection';
 
 export default function PortfolioLayout() {
     const { theme, toggleTheme } = useTheme();

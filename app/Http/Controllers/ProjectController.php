@@ -32,7 +32,7 @@ class ProjectController extends Controller
             'title' => 'required|string|max:255',
             'description' => 'nullable|string',
             'tech_stack' => 'nullable|string',
-            'skill' => 'nullable|string',
+            'skills' => 'nullable|string',
             'status' => 'nullable|string',
             'thumbnail' => 'nullable|string',
         ]);

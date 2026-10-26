@@ -1,6 +1,6 @@
-import GithubContributions from '@/components/Common/GIthubContributions';
-import ImageBadge from '@/components/Common/ImageBadge';
 import Button from '@/components/ui/Button';
+import GithubContributions from '@/pages/Portfolio/About/Components/GIthubContributions';
+import ImageBadge from '@/pages/Portfolio/About/Components/ImageBadge';
 
 export default function AboutSection() {
     return (

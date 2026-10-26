@@ -14,7 +14,7 @@ export default function Button({
         return (
             <Link
                 className={twMerge(
-                    `flex h-10 border-2 border-amber-500 bg-amber-500 px-3 text-xs font-bold text-slate-100 hover:bg-slate-950 hover:text-amber-500 ${title ? 'rounded-sm' : 'h-10 w-10 rounded-full'} ${className}`,
+                    `flex h-10 border-2 border-amber-500 bg-slate-950 px-3 text-xs font-bold text-amber-500 hover:bg-amber-500 hover:text-slate-100 ${title ? 'rounded-sm' : 'h-10 w-10 rounded-full'} ${className}`,
                 )}
                 onClick={onClick}
                 href={href}
@@ -29,7 +29,7 @@ export default function Button({
     return (
         <button
             className={twMerge(
-                `flex h-10 border-2 border-amber-500 bg-amber-500 px-3 text-xs font-bold text-slate-100 hover:bg-slate-950 hover:text-amber-500 ${title ? 'rounded-sm' : 'h-10 w-10 rounded-full'} ${className}`,
+                `flex h-10 border-2 border-amber-500 bg-slate-950 px-3 text-xs font-bold text-amber-500 hover:bg-amber-500 hover:text-slate-100 ${title ? 'rounded-sm' : 'h-10 w-10 rounded-full'} ${className}`,
             )}
             type={type}
             onClick={onClick}

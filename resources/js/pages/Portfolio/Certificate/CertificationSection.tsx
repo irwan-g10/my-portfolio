@@ -1,7 +1,7 @@
-import CertificationCard from '@/components/Common/CertificationCard';
 import Button from '@/components/ui/Button';
 import SectionTitle from '@/components/ui/SectionTitle';
 import { useState } from 'react';
+import CertificationCard from './Components/CertificationCard';
 
 export default function CertificationSection() {
     const [expandVisible, setExpandVisible] = useState(false);

@@ -102,8 +102,8 @@
 //     );
 // }
 
-import JourneyItemCard from '@/components/Common/JourneyItemCard';
 import ExpandableButton from '@/components/ui/ExpandableButton';
+import JourneyItemCard from '@/pages/Portfolio/Journey/Components/JourneyItemCard';
 
 import SectionTitle from '@/components/ui/SectionTitle';
 import { useState } from 'react';

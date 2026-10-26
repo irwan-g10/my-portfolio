@@ -1,5 +1,5 @@
-import Badge from '../ui/Badge';
-import Button from '../ui/Button';
+import Badge from '@/components/ui/Badge';
+import Button from '@/components/ui/Button';
 
 export default function CertificationCard() {
     return (

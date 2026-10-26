@@ -1,6 +1,6 @@
 import { FaGithub, FaStar } from 'react-icons/fa6';
-import Badge from '../ui/Badge';
-import Button from '../ui/Button';
+import Badge from '../../../../components/ui/Badge';
+import Button from '../../../../components/ui/Button';
 
 export default function ProjectHeroCard() {
     return (

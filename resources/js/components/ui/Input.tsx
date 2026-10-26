@@ -92,7 +92,9 @@ export default function Input({
                     <textarea
                         className="w-full outline-none"
                         rows={rows}
+                        value={value}
                         placeholder={placeholder}
+                        onChange={onChange}
                     >
                         {value}
                     </textarea>

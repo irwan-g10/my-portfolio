@@ -20,7 +20,7 @@ export default function Create({ skills }) {
         statusProject: '',
         techStack: '',
         features: [] as string[],
-        skill: [] as string[],
+        skills: [] as string[],
         thumbnail: '',
         images: [] as string[],
     });

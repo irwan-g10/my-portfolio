@@ -1,8 +1,8 @@
-import CodeCard from '@/components/Common/CodeCard';
-import HeroGreetings from '@/components/Common/Herogreetings';
-import HeroPhoto from '@/components/Common/HeroPhoto.';
 import GradientWaves from '@/components/GradientWaves';
 import StrokeText from '@/components/StrokeText';
+import CodeCard from '@/pages/Portfolio/Hero/Components/CodeCard';
+import HeroGreetings from '@/pages/Portfolio/Hero/Components/Herogreetings';
+import HeroPhoto from '@/pages/Portfolio/Hero/Components/HeroPhoto.';
 
 export default function HeroSection() {
     return (
