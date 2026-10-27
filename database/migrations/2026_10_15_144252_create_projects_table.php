@@ -25,7 +25,6 @@ return new class extends Migration
             $table->json('features')->nullable();
             $table->string('thumbnail')->nullable();
             $table->json('galery')->nullable();
-            $table->json('skills')->nullable();
 
             $table->timestamps();
         });

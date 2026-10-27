@@ -12,7 +12,7 @@ class ProjectController extends Controller
     
     public function index()
     {
-        return Inertia::render('Admin/Project/Index', ['projects' => Project::paginate(5)]);
+        return Inertia::render('Admin/Project/Index', ['projects' => Project::with('skills')->paginate(5)]);
     }
 
     /**
@@ -41,13 +41,19 @@ class ProjectController extends Controller
             'features' => 'nullable|array',
             'thumbnail' => 'nullable|string',
             'galery' => 'nullable|array',
-            'skills' => 'array', // Pastikan berupa array ID
-            'skills.*' => 'exists:skills,id', // Pastikan ID skill valid di database
+            'skills' => 'array', 
+            'skills.*' => 'exists:skills,id', 
         ]);
 
         
 
-       Project::create($validate);
+       // 1. Buat project dulu dan AMBIL data request KECUALI 'skills'
+    $project = Project::create($request->except('skills'));
+
+    // 2. Masukkan relasi skill yang dipilih ke tabel pivot 'project_to_skill'
+    if ($request->has('skills')) {
+        $project->skills()->sync($request->input('skills'));
+    }
 
         return redirect()->route('projects.index')->with('success', 'Project berhasil ditambahkan!');
     }

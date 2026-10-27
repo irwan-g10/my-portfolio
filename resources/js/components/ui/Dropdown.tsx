@@ -1,3 +1,4 @@
+import { toHover } from '@/lib/utils';
 import { useState } from 'react';
 
 export default function Dropdown({
@@ -15,7 +16,7 @@ export default function Dropdown({
                 name={name}
                 value={value}
                 onChange={onChange}
-                className="flex h-10 w-full cursor-pointer appearance-none justify-center rounded-sm border-2 border-amber-500 bg-slate-950 p-3 pr-9 text-xs font-semibold text-amber-500 outline-none hover:bg-amber-500 hover:text-slate-100"
+                className={`flex h-10 w-full cursor-pointer appearance-none justify-center rounded-sm border-2 border-amber-500 bg-slate-950 p-3 pr-9 text-xs font-semibold text-amber-500 outline-none ${toHover('bg-amber-500 text-slate-100')}`}
             >
                 <option
                     value=""
