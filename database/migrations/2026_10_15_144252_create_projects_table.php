@@ -24,7 +24,6 @@ return new class extends Migration
             $table->string('tech_stack')->nullable();
             $table->json('features')->nullable();
             $table->string('thumbnail')->nullable();
-            $table->json('galery')->nullable();
 
             $table->timestamps();
         });

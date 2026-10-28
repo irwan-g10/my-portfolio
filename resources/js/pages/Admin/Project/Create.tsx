@@ -2,6 +2,7 @@ import { useForm } from '@inertiajs/react';
 import AdminLayout from '../AdminLayout';
 import FeatureProjectForm from './Components/FeatureProjectForm';
 import FooterProjectForm from './Components/FooterProjectForm';
+import GaleryProjectForm from './Components/GaleryProjectForm';
 import MainProjectForm from './Components/MainProjectForm';
 import SkillProjectForm from './Components/SkillProjectForm';
 import StatusProjectForm from './Components/StatusProjectForm';
@@ -22,7 +23,7 @@ export default function Create({ skills }) {
         features: [] as string[],
         skills: [] as string[],
         thumbnail: '',
-        images: [] as string[],
+        galery: [] as string[],
     });
 
     const handleSubmit = (e) => {
@@ -60,7 +61,14 @@ export default function Create({ skills }) {
                             data={data}
                             setData={setData}
                         />
-                        <ThumbnailProjectForm />
+                        <ThumbnailProjectForm
+                            data={data}
+                            setData={setData}
+                        />
+                        <GaleryProjectForm
+                            data={data}
+                            setData={setData}
+                        />
                     </div>
                 </div>
                 <FooterProjectForm />

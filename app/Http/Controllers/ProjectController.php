@@ -39,20 +39,41 @@ class ProjectController extends Controller
             'status' => 'nullable|string',
             'tech_stack' => 'nullable|string',
             'features' => 'nullable|array',
-            'thumbnail' => 'nullable|string',
+            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'galery' => 'nullable|array',
-            'skills' => 'array', 
+            'skills' => 'nullable|array', 
             'skills.*' => 'exists:skills,id', 
+            'galery.*' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+
         ]);
 
-        
+        // dd($validate);
 
        // 1. Buat project dulu dan AMBIL data request KECUALI 'skills'
-    $project = Project::create($request->except('skills'));
+    $project = Project::create($request->except('skills','galery','thumbnail'));
 
     // 2. Masukkan relasi skill yang dipilih ke tabel pivot 'project_to_skill'
     if ($request->has('skills')) {
         $project->skills()->sync($request->input('skills'));
+    }
+    if($request->hasFile('galery')){
+        foreach($request->file('galery') as $file){
+            $filename = 'galery_'.time().'-'.uniqid().'.'. $file->getClientOriginalExtension();
+
+            $path = $file->storeAs('projects/galery',$filename,'public');
+            $project->galeries()->create(
+                ['image_path' => $path]
+            );
+        }
+
+    }
+    if($request->hasFile('thumbnail')){
+        $filename = 'thumbnail'.time().'-'.uniqid().'.'. $request->file('thumbnail')->getClientOriginalExtension();
+
+        $path = $request->file('thumbnail')->storeAs('projects/thumbnail', $filename, 'public');
+        $project->update([
+        'thumbnail' => $path
+    ]);
     }
 
         return redirect()->route('projects.index')->with('success', 'Project berhasil ditambahkan!');
