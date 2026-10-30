@@ -53,6 +53,13 @@ export default function MainProjectForm({ data, setData }) {
                         />
                     </div>
                 </div>
+                <div className="">
+                    <Input
+                        label="Label"
+                        value={data.label}
+                        onChange={(e) => setData('label', e.target.value)}
+                    />
+                </div>
                 <div className="flex gap-2">
                     <div className="flex-1">
                         <Input

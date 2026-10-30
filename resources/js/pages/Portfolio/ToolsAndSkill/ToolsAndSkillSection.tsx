@@ -81,7 +81,7 @@ export default function ToolsAndSkillSection() {
                         className="w-fit transform rounded border-slate-400/20 bg-slate-500/10 p-4 text-sm transition-all duration-300 hover:mx-2 hover:-translate-y-5 hover:scale-105 hover:rotate-5"
                     >
                         <div className="flex flex-col items-center gap-2">
-                            <i className="bi bi-filetype-php text-3xl"></i>
+                            {/* <i className="bi bi-filetype-php text-3xl"></i> */}
                             <div className="">{skill}</div>
                         </div>
                     </Card>

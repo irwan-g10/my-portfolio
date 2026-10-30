@@ -2,6 +2,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { usePage } from '@inertiajs/react';
 import { useState } from 'react';
 import NavbarMainItem from '../Common/NavbarMainItem';
+import NavMainSubItem from '../Common/NavMainSubItem';
 import ThemeButton from '../Common/ThemeButton';
 
 export default function NavbarMain() {
@@ -46,28 +47,74 @@ export default function NavbarMain() {
                     <div className="nav-content flex flex-col gap-3 overflow-auto p-5 [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden">
                         <div className="text-sm font-semibold">Navigation</div>
                         <div className="navigation ms-5 flex flex-col gap-2">
-                            {navigationMenus.map((menu) => (
-                                <NavbarMainItem
-                                    title={menu.title}
-                                    icon={menu.icon}
-                                    href={menu.href}
-                                    active={
-                                        currentSegment ===
-                                        menu.title.toLowerCase()
-                                    }
-                                />
-                            ))}
+                            {/* Bagian Navigation Menus */}
+                            <NavbarMainItem
+                                title="Dashboard"
+                                icon="bi-speedometer2"
+                                href="/dashboard"
+                                active={currentSegment === 'dashboard'}
+                            />
+                            <NavbarMainItem
+                                title="Projects"
+                                icon="bi-code-slash"
+                                href="/projects"
+                            />
+                            <NavMainSubItem
+                                title="All Projects"
+                                icon="bi-code-slash"
+                                href="/projects"
+                            />
+                            <NavMainSubItem
+                                title="Tech Stack"
+                                icon="bi-code-slash"
+                                href="/tech-stacks"
+                            />
+                            <NavMainSubItem
+                                title="Status"
+                                icon="bi-code-slash"
+                                href="/status-projects"
+                            />
+                            <NavbarMainItem
+                                title="Skills"
+                                icon="bi-tools"
+                                href="/skills"
+                            />
+                            <NavMainSubItem
+                                title="All Skill"
+                                icon="bi-code-slash"
+                                href="/projects"
+                            />
+                            <NavMainSubItem
+                                title="Category"
+                                icon="bi-code-slash"
+                                href="/projects"
+                            />
+                            <NavbarMainItem
+                                title="Certificates"
+                                icon="bi-award"
+                                href="/certificates"
+                                active={currentSegment === 'certificates'}
+                            />
+                            <NavbarMainItem
+                                title="Journey"
+                                icon="bi-briefcase-fill"
+                                href="/journey"
+                                active={currentSegment === 'journey'}
+                            />
                         </div>
                         <div className="text-sm font-semibold">Support</div>
                         <div className="navigation flex flex-col gap-2">
-                            {supportMenus.map((menu) => (
-                                <NavbarMainItem
-                                    title={menu.title}
-                                    icon={menu.icon}
-                                    onClick={() => setActiveItem(menu.title)}
-                                    active={activeItem === menu.title}
-                                />
-                            ))}
+                            {/* Bagian Support Menus */}
+                            <NavbarMainItem
+                                title="Settings"
+                                icon="bi-gear"
+                                active={currentSegment === 'settings'}
+                            />
+                            <NavbarMainItem
+                                title="Help and Docs"
+                                icon="bi-question-circle"
+                                active={currentSegment === 'help and docs'}
+                            />
                             <div className="flex justify-end">
                                 <ThemeButton
                                     theme={theme}

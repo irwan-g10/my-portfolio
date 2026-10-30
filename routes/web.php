@@ -7,6 +7,7 @@ use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\JourneyController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\StatusProjectController;
 use App\Http\Controllers\TechStackController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -45,5 +46,8 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
     Route::get('/skills',[SkillController::class, 'index'])->name('skills.index');
     Route::post('/skills',[SkillController::class, 'store'])->name('skills.store');
     Route::get('/skills/create',[SkillController::class, 'create'])->name('skills.create');
+
+    Route::get('/tech-stacks',[TechStackController::class, 'index'])->name('tech-stacks.index');
+    Route::get('/status-projects',[StatusProjectController::class, 'index'])->name('status-projects.index');
     
 require __DIR__.'/settings.php';

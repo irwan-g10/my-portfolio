@@ -26,6 +26,7 @@ export default function ProjectSection() {
                     title="Lihat Lebih Banyak"
                     onClick={onExpandClick}
                     isVisible={expandVisible}
+                    page
                 />
             </div>
         </div>

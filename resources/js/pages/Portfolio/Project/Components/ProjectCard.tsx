@@ -1,5 +1,5 @@
+import Card from '@/components/ui/Card';
 import Badge from '../../../../components/ui/Badge';
-import Card from '../../../../components/ui/Card';
 
 export default function ProjectCard({ onClick }) {
     return (
@@ -12,23 +12,28 @@ export default function ProjectCard({ onClick }) {
                 className="card-img-top h-full w-full rounded object-cover transition-all duration-500 group-hover:scale-110"
                 alt="Project Image"
             />
-            <div className="cardbody absolute inset-0 flex flex-col items-center justify-end gap-2 bg-slate-950/50 p-5 backdrop-blur-[2px] group-hover:backdrop-blur-none">
-                <div className="text-xl font-black">Project Title</div>
-                <div className="card-text mb-2 text-sm">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Delectus at corrupti tempora. Consectetur, dolorum ratione?
+            <div className="cardbody absolute inset-0 bg-slate-950/50 p-5 backdrop-blur-[2px] group-hover:backdrop-blur-none">
+                <div className="flex w-full justify-end text-sm text-xs font-semibold">
+                    <Card className="rounded-full p-1 px-3">
+                        Laravel Developer
+                    </Card>
+                </div>
+                <div className="text-center">
+                    <div className="text-xl font-black">Project Title</div>
+                    <div className="card-text mb-2 text-sm">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Delectus at corrupti tempora. Consectetur, dolorum
+                        ratione?
+                    </div>
                 </div>
                 <hr className="my-2 w-full rounded-full border border-slate-100" />
-                <div className="mb-5 flex flex-wrap gap-2">
+                <div className="mb-5 flex flex-wrap justify-center gap-2">
                     <Badge label="React JS" />
                     <Badge label="Laravel" />
                     <Badge label="Inertia.js" />
                     <Badge label="Bootstrap" />
                     <Badge label="+5" />
                 </div>
-            </div>
-            <div className="absolute top-5 right-5 text-sm text-xs font-semibold">
-                <Card className="rounded-full p-1 px-3">Laravel Developer</Card>
             </div>
         </div>
     );

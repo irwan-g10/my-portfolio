@@ -1,12 +1,32 @@
 import { dashboard } from '@/routes';
 import { Link, usePage } from '@inertiajs/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import NavbarLink from '../Common/NavbarLink';
 import ThemeButton from '../Common/ThemeButton';
 
 export default function Navbar({ onClick, theme, auth }) {
     const { url } = usePage();
     const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+    const [showNavbar, setShowNavbar] = useState(true);
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+
+            // Navbar akan muncul jika scroll ke atas ATAU posisi halaman masih di paling atas (<= 10px)
+            const isScrollingUp =
+                prevScrollPos > currentScrollPos || currentScrollPos < 10;
+
+            setShowNavbar(isScrollingUp);
+            setPrevScrollPos(currentScrollPos);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [prevScrollPos]);
 
     const toggleExpand = () => {
         setIsNavbarOpen((prev) => !prev);
@@ -14,7 +34,11 @@ export default function Navbar({ onClick, theme, auth }) {
     // console.log(auth.user.name)
 
     return (
-        <nav className="fixed inset-x-0 top-3 z-150 mx-auto flex w-3/5 justify-between rounded-full bg-slate-500/10 p-2 px-5 shadow-lg backdrop-blur-sm md:px-15">
+        <nav
+            className={`fixed inset-x-0 top-3 z-150 mx-auto flex w-3/5 justify-between rounded-full bg-slate-500/10 p-2 px-5 shadow-lg backdrop-blur-sm transition-transform duration-300 md:px-15 ${
+                showNavbar ? 'translate-y-0' : '-translate-y-28'
+            }`}
+        >
             <div className="navbar-brand flex-column flex items-center justify-center">
                 <a
                     href="#"

@@ -15,6 +15,7 @@ export default function Create({ skills }) {
         role: '',
         created_date: '',
         contributor: '',
+        label: '',
         demo_url: '',
         github_url: '',
         description: '',

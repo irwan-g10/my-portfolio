@@ -27,7 +27,10 @@ export default function ProjectList() {
 
     return (
         <div className="relative m-5">
-            <div className="mb-5 flex flex-wrap items-center justify-center gap-5">
+            <div className="mb-5 flex flex-wrap justify-center gap-5">
+                {/* <div className="col-span-2 row-span-2">
+                    <ProjectHeroCard />
+                </div> */}
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />

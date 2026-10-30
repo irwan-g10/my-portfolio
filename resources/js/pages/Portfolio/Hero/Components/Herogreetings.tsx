@@ -36,16 +36,16 @@ export default function HeroGreetings() {
             </Card>
 
             {/* CTA Buttons */}
-            <div className="flex items-center gap-3 pt-1">
-                <Button
-                    title="About me"
-                    className="w-full"
-                    icon={<i className="bi bi-person-fill"></i>}
-                />
+            <div className="group flex items-center gap-3 pt-1">
                 <Button
                     title="Download CV"
-                    className="w-full"
+                    className="w-3/5"
                     icon={<i className="bi bi-file-earmark-arrow-down"></i>}
+                />
+                <Button
+                    title="About me"
+                    className="w-2/5 hover:w-4/5"
+                    icon={<i className="bi bi-person-fill"></i>}
                 />
             </div>
         </div>

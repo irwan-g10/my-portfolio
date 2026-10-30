@@ -33,6 +33,7 @@ class ProjectController extends Controller
             'role' => 'nullable|string',
             'created_date' => 'nullable|string',
             'contributor' => 'nullable|string',
+            'label' => 'nullable|string',
             'demo_url' => 'nullable|string',
             'github_url' => 'nullable|string',
             'description' => 'nullable|string',

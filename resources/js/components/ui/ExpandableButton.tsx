@@ -1,6 +1,11 @@
 import Button from './Button';
 
-export default function ExpandableButton({ title = '', isVisible, onClick }) {
+export default function ExpandableButton({
+    title = '',
+    isVisible,
+    onClick,
+    page = false,
+}) {
     let icon = <i className="bi bi-arrow-right"></i>;
     return (
         <div className="w-full">
@@ -17,35 +22,44 @@ export default function ExpandableButton({ title = '', isVisible, onClick }) {
             )}
             {isVisible && (
                 <div className="flex justify-between font-extrabold">
-                    <div>Menampilkan 3 dari 15 sertifikat</div>
+                    <div>{page && 'Menampilkan 3 dari 15 sertifikat'}</div>
                     <Button
                         icon={<i className="bi bi-clipboard-x"></i>}
+                        className="border-none bg-transparent p-2 text-2xl"
                         onClick={onClick}
                     />
-                    <div className="flex items-center gap-5">
-                        <div>0-1 of 0</div>
-                        <div className="flex gap-1">
-                            <Button
-                                icon={
-                                    <i className="bi bi-chevron-bar-left"></i>
-                                }
-                                className="h-fit w-fit scale-90 rounded-sm p-0 px-1 text-lg font-extrabold"
-                            ></Button>
-                            <Button
-                                icon={<i className="bi bi-chevron-left"></i>}
-                                className="h-fit w-fit scale-90 rounded-sm p-0 px-1 text-lg font-extrabold"
-                            ></Button>
-                            <Button
-                                icon={<i className="bi bi-chevron-right"></i>}
-                                className="h-fit w-fit scale-90 rounded-sm p-0 px-1 text-lg font-extrabold"
-                            ></Button>
-                            <Button
-                                icon={
-                                    <i className="bi bi-chevron-bar-right"></i>
-                                }
-                                className="h-fit w-fit scale-90 rounded-sm p-0 px-1 text-lg font-extrabold"
-                            ></Button>
-                        </div>
+                    <div>
+                        {page && (
+                            <div className="flex items-center gap-5">
+                                <div>0-1 of 0</div>
+                                <div className="flex gap-1">
+                                    <Button
+                                        icon={
+                                            <i className="bi bi-chevron-bar-left"></i>
+                                        }
+                                        className="h-fit w-fit scale-90 rounded-sm p-0 px-1 text-lg font-extrabold"
+                                    ></Button>
+                                    <Button
+                                        icon={
+                                            <i className="bi bi-chevron-left"></i>
+                                        }
+                                        className="h-fit w-fit scale-90 rounded-sm p-0 px-1 text-lg font-extrabold"
+                                    ></Button>
+                                    <Button
+                                        icon={
+                                            <i className="bi bi-chevron-right"></i>
+                                        }
+                                        className="h-fit w-fit scale-90 rounded-sm p-0 px-1 text-lg font-extrabold"
+                                    ></Button>
+                                    <Button
+                                        icon={
+                                            <i className="bi bi-chevron-bar-right"></i>
+                                        }
+                                        className="h-fit w-fit scale-90 rounded-sm p-0 px-1 text-lg font-extrabold"
+                                    ></Button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             )}

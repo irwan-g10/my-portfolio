@@ -1,54 +1,106 @@
-import { FaGithub, FaStar } from 'react-icons/fa6';
-import Badge from '../../../../components/ui/Badge';
-import Button from '../../../../components/ui/Button';
+import Badge from '@/components/ui/Badge';
+import Button from '@/components/ui/Button';
+import Card from '@/components/ui/Card';
 
 export default function ProjectHeroCard() {
     return (
-        <div className="rounded-2xl border border-slate-100 p-5 py-10 shadow-sm">
-            <div className="flex">
-                <div className="gambar flex flex-3 items-center justify-start">
+        <div className="relative flex justify-center">
+            <Card className="z-50 h-full w-100 bg-slate-950">
+                <div className="relative overflow-hidden">
+                    <div className="absolute top-5 right-5 z-100 text-sm text-xs font-extrabold">
+                        <Card className="rounded-full bg-slate-600 p-1 px-3">
+                            Laravel Developer
+                        </Card>
+                    </div>
                     <img
                         src="/images/website.png"
+                        className="card-img-top z-0 h-full w-full rounded object-cover transition-all duration-500"
                         alt="Project Image"
-                        className="img-fluid object-fit-cover rounded-5 border border-secondary shadow-sm"
-                        style={{ height: '250px' }}
                     />
                 </div>
-                <div className="deskripsi flex flex-2 flex-col gap-2">
-                    <div
-                        className="mb-2 mb-3 flex items-center gap-2 rounded-full border bg-blue-500 p-1 px-5 font-bold text-white italic shadow-sm"
-                        style={{ width: 'fit-content' }}
-                    >
-                        <FaStar />
-                        <span>On-Going Project</span>
-                    </div>
-                    <h3 className="text-xl font-bold">
-                        E-Commerce Web Application
-                    </h3>
-                    <div className="text-sm">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Similique aliquam eum adipisci ullam ex, saepe cum
-                        atque at aut dolorum officiis pariatur voluptate
-                        laudantium. Quod fugiat, placeat est sunt, vel aut sequi
-                        nemo eum totam odit ut vero deleniti! Fuga?
-                    </div>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                        <Badge label="React JS" />
-                        <Badge label="Laravel" />
-                        <Badge label="Inertia.js" />
-                        <Badge label="Bootstrap" />
-                        <Badge label="+5" />
-                    </div>
-                    <div className="align-items-center mt-3 flex justify-end gap-3">
-                        <Button title="Live Demo" />
-                        <Button
-                            title="GIthub"
-                            icon={<FaGithub />}
-                        />
-                    </div>
+                <div>Webiste Portofolio</div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Deserunt, sequi nam error, nihil tempora quidem officiis sit
+                    numquam, consectetur eius odit suscipit blanditiis saepe
+                    voluptate magni id dolor fugiat delectus ab exercitationem.
                 </div>
-            </div>
-            {/* <ProjectList /> */}
+                <div className="mb-5 flex flex-wrap gap-2">
+                    <Badge label="React JS" />
+                    <Badge label="Laravel" />
+                    <Badge label="Inertia.js" />
+                    <Badge label="Bootstrap" />
+                    <Badge label="+5" />
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                    <Button title="Github" />
+                    <Button title="View Demo" />
+                </div>
+            </Card>
+            <Card className="absolute -right-20 z-40 h-full w-100 scale-90 bg-slate-950">
+                <div className="relative overflow-hidden">
+                    <div className="absolute top-5 right-5 z-100 text-sm text-xs font-extrabold">
+                        <Card className="rounded-full bg-slate-600 p-1 px-3">
+                            Laravel Developer
+                        </Card>
+                    </div>
+                    <img
+                        src="/images/website.png"
+                        className="card-img-top z-0 h-full w-full rounded object-cover transition-all duration-500"
+                        alt="Project Image"
+                    />
+                </div>
+                <div>Webiste Portofolio</div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Deserunt, sequi nam error, nihil tempora quidem officiis sit
+                    numquam, consectetur eius odit suscipit blanditiis saepe
+                    voluptate magni id dolor fugiat delectus ab exercitationem.
+                </div>
+                <div className="mb-5 flex flex-wrap gap-2">
+                    <Badge label="React JS" />
+                    <Badge label="Laravel" />
+                    <Badge label="Inertia.js" />
+                    <Badge label="Bootstrap" />
+                    <Badge label="+5" />
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                    <Button title="Github" />
+                    <Button title="View Demo" />
+                </div>
+            </Card>
+            <Card className="absolute -right-40 h-full w-100 scale-80 bg-slate-950">
+                <div className="relative overflow-hidden">
+                    <div className="absolute top-5 right-5 z-100 text-sm text-xs font-extrabold">
+                        <Card className="rounded-full bg-slate-600 p-1 px-3">
+                            Laravel Developer
+                        </Card>
+                    </div>
+                    <img
+                        src="/images/website.png"
+                        className="card-img-top z-0 h-full w-full rounded object-cover transition-all duration-500"
+                        alt="Project Image"
+                    />
+                </div>
+                <div>Webiste Portofolio</div>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Deserunt, sequi nam error, nihil tempora quidem officiis sit
+                    numquam, consectetur eius odit suscipit blanditiis saepe
+                    voluptate magni id dolor fugiat delectus ab exercitationem.
+                </div>
+                <div className="mb-5 flex flex-wrap gap-2">
+                    <Badge label="React JS" />
+                    <Badge label="Laravel" />
+                    <Badge label="Inertia.js" />
+                    <Badge label="Bootstrap" />
+                    <Badge label="+5" />
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                    <Button title="Github" />
+                    <Button title="View Demo" />
+                </div>
+            </Card>
         </div>
     );
 }
