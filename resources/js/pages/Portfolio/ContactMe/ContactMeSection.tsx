@@ -1,5 +1,5 @@
-import ContactInput from '@/components/Section/Portofolio/ContactInput';
 import Button from '@/components/ui/Button';
+import Input from '@/components/ui/Input';
 import SectionTitle from '@/components/ui/SectionTitle';
 import ContactInfo from '@/pages/Portfolio/ContactMe/Components/ContactInfo';
 import { GrMapLocation } from 'react-icons/gr';
@@ -40,30 +40,31 @@ export default function ContactMeSection() {
                         />
                     </div>
                 </div>
-                <div className="flex flex-2 flex-col p-5">
+                <div className="flex flex-2 flex-col p-5 text-sm">
                     <div className="flex gap-2">
                         <div className="flex-1">
-                            <ContactInput
+                            <Input
                                 placeholder="Masukan Nama Lengkap anda"
                                 label="Nama Lengkap"
                                 icon={<i className="bi bi-person"></i>}
                             />
                         </div>
                         <div className="flex-1">
-                            <ContactInput
+                            <Input
                                 label="Alamat Email"
                                 placeholder="Masukan Email Anda"
                                 icon={<i className="bi bi-envelope"></i>}
                             />
                         </div>
                     </div>
-                    <ContactInput
+                    <Input
                         label="Subjek / Topik "
                         icon={<i className="bi bi-lightbulb"></i>}
                         placeholder="Subjek / Topik Pembahasan"
                     />
-                    <ContactInput
+                    <Input
                         label="Pesan Anda"
+                        placeholder="Masukan Pesan anda"
                         type="textarea"
                     />
                     <Button title="Kirim Pesan" />

@@ -13,20 +13,21 @@ export default function HeroGreetings() {
             <div>
                 <div className="text-xl font-bold">Fullstack Developer</div>
                 <div className="text-xs">
-                    Fokus pada pengembangan aplikasi web modern, performa
-                    tinggi, dan UI/UX yang responsif.
+                    Fokus pada pengembangan aplikasi web modern, pendekatan
+                    kerja yang pragmatis dan terarah, serta konsisten menjaga
+                    kualitas kode yang bersih.
                 </div>
             </div>
             <Card>
                 <div className="flex">
                     <div className="flex-1">
-                        <div className="text-xl font-extrabold text-purple-500">
+                        <div className="text-xl font-extrabold text-amber-500">
                             2+
                         </div>
                         <div className="text-xs">Tahun Pengalaman</div>
                     </div>
                     <div className="flex-1">
-                        <div className="text-xl font-extrabold text-purple-500">
+                        <div className="text-xl font-extrabold text-amber-500">
                             10+
                         </div>
                         <div className="text-xs">Proyek Selesai</div>
