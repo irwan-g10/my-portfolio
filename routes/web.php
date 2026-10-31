@@ -48,6 +48,7 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
     Route::get('/skills/create',[SkillController::class, 'create'])->name('skills.create');
 
     Route::get('/tech-stacks',[TechStackController::class, 'index'])->name('tech-stacks.index');
+    
     Route::get('/status-projects',[StatusProjectController::class, 'index'])->name('status-projects.index');
     
 require __DIR__.'/settings.php';
