@@ -27,7 +27,7 @@ export default function ProjectList() {
 
     return (
         <div className="relative m-5">
-            <div className="mb-5 flex flex-wrap justify-center gap-5">
+            <div className="mb-5 flex flex-wrap justify-center gap-3">
                 {/* <div className="col-span-2 row-span-2">
                     <ProjectHeroCard />
                 </div> */}
@@ -37,6 +37,9 @@ export default function ProjectList() {
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
                 <ProjectCard onClick={toggleShowProject} />
+                {/* <ProjectCard onClick={toggleShowProject} />
+                <ProjectCard onClick={toggleShowProject} />
+                <ProjectCard onClick={toggleShowProject} /> */}
             </div>
             {isVisible && (
                 <div className="fixed inset-x-0 top-0 z-70 mx-auto h-full w-full bg-slate-400/10 backdrop-blur-sm">
