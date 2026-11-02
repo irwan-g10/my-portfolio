@@ -48,6 +48,10 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
     Route::get('/skills/create',[SkillController::class, 'create'])->name('skills.create');
 
     Route::get('/tech-stacks',[TechStackController::class, 'index'])->name('tech-stacks.index');
+    Route::get('/tech-stacks/{id}/update',[TechStackController::class, 'create'])->name('tech-stacks.create');
+    Route::post('/tech-stacks',[TechStackController::class, 'store'])->name('tech-stacks.store');
+    Route::put('/tech-stacks',[TechStackController::class, 'edit'])->name('tech-stacks.edit');
+    Route::get('/tech-stacks/create',[TechStackController::class, 'create'])->name('tech-stacks.create');
     
     Route::get('/status-projects',[StatusProjectController::class, 'index'])->name('status-projects.index');
     

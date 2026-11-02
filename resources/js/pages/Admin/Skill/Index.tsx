@@ -1,9 +1,10 @@
 import CategoryBadge from '@/components/Common/CategoryBadge';
+import Pagination from '@/components/Pagination';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import Dropdown from '@/components/ui/Dropdown';
 import Input from '@/components/ui/Input';
-import { Link, useForm } from '@inertiajs/react';
+import { useForm } from '@inertiajs/react';
 import AdminLayout from '../AdminLayout';
 import FormLayout from '../Project/Components/FormLayout';
 
@@ -162,33 +163,7 @@ export default function Index({ skills }) {
                             </tbody>
                         </table>
                     </div>
-                    <div className="mt-4 flex items-center justify-between">
-                        <div className="flex items-center gap-1 text-slate-400">
-                            <div>Menampilkan</div>
-                            <div>
-                                {skills.from || 0} - {skills.to || 0}
-                            </div>
-                            <div>dari {skills.total} data</div>
-                        </div>
-
-                        <div className="flex items-center gap-1">
-                            {skills.links &&
-                                skills.links.map((link, idx) => (
-                                    <Link
-                                        key={idx}
-                                        href={link.url || '#'}
-                                        className={`rounded-lg px-3 py-1 text-xs font-semibold transition-colors ${
-                                            link.active
-                                                ? 'bg-amber-500 text-slate-950'
-                                                : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
-                                        } ${!link.url ? 'cursor-not-allowed opacity-40' : ''}`}
-                                        dangerouslySetInnerHTML={{
-                                            __html: link.label,
-                                        }}
-                                    />
-                                ))}
-                        </div>
-                    </div>
+                    <Pagination data={skills} />
                     {/* <div className="flex justify-between">
                         <div className="flex items-center gap-2">
                             <div>Rows Per Page</div>

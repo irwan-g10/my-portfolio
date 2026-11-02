@@ -6,6 +6,7 @@ import React from 'react';
 interface StatisticCardProps {
     total?: string;
     title?: string;
+    addUrl?: string;
     active?: boolean;
     onClick?: () => void;
     children?: React.ReactNode;
@@ -16,6 +17,7 @@ export default function StatisticCard({
     title,
     active = false,
     onClick,
+    addUrl = '',
     children,
 }: StatisticCardProps) {
     let pulseActive;
@@ -26,8 +28,8 @@ export default function StatisticCard({
         );
     }
     return (
-        <div className="grid grid-cols-3 gap-5">
-            <div className="col-span-2">
+        <div className="grid grid-cols-2 gap-5">
+            <div className="">
                 <Card
                     className={`flex origin-bottom cursor-pointer flex-col justify-between text-xs transition-transform duration-300 ${active && activeStyle}`}
                     onClick={onClick}
@@ -48,14 +50,14 @@ export default function StatisticCard({
             </div>
             <div className="col-span-1 flex flex-col gap-2">
                 <Button
-                    title="Add Project"
+                    title={`Add New ${title}`}
                     icon={<i className="bi bi-plus"></i>}
-                    href={'projects/create'}
+                    href={addUrl}
                 />
                 <Button
-                    title="Delete Selected Project"
+                    title={`Delete Selected ${title}`}
                     icon={<i className="bi bi-plus"></i>}
-                    href={'projects/create'}
+                    // href={'projects/create'}
                 />
                 <div className="grid grid-cols-2">
                     <CategoryBadge

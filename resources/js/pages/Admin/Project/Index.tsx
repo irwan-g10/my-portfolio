@@ -1,6 +1,6 @@
+import StatisticCard from '../../../components/StatisticCard';
 import AdminLayout from '../AdminLayout';
 import ProjectTable from './Components/ProjectTable';
-import StatisticCard from './Components/StatisticCard';
 
 export default function Project({ projects }) {
     const dummyProjects = [
@@ -50,6 +50,8 @@ export default function Project({ projects }) {
             status: 'Pending',
         },
     ];
+
+    console.log('Projects data:', projects); // Log the projects data to the console
     return (
         <AdminLayout title="Project">
             <div className="grid gap-2">
@@ -59,7 +61,7 @@ export default function Project({ projects }) {
                         total="10"
                     />
                 </div>
-                <ProjectTable data={projects?.data} />
+                <ProjectTable projects={projects} />
             </div>
         </AdminLayout>
     );
