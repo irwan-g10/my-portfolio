@@ -17,45 +17,47 @@ export default function TechStackTableContent({ techStacks }) {
         <div className="w-full">
             <table className="w-full border-collapse text-left">
                 <thead>
-                    <tr>
-                        <th className="">
+                    <tr className="bg-slate-950/50 text-xs text-slate-400 uppercase">
+                        <th className="w-1 p-3">
                             <input type="checkbox" />
                         </th>
-                        <th className="">No</th>
-                        <th className="">Tech Stack Name</th>
-                        <th className="">Jobdesc</th>
-                        <th className="">Description</th>
-                        <th className="text-end">Action</th>
+                        <th className="w-1 p-3">No</th>
+                        <th className="w-2/10 p-3">Tech Stack Name</th>
+                        <th className="w-4/10 p-3">Jobdesc</th>
+                        <th className="w-6/10 p-3">Description</th>
+                        <th className="w-1 p-3 text-center">Action</th>
                     </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-600">
                     {techStacks.map((project, index) => (
                         <tr
                             key={project.id}
-                            className=""
+                            className={`hover:bg-slate-600 ${index % 2 === 0 ? '' : 'bg-slate-950/50'}`}
                         >
-                            <td className="py-3">
+                            <td className="p-3">
                                 <input type="checkbox" />
                             </td>
-                            <td className="py-3 whitespace-nowrap">
+                            <td className="p-3 whitespace-nowrap">
                                 {index + 1}
                             </td>
-                            <td className="py-3">{project.title}</td>
-                            <td className="py-3">{project.job_desc}</td>
-                            <td className="py-3">{project.description}</td>
-                            <td className="flex justify-end gap-2 py-3">
-                                <Button
-                                    icon={<i className="bi bi-trash3"></i>}
-                                    className="h-7 w-7 rounded-sm text-xs"
-                                    onClick={() => handleDelete(project.id)}
-                                />
-                                <Button
-                                    icon={
-                                        <i className="bi bi-pencil-square"></i>
-                                    }
-                                    href={`/tech-stacks/${project.id}/update`}
-                                    className="h-7 w-7 rounded-sm text-xs"
-                                />
+                            <td className="p-3">{project.title}</td>
+                            <td className="p-3">{project.job_desc}</td>
+                            <td className="p-3">{project.description}</td>
+                            <td className="p-3">
+                                <div className="flex gap-2">
+                                    <Button
+                                        icon={<i className="bi bi-trash3"></i>}
+                                        className="h-7 w-7 rounded-sm text-xs"
+                                        onClick={() => handleDelete(project.id)}
+                                    />
+                                    <Button
+                                        icon={
+                                            <i className="bi bi-pencil-square"></i>
+                                        }
+                                        href={`/tech-stacks/${project.id}/update`}
+                                        className="h-7 w-7 rounded-sm text-xs"
+                                    />
+                                </div>
                             </td>
                         </tr>
                     ))}

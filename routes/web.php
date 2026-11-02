@@ -49,7 +49,7 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
 
     Route::get('/tech-stacks',[TechStackController::class, 'index'])->name('tech-stacks.index');
     Route::get('/tech-stacks/create',[TechStackController::class, 'create'])->name('tech-stacks.create');
-    Route::get('/tech-stacks/{id}/update',[TechStackController::class, 'create'])->name('tech-stacks.create');
+    Route::get('/tech-stacks/{id}/update',[TechStackController::class, 'create'])->name('tech-stacks.update');
 
     Route::post('/api/tech-stacks',[TechStackController::class, 'store'])->name('tech-stacks.store');
     Route::put('/api/tech-stacks/{id}',[TechStackController::class, 'edit'])->name('tech-stacks.edit');
