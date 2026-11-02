@@ -71,7 +71,7 @@ class TechStackController extends Controller
         $project = TechStack::findOrFail($id);
         $project->update($validate);
 
-        return redirect()->back()->with('success', 'Tech Stack updated successfully.');
+        return redirect()->route('tech-stacks.index')->with('success', 'Tech Stack updated successfully.');
     }
 
     /**
@@ -87,6 +87,9 @@ class TechStackController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $techStack = TechStack::findOrFail($id);
+        $techStack->delete();
+
+        return redirect()->route('tech-stacks.index')->with('success', 'Tech Stack deleted successfully.');
     }
 }

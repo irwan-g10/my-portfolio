@@ -1,6 +1,18 @@
 import Button from '@/components/ui/Button';
+import { router } from '@inertiajs/react';
 
 export default function TechStackTableContent({ techStacks }) {
+    const handleDelete = (id) => {
+        if (confirm('Apakah kamu yakin ingin menghapus data ini?')) {
+            // 2. Jalankan request DELETE ke route Laravel
+            router.delete(`/api/tech-stacks/${id}`, {
+                onSuccess: () => {
+                    // Opsional: Pesan sukses atau aksi setelah terhapus
+                    console.log('Data berhasil dihapus');
+                },
+            });
+        }
+    };
     return (
         <div className="w-full">
             <table className="w-full border-collapse text-left">
@@ -35,6 +47,7 @@ export default function TechStackTableContent({ techStacks }) {
                                 <Button
                                     icon={<i className="bi bi-trash3"></i>}
                                     className="h-7 w-7 rounded-sm text-xs"
+                                    onClick={() => handleDelete(project.id)}
                                 />
                                 <Button
                                     icon={

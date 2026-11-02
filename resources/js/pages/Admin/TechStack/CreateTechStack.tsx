@@ -5,7 +5,7 @@ import { useForm } from '@inertiajs/react';
 import AdminLayout from '../AdminLayout';
 
 export default function CreateTechStack({ techStack, isUpdate }) {
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const { data, setData, post, put, processing, errors, reset } = useForm({
         title: techStack?.title || '',
         job_desc: techStack?.job_desc || '',
         description: techStack?.description || '',
@@ -14,13 +14,22 @@ export default function CreateTechStack({ techStack, isUpdate }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        post('/tech-stacks', {
-            onSuccess: () => reset(),
-            onError: (errors) => {
-                console.log(errors);
-            },
-        });
-        console.log(data);
+
+        if (isUpdate) {
+            put(`/api/tech-stacks/${techStack.id}`, {
+                onSuccess: () => reset(),
+                onError: (errors) => {
+                    console.log(errors);
+                },
+            });
+        } else {
+            post('/api/tech-stacks', {
+                onSuccess: () => reset(),
+                onError: (errors) => {
+                    console.log(errors);
+                },
+            });
+        }
     };
     return (
         <AdminLayout>
