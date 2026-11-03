@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('category');
+            $table->string('level');
+            $table->unsignedTinyInteger('percentage')->default(80);
+            $table->foreignId('icon_id')->nullable()->constrained('icons');
             $table->timestamps();
         });
     }

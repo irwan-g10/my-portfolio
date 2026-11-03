@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('label')->nullable();
+            $table->boolean('is_featured')->default(false);
             $table->string('role')->nullable();
             $table->date('created_date')->nullable();
             $table->string('contributor')->nullable();
@@ -22,8 +24,10 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('status')->nullable();
             $table->string('tech_stack')->nullable();
+            $table->string('skills')->nullable();
             $table->json('features')->nullable();
             $table->string('thumbnail')->nullable();
+            $table->string('galleries')->nullable();
 
             $table->timestamps();
         });

@@ -7,6 +7,10 @@ export default function TechStack({ techStacks }) {
     return (
         <AdminLayout title="Tech Stack">
             <div className="grid gap-2">
+                <div className="h-50 w-50">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                </div>
+
                 <div>
                     <StatisticCard
                         title="Tech Stack"

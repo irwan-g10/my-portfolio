@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('tech_stacks', function (Blueprint $table) {
-            $table->renameColumn('Description', 'description');
+        Schema::create('icons', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('category')->nullable();
+            $table->string('type');
+            $table->string('source');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('tech_stacks', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('icons');
     }
 };
