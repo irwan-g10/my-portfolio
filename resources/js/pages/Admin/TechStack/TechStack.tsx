@@ -3,7 +3,8 @@ import AdminLayout from '../AdminLayout';
 import TechStackTable from './Components/TechStackTable';
 
 export default function TechStack({ techStacks }) {
-    console.log(techStacks);
+    // console.log(techStacks);
+    // console.log(techStacks);
     return (
         <AdminLayout title="Tech Stack">
             <div className="grid gap-2">

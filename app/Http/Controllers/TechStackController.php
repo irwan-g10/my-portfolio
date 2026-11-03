@@ -15,7 +15,7 @@ class TechStackController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Admin/TechStack/TechStack',['techStacks' => TechStack::paginate(5)]);
+        return Inertia::render('Admin/TechStack/TechStack',['techStacks' => TechStack::with('icon')->paginate(5)]);
     }
 
     /**

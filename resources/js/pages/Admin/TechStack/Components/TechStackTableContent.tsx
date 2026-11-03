@@ -1,3 +1,4 @@
+import IconGenerate from '@/components/IconGenerate';
 import Button from '@/components/ui/Button';
 import { router } from '@inertiajs/react';
 
@@ -22,6 +23,7 @@ export default function TechStackTableContent({ techStacks }) {
                             <input type="checkbox" />
                         </th>
                         <th className="w-1 p-3">No</th>
+                        <th className="w-2/10 p-3">Icon</th>
                         <th className="w-2/10 p-3">Tech Stack Name</th>
                         <th className="w-4/10 p-3">Jobdesc</th>
                         <th className="w-6/10 p-3">Description</th>
@@ -39,6 +41,9 @@ export default function TechStackTableContent({ techStacks }) {
                             </td>
                             <td className="p-3 whitespace-nowrap">
                                 {index + 1}
+                            </td>
+                            <td className="p-3">
+                                <IconGenerate icon={project.icon} />
                             </td>
                             <td className="p-3">{project.title}</td>
                             <td className="p-3">{project.job_desc}</td>

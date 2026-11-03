@@ -9,7 +9,7 @@ class TechStack extends Model
     protected $fillable = ['title','job_desc','description','icon_id'];
     protected $guarded = ['id'];
 
-    public function icons()
+    public function icon()
     {
         return $this->belongsTo(Icon::class);
     }
