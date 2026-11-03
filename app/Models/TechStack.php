@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TechStack extends Model
 {
-    protected $fillable = ['title','job_desc','description'];
+    protected $fillable = ['title','job_desc','description','icon_id'];
     protected $guarded = ['id'];
 
     public function icons()

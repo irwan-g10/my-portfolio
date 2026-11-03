@@ -19,6 +19,7 @@ export default function Input({
     label,
     type = 'text',
     className,
+    disabled = false,
     checked = false,
     name,
     onChange,
@@ -67,6 +68,7 @@ export default function Input({
                             className="w-full text-xs text-slate-100 outline-none"
                             value={value}
                             name={name}
+                            disabled={disabled}
                             placeholder={placeholder}
                             onChange={onChange}
                         />

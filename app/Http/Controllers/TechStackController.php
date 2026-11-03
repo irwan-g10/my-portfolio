@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Icon;
 use App\Models\TechStack;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class TechStackController extends Controller
@@ -40,12 +42,29 @@ class TechStackController extends Controller
             'title' => 'required|string|max:255',
             'job_desc'=> 'nullable|string',
             'description' => 'nullable|string',
+            'icon_type' => 'nullable|string',
+            'icon_source' => 'nullable|string',
+            'icon_category' => 'nullable|string',
         ]);
 
-        // dd($validate);
-        TechStack::create($validate);
+        DB::transaction(function () use ($validate) {
 
-        return redirect()->route('tech-stacks.index')->with('success', 'Tech Stack created successfully.');
+            $icon = Icon::create([
+                'name' => $validate['title'],
+                'type' => $validate['icon_type'],
+                'source' => $validate['icon_source'],
+                'category' => $validate['icon_category'],
+            ]);
+            TechStack::create([
+                'title' => $validate['title'],
+                'job_desc' => $validate['job_desc'],
+                'description' => $validate['description'],
+                'icon_id' => $icon->id,
+            ]);
+            });
+            
+            return redirect()->route('tech-stacks.index')->with('success', 'Tech Stack created successfully.');
+
     }
 
     /**
