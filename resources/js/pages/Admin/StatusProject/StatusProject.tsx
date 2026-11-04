@@ -2,7 +2,7 @@ import StatisticCard from '@/components/StatisticCard';
 import AdminLayout from '../AdminLayout';
 import StatusProjectTable from './Components/StatusProjectTable';
 
-export default function StatusProject(statusProject) {
+export default function StatusProject({ statusProject }) {
     return (
         <AdminLayout>
             <div className="grid gap-2">
@@ -13,7 +13,7 @@ export default function StatusProject(statusProject) {
                         addUrl="/status-projects/create"
                     />
                 </div>
-                <StatusProjectTable statusProjects={statusProject} />
+                <StatusProjectTable statusProjects={[]} />
             </div>
         </AdminLayout>
     );

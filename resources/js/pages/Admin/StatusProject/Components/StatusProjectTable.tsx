@@ -38,7 +38,7 @@ export default function StatusProjectTable({ statusProjects }) {
                     />
                 </div>
             </div>
-            <StatusProjectTableContent statusProjects={[]} />
+            <StatusProjectTableContent statusProjects={statusProjects} />
             <Pagination data={statusProjects} />
         </Card>
     );
