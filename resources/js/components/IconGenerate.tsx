@@ -1,4 +1,4 @@
-export default function IconGenerate({ icon }) {
+export default function IconGenerate({ icon, className }) {
     console.log(icon);
     let iconElement;
     if (icon.type === 'image') {
@@ -10,14 +10,14 @@ export default function IconGenerate({ icon }) {
             />
         );
     } else if (icon.type === 'dev-icons') {
-        iconElement = <i className={`devicon-${icon.source} text-6xl`}></i>;
+        iconElement = <i className={`devicon-${icon.source}`}></i>;
     } else if (icon.type === 'bootstrap-icons') {
-        iconElement = <i className={`bi bi-${icon.source} text-6xl`}></i>;
+        iconElement = <i className={`bi bi-${icon.source}`}></i>;
     } else {
         iconElement = <span>Unknown Icon Type</span>;
     }
     return (
-        <div className="flex items-center justify-center p-2">
+        <div className={`flex items-center justify-center p-2 ${className}`}>
             {iconElement}
         </div>
     );

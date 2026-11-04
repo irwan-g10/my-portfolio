@@ -43,7 +43,10 @@ export default function TechStackTableContent({ techStacks }) {
                                 {index + 1}
                             </td>
                             <td className="p-3">
-                                <IconGenerate icon={project.icon} />
+                                <IconGenerate
+                                    icon={project.icon}
+                                    className="text-xl"
+                                />
                             </td>
                             <td className="p-3">{project.title}</td>
                             <td className="p-3">{project.job_desc}</td>

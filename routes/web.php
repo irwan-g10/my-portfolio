@@ -56,5 +56,6 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
     Route::delete('/api/tech-stacks/{id}',[TechStackController::class, 'destroy'])->name('tech-stacks.destroy');
     
     Route::get('/status-projects',[StatusProjectController::class, 'index'])->name('status-projects.index');
+    Route::get('/status-projects/create',[StatusProjectController::class, 'create'])->name('status-projects.create');
     
 require __DIR__.'/settings.php';

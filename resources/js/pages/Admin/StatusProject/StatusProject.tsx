@@ -1,9 +1,20 @@
+import StatisticCard from '@/components/StatisticCard';
 import AdminLayout from '../AdminLayout';
+import StatusProjectTable from './Components/StatusProjectTable';
 
-export default function StatusProject() {
+export default function StatusProject(statusProject) {
     return (
         <AdminLayout>
-            <div>ini Status</div>
+            <div className="grid gap-2">
+                <div>
+                    <StatisticCard
+                        title="Status Project"
+                        total={'18'}
+                        addUrl="/status-projects/create"
+                    />
+                </div>
+                <StatusProjectTable statusProjects={statusProject} />
+            </div>
         </AdminLayout>
     );
 }
