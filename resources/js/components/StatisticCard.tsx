@@ -1,5 +1,3 @@
-import CategoryBadge from '@/components/Common/CategoryBadge';
-import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import React from 'react';
 
@@ -28,7 +26,7 @@ export default function StatisticCard({
         );
     }
     return (
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid grid-cols-3 gap-5">
             <div className="">
                 <Card
                     className={`flex origin-bottom cursor-pointer flex-col justify-between text-xs transition-transform duration-300 ${active && activeStyle}`}
@@ -47,25 +45,6 @@ export default function StatisticCard({
                         </div>
                     </div>
                 </Card>
-            </div>
-            <div className="col-span-1 flex flex-col gap-2">
-                <Button
-                    title={`Add New ${title}`}
-                    icon={<i className="bi bi-plus"></i>}
-                    href={addUrl}
-                />
-                <Button
-                    title={`Delete Selected ${title}`}
-                    icon={<i className="bi bi-plus"></i>}
-                    // href={'projects/create'}
-                />
-                <div className="grid grid-cols-2">
-                    <CategoryBadge
-                        title={'Table'}
-                        isActive
-                    />
-                    <CategoryBadge title={'Card'} />
-                </div>
             </div>
         </div>
     );

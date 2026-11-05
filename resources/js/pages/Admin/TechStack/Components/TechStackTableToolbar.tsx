@@ -1,11 +1,18 @@
+import CategoryBadge from '@/components/Common/CategoryBadge';
 import Button from '@/components/ui/Button';
-import Dropdown from '@/components/ui/Dropdown';
 import Input from '@/components/ui/Input';
 
 export default function TechStackTableToolbar() {
     return (
-        <div className="flex w-full items-center gap-2">
-            <div className="flex-1">
+        <div className="grid w-full grid-cols-5 items-center gap-2">
+            <div className="col-span-2 grid grid-cols-2 gap-2">
+                <CategoryBadge
+                    title={'Table'}
+                    isActive
+                />
+                <CategoryBadge title={'Card'} />
+            </div>
+            <div className="col-span-2">
                 <Input
                     icon={<i className="bi bi-search"></i>}
                     inline
@@ -13,19 +20,11 @@ export default function TechStackTableToolbar() {
                     placeholder="Filter by Project name"
                 />
             </div>
-            <div className="flex gap-2">
+            <div className="">
                 <Button
-                    title="View"
-                    icon={<i className="bi bi-view-list"></i>}
-                />
-                <Dropdown
-                    label="Sort By"
-                    icon={<i className="bi bi-sort-down"></i>}
-                    options={['Terbaru', 'Terlama', 'Nama (A-Z)', 'Nama (Z-A)']}
-                    // value={data.sortBy}
-                    // onChange={(e) =>
-                    //     setData('sortBy', e.target.value)
-                    // }
+                    title={`Add New title`}
+                    icon={<i className="bi bi-plus"></i>}
+                    // href={addUrl}
                 />
             </div>
         </div>
