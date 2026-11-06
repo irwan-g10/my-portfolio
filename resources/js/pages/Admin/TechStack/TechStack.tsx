@@ -7,7 +7,7 @@ export default function TechStack({ techStacks }) {
     // console.log(techStacks);
     return (
         <AdminLayout title="Tech Stack">
-            <div className="grid gap-2">
+            <div className="grid gap-5">
                 <div>
                     <StatisticCard
                         title="Tech Stack"

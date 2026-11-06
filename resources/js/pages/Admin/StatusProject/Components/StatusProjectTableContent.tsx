@@ -1,4 +1,3 @@
-import IconGenerate from '@/components/IconGenerate';
 import Button from '@/components/ui/Button';
 import { router } from '@inertiajs/react';
 
@@ -39,15 +38,7 @@ export default function StatusProjectTableContent({ statusProjects }) {
                             <td className="p-3 whitespace-nowrap">
                                 {index + 1}
                             </td>
-                            <td className="p-3">
-                                <IconGenerate
-                                    icon={project.icon}
-                                    className="text-xl"
-                                />
-                            </td>
-                            <td className="p-3">{project.Status}</td>
-                            <td className="p-3">{project.job_desc}</td>
-                            <td className="p-3">{project.description}</td>
+                            <td className="p-3">{project.status}</td>
                             <td className="p-3">
                                 <div className="flex gap-2">
                                     <Button

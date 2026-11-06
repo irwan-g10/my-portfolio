@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StatusProject;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -12,7 +13,7 @@ class StatusProjectController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Admin/StatusProject/StatusProject');
+        return Inertia::render('Admin/StatusProject/StatusProject',['statusProject'=> StatusProject::paginate(5)]);
     }
 
     /**
@@ -28,7 +29,15 @@ class StatusProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'status' => 'required|string|max:255',
+        ]);
+
+        StatusProject::create($validate);
+
+        // dd($validate);
+
+        return redirect()->route('status-projects.index')->with('success', 'Status Project created successfully.');
     }
 
     /**

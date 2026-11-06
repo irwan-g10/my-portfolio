@@ -3,6 +3,7 @@ import AdminLayout from '../AdminLayout';
 import StatusProjectTable from './Components/StatusProjectTable';
 
 export default function StatusProject({ statusProject }) {
+    console.log(statusProject);
     return (
         <AdminLayout>
             <div className="grid gap-2">
@@ -13,7 +14,7 @@ export default function StatusProject({ statusProject }) {
                         addUrl="/status-projects/create"
                     />
                 </div>
-                <StatusProjectTable statusProjects={[]} />
+                <StatusProjectTable statusProjects={statusProject} />
             </div>
         </AdminLayout>
     );

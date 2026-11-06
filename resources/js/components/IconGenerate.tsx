@@ -17,7 +17,7 @@ export default function IconGenerate({ icon, className }) {
         iconElement = <span>Unknown Icon Type</span>;
     }
     return (
-        <div className={`flex items-center justify-center p-2 ${className}`}>
+        <div className={`flex items-center justify-center ${className}`}>
             {iconElement}
         </div>
     );

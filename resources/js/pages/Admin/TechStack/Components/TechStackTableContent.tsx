@@ -1,5 +1,5 @@
+import ActionButton from '@/components/Common/Admin/ActionButton';
 import IconGenerate from '@/components/IconGenerate';
-import Button from '@/components/ui/Button';
 import { router } from '@inertiajs/react';
 
 export default function TechStackTableContent({ techStacks }) {
@@ -23,10 +23,10 @@ export default function TechStackTableContent({ techStacks }) {
                             <input type="checkbox" />
                         </th>
                         <th className="w-1 p-3">No</th>
-                        <th className="w-2/10 p-3">Icon</th>
+                        <th className="w-1 p-3">Icon</th>
                         <th className="w-2/10 p-3">Tech Stack Name</th>
-                        <th className="w-4/10 p-3">Jobdesc</th>
-                        <th className="w-6/10 p-3">Description</th>
+                        <th className="w-3/10 p-3">Jobdesc</th>
+                        <th className="w-5/10 p-3">Description</th>
                         <th className="w-1 p-3 text-center">Action</th>
                     </tr>
                 </thead>
@@ -34,38 +34,28 @@ export default function TechStackTableContent({ techStacks }) {
                     {techStacks.map((project, index) => (
                         <tr
                             key={project.id}
-                            className={`hover:bg-slate-600 ${index % 2 === 0 ? '' : 'bg-slate-950/50'}`}
+                            className={`hover:bg-slate-600 ${index % 2 === 0 ? '' : 'bg-slate-950/50'} `}
                         >
-                            <td className="p-3">
+                            <td className="p-3 text-center whitespace-nowrap">
                                 <input type="checkbox" />
                             </td>
-                            <td className="p-3 whitespace-nowrap">
-                                {index + 1}
-                            </td>
+                            <td className="p-3">{index + 1}</td>
                             <td className="p-3">
                                 <IconGenerate
                                     icon={project.icon}
-                                    className="text-xl"
+                                    className="text-lg"
                                 />
                             </td>
                             <td className="p-3">{project.title}</td>
                             <td className="p-3">{project.job_desc}</td>
                             <td className="p-3">{project.description}</td>
                             <td className="p-3">
-                                <div className="flex gap-2">
-                                    <Button
-                                        icon={<i className="bi bi-trash3"></i>}
-                                        className="h-7 w-7 rounded-sm text-xs"
-                                        onClick={() => handleDelete(project.id)}
-                                    />
-                                    <Button
-                                        icon={
-                                            <i className="bi bi-pencil-square"></i>
-                                        }
-                                        href={`/tech-stacks/${project.id}/update`}
-                                        className="h-7 w-7 rounded-sm text-xs"
-                                    />
-                                </div>
+                                <ActionButton
+                                    handleDelete={() =>
+                                        handleDelete(project.id)
+                                    }
+                                    href={`/tech-stacks/${project.id}/update`}
+                                />
                             </td>
                         </tr>
                     ))}

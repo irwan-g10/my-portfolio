@@ -58,4 +58,6 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
     Route::get('/status-projects',[StatusProjectController::class, 'index'])->name('status-projects.index');
     Route::get('/status-projects/create',[StatusProjectController::class, 'create'])->name('status-projects.create');
     
+    Route::post('/api/status-projects',[StatusProjectController::class, 'store'])->name('status-projects.store');
+    
 require __DIR__.'/settings.php';
