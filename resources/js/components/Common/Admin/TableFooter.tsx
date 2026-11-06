@@ -8,9 +8,9 @@ export default function TableFooter({ children }) {
             <div className="flex items-center justify-between gap-5">
                 <div className="text-sm">0 items selected</div>
                 <Button
-                    title={`Delete Selected data`}
-                    icon={<i className="bi bi-plus"></i>}
-                    // href={'projects/create'}
+                    icon={<i className="bi bi-trash3"></i>}
+                    className="h-7 w-7 rounded-sm text-xs"
+                    // onClick={handleDelete}
                 />
             </div>
             <div className="flex justify-end gap-2">

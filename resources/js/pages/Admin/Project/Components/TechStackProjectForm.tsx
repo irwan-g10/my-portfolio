@@ -1,7 +1,7 @@
 import Input from '@/components/ui/Input';
 import FormLayout from './FormLayout';
 
-export default function TechStackProjectForm({ data, setData }) {
+export default function TechStackProjectForm({ data, setData, techStack }) {
     const dummyTechs = [
         'Frontend Development',
         'UI/UX Design',
@@ -9,16 +9,17 @@ export default function TechStackProjectForm({ data, setData }) {
         'RESTful API Integration',
         'Git & Version Control',
     ];
+    console.log(techStack);
     return (
         <FormLayout title="Tech Stack">
             <div className="flex flex-wrap justify-start gap-2">
-                {dummyTechs.map((tech, index) => (
+                {techStack.map((tech, index) => (
                     <Input
                         type="radio"
-                        label={tech}
+                        label={tech.title}
                         name="tech_stack"
-                        value={tech}
-                        checked={data.tech_stack === tech}
+                        value={tech.id}
+                        checked={Number(data.tech_stack) === Number(tech.id)}
                         onChange={(e) => setData('tech_stack', e.target.value)}
                     />
                 ))}

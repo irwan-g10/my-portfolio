@@ -9,7 +9,7 @@ import StatusProjectForm from './Components/StatusProjectForm';
 import TechStackProjectForm from './Components/TechStackProjectForm';
 import ThumbnailProjectForm from './Components/ThumbnailProjectForm';
 
-export default function Create({ skills }) {
+export default function Create({ skills, statusProject, techStack }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         title: '',
         role: '',
@@ -44,10 +44,12 @@ export default function Create({ skills }) {
                             setData={setData}
                         />
                         <StatusProjectForm
+                            statusProject={statusProject}
                             data={data}
                             setData={setData}
                         />
                         <TechStackProjectForm
+                            techStack={techStack}
                             data={data}
                             setData={setData}
                         />

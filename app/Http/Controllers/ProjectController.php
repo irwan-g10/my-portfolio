@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Models\Skill;
+use App\Models\StatusProject;
+use App\Models\TechStack;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -20,7 +22,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Admin/Project/Create', ['skills' => Skill::all()]);
+        return Inertia::render('Admin/Project/Create', ['skills' => Skill::all(), 'statusProject' => StatusProject::all(), 'techStack' => TechStack::all()]);
     }
 
     /**
