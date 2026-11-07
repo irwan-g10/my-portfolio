@@ -87,7 +87,7 @@ export default function NavbarMain() {
                             <NavMainSubItem
                                 title="Category"
                                 icon="bi-code-slash"
-                                href="/projects"
+                                href="/category-skills"
                             />
                             <NavbarMainItem
                                 title="Certificates"

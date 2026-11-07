@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\CategorySkillController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\JourneyController;
@@ -46,6 +47,9 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
     Route::get('/skills',[SkillController::class, 'index'])->name('skills.index');
     Route::post('/skills',[SkillController::class, 'store'])->name('skills.store');
     Route::get('/skills/create',[SkillController::class, 'create'])->name('skills.create');
+
+    Route::get('/category-skills', [CategorySkillController::class, 'index'])->name('category-skills.index');
+    Route::get('/category-skills/create', [CategorySkillController::class, 'create'])->name('category-skills.create');
 
     Route::get('/tech-stacks',[TechStackController::class, 'index'])->name('tech-stacks.index');
     Route::get('/tech-stacks/create',[TechStackController::class, 'create'])->name('tech-stacks.create');
