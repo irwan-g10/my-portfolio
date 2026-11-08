@@ -89,6 +89,11 @@ export default function NavbarMain() {
                                 icon="bi-code-slash"
                                 href="/category-skills"
                             />
+                            <NavMainSubItem
+                                title="Level"
+                                icon="bi-code-slash"
+                                href="/level-skills"
+                            />
                             <NavbarMainItem
                                 title="Certificates"
                                 icon="bi-award"

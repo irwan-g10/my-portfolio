@@ -6,10 +6,12 @@ use App\Http\Controllers\CategorySkillController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\JourneyController;
+use App\Http\Controllers\LevelSkillController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\StatusProjectController;
 use App\Http\Controllers\TechStackController;
+use App\Models\LevelSkill;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
@@ -50,6 +52,10 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
 
     Route::get('/category-skills', [CategorySkillController::class, 'index'])->name('category-skills.index');
     Route::get('/category-skills/create', [CategorySkillController::class, 'create'])->name('category-skills.create');
+
+
+    Route::get('/level-skills', [LevelSkillController::class, 'index'])->name('level-skills.index');
+    // Route::get('/Level-skills/create', [CategorySkillController::class, 'create'])->name('category-skills.create');
     
     
     Route::post('/api/category-skills', [CategorySkillController::class, 'store'])->name('category-skills.store');
