@@ -2,7 +2,8 @@ import StatisticCard from '@/components/StatisticCard';
 import AdminLayout from '../AdminLayout';
 import CategorySkillTable from './Components/CategorySkillTable';
 
-function CategorySkill() {
+function CategorySkill({ categorySkills }) {
+    console.log(categorySkills);
     return (
         <AdminLayout title="Category Skills">
             <div className="grid gap-5">
@@ -10,7 +11,7 @@ function CategorySkill() {
                     title="Category Skill"
                     total="10"
                 />
-                <CategorySkillTable categorySkills={[]} />
+                <CategorySkillTable categorySkills={categorySkills} />
             </div>
         </AdminLayout>
     );

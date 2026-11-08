@@ -20,7 +20,7 @@ export default function CreateCategorySkill({ categorySkill }) {
         //         },
         //     });
         // } else {
-        post('/api/status-projects', {
+        post('/api/category-skills', {
             onSuccess: () => reset(),
             onError: (errors) => {
                 console.log(errors);
@@ -38,8 +38,8 @@ export default function CreateCategorySkill({ categorySkill }) {
                     <Input
                         label="Category Name"
                         placeholder="Enter Category Name"
-                        value={data.status}
-                        onChange={(e) => setData('status', e.target.value)}
+                        value={data.name}
+                        onChange={(e) => setData('name', e.target.value)}
                     />
                     <div className="flex justify-end">
                         <Button

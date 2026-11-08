@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategorySkill;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -12,7 +13,7 @@ class CategorySkillController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Admin/CategorySkill/CategorySkill');
+        return Inertia::render('Admin/CategorySkill/CategorySkill', ['categorySkills' => CategorySkill::paginate(5)]);
     }
 
     /**
@@ -28,7 +29,15 @@ class CategorySkillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        CategorySkill::create($validate);
+
+        // dd($validate);
+
+        return redirect()->route('category-skills.index')->with('success', 'Category Skill created successfully.');
     }
 
     /**

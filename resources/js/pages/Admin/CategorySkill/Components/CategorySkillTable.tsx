@@ -8,7 +8,7 @@ export default function CategorySkillTable({ categorySkills }) {
     return (
         <Card className="relative grid gap-5 text-xs">
             <TableHeader addUrl="/category-skills/create" />
-            <CategorySkillTableContent categorySkills={[]} />
+            <CategorySkillTableContent categorySkills={categorySkills.data} />
             <TableFooter />
             <Pagination data={categorySkills} />
         </Card>

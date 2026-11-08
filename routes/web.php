@@ -50,6 +50,9 @@ Route::get('/', [PortfolioController::class, 'index'])->name('portfolio.index');
 
     Route::get('/category-skills', [CategorySkillController::class, 'index'])->name('category-skills.index');
     Route::get('/category-skills/create', [CategorySkillController::class, 'create'])->name('category-skills.create');
+    
+    
+    Route::post('/api/category-skills', [CategorySkillController::class, 'store'])->name('category-skills.store');
 
     Route::get('/tech-stacks',[TechStackController::class, 'index'])->name('tech-stacks.index');
     Route::get('/tech-stacks/create',[TechStackController::class, 'create'])->name('tech-stacks.create');
