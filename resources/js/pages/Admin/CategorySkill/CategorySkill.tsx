@@ -1,6 +1,6 @@
 import StatisticCard from '@/components/StatisticCard';
 import AdminLayout from '../AdminLayout';
-import CategorySkillTable from './Components/CategorySkillTable';
+import CategorySkillTable from '../Skill/Components/CategorySkillContent';
 
 function CategorySkill({ categorySkills }) {
     console.log(categorySkills);

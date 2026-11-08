@@ -11,10 +11,14 @@ use Inertia\Inertia;
 
 class ProjectController extends Controller
 {
-    
+
     public function index()
     {
-        return Inertia::render('Admin/Project/Index', ['projects' => Project::with('skills')->paginate(5)]);
+        return Inertia::render('Admin/Project/Index', [
+            'projects' => Project::with('skills')->paginate(5),
+            'techStacks' => TechStack::with('icon')->paginate(5),
+            'statusProjects' => StatusProject::paginate(5)
+        ]);
     }
 
     /**
@@ -44,40 +48,39 @@ class ProjectController extends Controller
             'features' => 'nullable|array',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'galery' => 'nullable|array',
-            'skills' => 'nullable|array', 
-            'skills.*' => 'exists:skills,id', 
+            'skills' => 'nullable|array',
+            'skills.*' => 'exists:skills,id',
             'galery.*' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
 
         ]);
 
         // dd($validate);
 
-       // 1. Buat project dulu dan AMBIL data request KECUALI 'skills'
-    $project = Project::create($request->except('skills','galery','thumbnail'));
+        // 1. Buat project dulu dan AMBIL data request KECUALI 'skills'
+        $project = Project::create($request->except('skills', 'galery', 'thumbnail'));
 
-    // 2. Masukkan relasi skill yang dipilih ke tabel pivot 'project_to_skill'
-    if ($request->has('skills')) {
-        $project->skills()->sync($request->input('skills'));
-    }
-    if($request->hasFile('galery')){
-        foreach($request->file('galery') as $file){
-            $filename = 'galery_'.time().'-'.uniqid().'.'. $file->getClientOriginalExtension();
-
-            $path = $file->storeAs('projects/galery',$filename,'public');
-            $project->galeries()->create(
-                ['image_path' => $path]
-            );
+        // 2. Masukkan relasi skill yang dipilih ke tabel pivot 'project_to_skill'
+        if ($request->has('skills')) {
+            $project->skills()->sync($request->input('skills'));
         }
+        if ($request->hasFile('galery')) {
+            foreach ($request->file('galery') as $file) {
+                $filename = 'galery_' . time() . '-' . uniqid() . '.' . $file->getClientOriginalExtension();
 
-    }
-    if($request->hasFile('thumbnail')){
-        $filename = 'thumbnail'.time().'-'.uniqid().'.'. $request->file('thumbnail')->getClientOriginalExtension();
+                $path = $file->storeAs('projects/galery', $filename, 'public');
+                $project->galeries()->create(
+                    ['image_path' => $path]
+                );
+            }
+        }
+        if ($request->hasFile('thumbnail')) {
+            $filename = 'thumbnail' . time() . '-' . uniqid() . '.' . $request->file('thumbnail')->getClientOriginalExtension();
 
-        $path = $request->file('thumbnail')->storeAs('projects/thumbnail', $filename, 'public');
-        $project->update([
-        'thumbnail' => $path
-    ]);
-    }
+            $path = $request->file('thumbnail')->storeAs('projects/thumbnail', $filename, 'public');
+            $project->update([
+                'thumbnail' => $path
+            ]);
+        }
 
         return redirect()->route('projects.index')->with('success', 'Project berhasil ditambahkan!');
     }

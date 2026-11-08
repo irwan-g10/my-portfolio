@@ -4,11 +4,14 @@ import Pagination from '@/components/Pagination';
 import Card from '@/components/ui/Card';
 import StatusProjectTableContent from './StatusProjectTableContent';
 
-export default function StatusProjectTable({ statusProjects }) {
+export default function StatusProjectContent({ statusProjects }) {
     // console.log(statusProjects);
     return (
         <Card className="relative grid gap-5 text-xs">
-            <TableHeader addUrl="/status-projects/create" />
+            <TableHeader
+                addUrl="/status-projects/create"
+                title={'Status'}
+            />
             <StatusProjectTableContent statusProjects={statusProjects.data} />
             <TableFooter />
             <Pagination data={statusProjects} />

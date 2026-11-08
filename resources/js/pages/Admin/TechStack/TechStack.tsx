@@ -1,6 +1,6 @@
 import StatisticCard from '../../../components/StatisticCard';
 import AdminLayout from '../AdminLayout';
-import TechStackTable from './Components/TechStackTable';
+import TechStackTable from '../Project/Components/TechStackContent';
 
 export default function TechStack({ techStacks }) {
     // console.log(techStacks);

@@ -17,12 +17,12 @@ export default function TableHeader({ title, addUrl, onClick }) {
                     icon={<i className="bi bi-search"></i>}
                     inline
                     label={'Cari data :'}
-                    placeholder="Filter by Project name"
+                    placeholder={`FIlter by ${title} name`}
                 />
             </div>
             <div className="">
                 <Button
-                    title={`Add New title`}
+                    title={`New ${title}`}
                     icon={<i className="bi bi-plus"></i>}
                     href={addUrl}
                 />

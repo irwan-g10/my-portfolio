@@ -1,6 +1,6 @@
 import StatisticCard from '@/components/StatisticCard';
 import AdminLayout from '../AdminLayout';
-import StatusProjectTable from './Components/StatusProjectTable';
+import StatusProjectTable from '../Project/Components/StatusProjectContent';
 
 export default function StatusProject({ statusProject }) {
     console.log(statusProject);

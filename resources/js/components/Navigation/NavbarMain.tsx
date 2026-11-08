@@ -2,7 +2,6 @@ import { useTheme } from '@/hooks/useTheme';
 import { usePage } from '@inertiajs/react';
 import { useState } from 'react';
 import NavbarMainItem from '../Common/NavbarMainItem';
-import NavMainSubItem from '../Common/NavMainSubItem';
 import ThemeButton from '../Common/ThemeButton';
 
 export default function NavbarMain() {
@@ -59,41 +58,12 @@ export default function NavbarMain() {
                                 icon="bi-code-slash"
                                 href="/projects"
                             />
-                            <NavMainSubItem
-                                title="All Projects"
-                                icon="bi-code-slash"
-                                href="/projects"
-                            />
-                            <NavMainSubItem
-                                title="Tech Stack"
-                                icon="bi-code-slash"
-                                href="/tech-stacks"
-                            />
-                            <NavMainSubItem
-                                title="Status"
-                                icon="bi-code-slash"
-                                href="/status-projects"
-                            />
                             <NavbarMainItem
                                 title="Skills"
                                 icon="bi-tools"
                                 href="/skills"
                             />
-                            <NavMainSubItem
-                                title="All Skill"
-                                icon="bi-code-slash"
-                                href="/projects"
-                            />
-                            <NavMainSubItem
-                                title="Category"
-                                icon="bi-code-slash"
-                                href="/category-skills"
-                            />
-                            <NavMainSubItem
-                                title="Level"
-                                icon="bi-code-slash"
-                                href="/level-skills"
-                            />
+
                             <NavbarMainItem
                                 title="Certificates"
                                 icon="bi-award"

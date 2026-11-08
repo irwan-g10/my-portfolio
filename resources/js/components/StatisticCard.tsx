@@ -17,6 +17,7 @@ export default function StatisticCard({
     onClick,
     addUrl = '',
     children,
+    setDataActive,
 }: StatisticCardProps) {
     let pulseActive;
     const activeStyle = 'border-emerald-500/20 bg-emerald-500/10 ';
@@ -26,26 +27,22 @@ export default function StatisticCard({
         );
     }
     return (
-        <div className="grid grid-cols-3 gap-5">
-            <div className="">
-                <Card
-                    className={`flex origin-bottom cursor-pointer flex-col justify-between text-xs transition-transform duration-300 ${active && activeStyle}`}
-                    onClick={onClick}
-                >
-                    <div className="flex justify-between border-b-2 border-slate-950 pb-2">
-                        <div className="text-lg font-semibold">{title}</div>
-                        <Card className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-950 p-0">
-                            {pulseActive}
-                        </Card>
-                    </div>
-                    <div className="flex justify-between gap-2">
-                        <div className="flex items-end gap-2">
-                            <span className="text-4xl font-bold">{total}</span>
-                            <span className="text-">Total {title} </span>
-                        </div>
-                    </div>
+        <Card
+            className={`flex origin-bottom cursor-pointer flex-col justify-between text-xs transition-transform duration-300 ${active && activeStyle}`}
+            onClick={onClick}
+        >
+            <div className="flex justify-between border-b-2 border-slate-950 pb-2">
+                <div className="text-lg font-semibold">{title}</div>
+                <Card className="flex h-7 w-7 items-center justify-center rounded-full bg-slate-950 p-0">
+                    {pulseActive}
                 </Card>
             </div>
-        </div>
+            <div className="flex justify-between gap-2">
+                <div className="flex items-end gap-2">
+                    <span className="text-4xl font-bold">{total}</span>
+                    <span className="text-">Total {title} </span>
+                </div>
+            </div>
+        </Card>
     );
 }

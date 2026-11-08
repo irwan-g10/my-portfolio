@@ -1,19 +1,56 @@
+import { useState } from 'react';
 import StatisticCard from '../../../components/StatisticCard';
 import AdminLayout from '../AdminLayout';
-import ProjectTable from './Components/ProjectTable';
+import ProjectContent from './Components/ProjectContent';
+import StatusProjectContent from './Components/StatusProjectContent';
+import TechStackContent from './Components/TechStackContent';
 
-export default function Project({ projects }) {
-    console.log('Projects data:', projects); // Log the projects data to the console
+export default function Project({ projects, techStacks, statusProjects }) {
+    const [dataActive, setDataActive] = useState('projects');
+    const statistic = [
+        {
+            key: 'projects',
+            title: 'Project',
+            total: projects.total,
+        },
+        {
+            key: 'tech-stack',
+            title: 'Tech Stack',
+            total: techStacks.total,
+        },
+        {
+            key: 'status-project',
+            title: 'Status',
+            total: statusProjects.total,
+        },
+    ];
+
+    let content;
+
+    if (dataActive === 'projects') {
+        content = <ProjectContent projects={projects} />;
+    } else if (dataActive === 'tech-stack') {
+        content = <TechStackContent techStacks={techStacks} />;
+    } else if (dataActive === 'status-project') {
+        content = <StatusProjectContent statusProjects={statusProjects} />;
+    }
+
     return (
         <AdminLayout title="Project">
-            <div className="grid gap-2">
-                <div>
-                    <StatisticCard
-                        title="Project"
-                        total="10"
-                    />
+            <div className="grid gap-5">
+                <div className="grid grid-cols-3 gap-2">
+                    {statistic.map((stat) => (
+                        <StatisticCard
+                            key={stat.key}
+                            title={stat.title}
+                            total={stat.total}
+                            active={dataActive === stat.key}
+                            onClick={() => setDataActive(stat.key)}
+                        />
+                    ))}
                 </div>
-                <ProjectTable projects={projects} />
+
+                {content}
             </div>
         </AdminLayout>
     );

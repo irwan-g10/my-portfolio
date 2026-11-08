@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategorySkill;
+use App\Models\LevelSkill;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -14,14 +16,18 @@ class SkillController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Admin/Skill/Index', ['skills' => Skill::paginate(5)]);
-        }
-        
-        /**
-         * Show the form for creating a new resource.
-        */
-        public function create()
-        {
+        return Inertia::render('Admin/Skill/Index', [
+            'skills' => Skill::paginate(5),
+            'category' => CategorySkill::paginate(5),
+            'level' => LevelSkill::paginate(5),
+        ]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
         return Inertia::render('Admin/Skill/Create');
         //
     }

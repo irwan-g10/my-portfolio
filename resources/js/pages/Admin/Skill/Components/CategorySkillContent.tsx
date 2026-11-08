@@ -4,10 +4,13 @@ import Pagination from '@/components/Pagination';
 import Card from '@/components/ui/Card';
 import CategorySkillTableContent from './CategorySkillTableContent';
 
-export default function CategorySkillTable({ categorySkills }) {
+export default function CategorySkillContent({ categorySkills }) {
     return (
         <Card className="relative grid gap-5 text-xs">
-            <TableHeader addUrl="/category-skills/create" />
+            <TableHeader
+                addUrl="/category-skills/create"
+                title={'Category'}
+            />
             <CategorySkillTableContent categorySkills={categorySkills.data} />
             <TableFooter />
             <Pagination data={categorySkills} />

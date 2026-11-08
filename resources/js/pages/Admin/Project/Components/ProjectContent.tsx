@@ -5,10 +5,13 @@ import Card from '@/components/ui/Card';
 import Dropdown from '@/components/ui/Dropdown';
 import ProjectTableContent from './ProjectTableContent';
 
-export default function ProjectTable({ projects }) {
+export default function ProjectContent({ projects }) {
     return (
         <Card className="relative grid gap-5 text-xs">
-            <TableHeader addUrl={'/projects/create'} />
+            <TableHeader
+                addUrl={'/projects/create'}
+                title={'Project'}
+            />
             <ProjectTableContent data={projects.data} />
             <TableFooter>
                 <Dropdown label={'Tech Stack'} />
