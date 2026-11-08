@@ -3,6 +3,7 @@ import { useForm } from '@inertiajs/react';
 import { useState } from 'react';
 import AdminLayout from '../AdminLayout';
 import CategorySkillContent from './Components/CategorySkillContent';
+import LevelSkillContent from './Components/LevelSkillContent';
 import SkillContent from './Components/SkillContent';
 
 export default function Index({ skills, category, level }) {
@@ -34,10 +35,9 @@ export default function Index({ skills, category, level }) {
         content = <SkillContent skills={skills} />;
     } else if (dataActive === 'category') {
         content = <CategorySkillContent categorySkills={category} />;
+    } else if (dataActive === 'level') {
+        content = <LevelSkillContent levelSkills={level} />;
     }
-    //  else if (dataActive === 'status-project') {
-    //     content = <StatusProjectContent level={level} />;
-    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();

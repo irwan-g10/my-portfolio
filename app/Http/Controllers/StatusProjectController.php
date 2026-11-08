@@ -13,7 +13,7 @@ class StatusProjectController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Admin/StatusProject/StatusProject',['statusProject'=> StatusProject::paginate(5)]);
+        return Inertia::render('Admin/StatusProject/StatusProject', ['statusProject' => StatusProject::paginate(5)]);
     }
 
     /**
@@ -35,7 +35,6 @@ class StatusProjectController extends Controller
 
         StatusProject::create($validate);
 
-        // dd($validate);
 
         return redirect()->route('status-projects.index')->with('success', 'Status Project created successfully.');
     }

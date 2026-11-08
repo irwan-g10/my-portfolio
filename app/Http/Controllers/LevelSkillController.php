@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LevelSkill;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -20,7 +21,8 @@ class LevelSkillController extends Controller
      */
     public function create()
     {
-        //
+        // dd('halo');
+        return Inertia::render('Admin/LevelSkill/CreateLevelSkill');
     }
 
     /**
@@ -28,7 +30,13 @@ class LevelSkillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'name' => 'string|required|max:255'
+        ]);
+
+        LevelSkill::create($validate);
+
+        return redirect()->route('skills.index')->with('Success', 'Level Created Succesfully');
     }
 
     /**
