@@ -32,6 +32,7 @@ class SkillController extends Controller
     {
         return Inertia::render('Admin/Skill/Create', [
             'category' => CategorySkill::all(),
+            'level' => LevelSkill::all(),
         ]);
         //
     }
@@ -43,7 +44,7 @@ class SkillController extends Controller
     {
         $validate = $request->validate([
             'name' => 'required|string|max:255',
-            'category' => 'required|string|max:255',
+            'category' => 'nullable|string|max:255',
             'level' => 'nullable|string|min:0|max:100',
             'percentage' => 'nullable|integer|max:255',
             'iconSource' => 'nullable|string|max:255',

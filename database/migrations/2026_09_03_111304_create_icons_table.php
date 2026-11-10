@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('icons', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('icon_name')->require();
+            $table->string('type')->require();
+            $table->string('source')->require();
             $table->string('category')->nullable();
-            $table->string('type');
-            $table->string('source');
             $table->timestamps();
         });
     }

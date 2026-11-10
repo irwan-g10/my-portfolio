@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title')->require();
             $table->string('label')->nullable();
             $table->boolean('is_featured')->default(false);
             $table->string('role')->nullable();

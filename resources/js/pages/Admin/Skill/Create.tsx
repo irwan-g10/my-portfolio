@@ -6,7 +6,7 @@ import WakeSlider from '@/components/WakeSlider';
 import { useForm } from '@inertiajs/react';
 import AdminLayout from '../AdminLayout';
 
-export default function Create({ category }) {
+export default function Create({ category, level }) {
     const { data, setData, post, put, processing, errors, reset } = useForm({
         name: '',
         category: '',
@@ -22,23 +22,38 @@ export default function Create({ category }) {
                 ? value.target.value
                 : value;
 
-        if (val > 75) {
-            setData('level', 'Expert');
-        } else if (val > 45) {
-            setData('level', 'Advance');
-        } else if (val > 20) {
-            setData('level', 'Intermediate');
-        } else {
-            setData('level', 'Beginner');
-        }
-        setData('percentage', val);
+        const totalLevels = level.length;
+        const rangeSize = 100 / totalLevels;
 
+        let matchedLevel = '';
+
+        for (let i = 0; i < totalLevels; i++) {
+            const upperLimit = rangeSize * (i + 1);
+
+            if (val <= upperLimit) {
+                matchedLevel = level[i].name;
+                break;
+            }
+        }
+
+        setData('percentage', val);
+        setData('level', matchedLevel);
+        // if (val > 75) {
+        //     setData('level', 'Expert');
+        // } else if (val > 45) {
+        //     setData('level', 'Advance');
+        // } else if (val > 20) {
+        //     setData('level', 'Intermediate');
+        // } else {
+        //     setData('level', 'Beginner');
+        // }
+        // setData('percentage', val);
         // alert(val);
     };
     const handleSumbit = (e) => {
         e.preventDefault();
 
-        console.log(data);
+        console.log(data.level);
         // if (isUpdate) {
         //     put(`/api/tech-stacks/${techStack.id}`, {
         //         onSuccess: () => reset(),
@@ -47,12 +62,12 @@ export default function Create({ category }) {
         //         },
         //     });
         // } else {
-        post('/api/skills', {
-            onSuccess: () => reset(),
-            onError: (errors) => {
-                console.log(errors);
-            },
-        });
+        // post('/api/skills', {
+        //     onSuccess: () => reset(),
+        //     onError: (errors) => {
+        //         console.log(errors);
+        //     },
+        // });
         // }
     };
     return (
@@ -90,7 +105,7 @@ export default function Create({ category }) {
                         <div className="grid px-10">
                             <WakeSlider
                                 value={data.percentage}
-                                min={0}
+                                min={5}
                                 max={100}
                                 step={5}
                                 bars={20}
@@ -108,77 +123,37 @@ export default function Create({ category }) {
                                 disabled={false}
                             />
                             <div className="mb-10 grid grid-cols-4 gap-1 text-sm font-semibold">
-                                <div
-                                    className="cursor-pointer"
-                                    onClick={() => {
-                                        setData('percentage', 20);
-                                        setData('level', 'Beginner');
-                                    }}
-                                >
+                                {level.map((lev, index) => (
                                     <div
-                                        className={`h-5 rounded-full border-b-[5px] ${data.level === 'Beginner' ? 'border-amber-500' : 'border-slate-100'}`}
-                                    ></div>
-                                    <div
-                                        className={`text-center text-sm ${data.level === 'Beginner' ? 'text-amber-500' : 'text-gray-500'}`}
+                                        className="cursor-pointer"
+                                        onClick={() => {
+                                            setData(
+                                                'percentage',
+                                                (100 / level.length) *
+                                                    (index + 1),
+                                            );
+                                            setData('level', lev.name);
+                                        }}
                                     >
-                                        Beginner
+                                        <div
+                                            className={`h-5 rounded-full border-b-[5px] ${data.level === lev.name ? 'border-amber-500' : 'border-slate-100'}`}
+                                        ></div>
+                                        <div
+                                            className={`text-center text-sm ${data.level === lev.name ? 'text-amber-500' : 'text-gray-500'}`}
+                                        >
+                                            {lev.name}
+                                        </div>
                                     </div>
-                                </div>
-                                <div
-                                    className="cursor-pointer"
-                                    onClick={() => {
-                                        setData('percentage', 45);
-                                        setData('level', 'Intermediate');
-                                    }}
-                                >
-                                    <div
-                                        className={`h-5 rounded-full border-b-[5px] ${data.level === 'Intermediate' ? 'border-amber-500' : 'border-slate-100'}`}
-                                    ></div>
-                                    <div
-                                        className={`text-center text-sm ${data.level === 'Intermediate' ? 'text-amber-500' : 'text-gray-500'}`}
-                                    >
-                                        Intermediate
-                                    </div>
-                                </div>
-                                <div
-                                    className="cursor-pointer"
-                                    onClick={() => {
-                                        setData('percentage', 75);
-                                        setData('level', 'Advance');
-                                    }}
-                                >
-                                    <div
-                                        className={`h-5 rounded-full border-b-[5px] ${data.level === 'Advance' ? 'border-amber-500' : 'border-slate-100'}`}
-                                    ></div>
-                                    <div
-                                        className={`text-center text-sm ${data.level === 'Advance' ? 'text-amber-500' : 'text-gray-500'}`}
-                                    >
-                                        Advance
-                                    </div>
-                                </div>
-                                <div
-                                    className="cursor-pointer"
-                                    onClick={() => {
-                                        setData('percentage', 100);
-                                        setData('level', 'Expert');
-                                    }}
-                                >
-                                    <div
-                                        className={`h-5 rounded-full border-b-[5px] ${data.level === 'Expert' ? 'border-amber-500' : 'border-slate-100'}`}
-                                    ></div>
-                                    <div
-                                        className={`text-center text-sm ${data.level === 'Expert' ? 'text-amber-500' : 'text-gray-500'}`}
-                                    >
-                                        Expert
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                         </div>
                     </div>
                 </Card>
                 <Card className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center justify-center rounded-sm p-2">
+                    <div className="flex flex-col items-center justify-between rounded-sm p-2">
+                        <div className="w-full text-start">Icon</div>
                         <i className="devicon-react-original text-6xl"></i>
+                        <div>{data.name && `react-${data.name}`}</div>
                     </div>
                     <div className="gap-2">
                         <div className="hidden">

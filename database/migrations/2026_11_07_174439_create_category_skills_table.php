@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('category_skills', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->require();
+            $table->string('category_name')->require();
             $table->timestamps();
         });
     }

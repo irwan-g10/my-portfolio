@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tech_stacks', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
+            $table->string('tech_stack_name')->require();
             $table->string('job_desc')->nullable();
             $table->string('description')->nullable();
             $table->foreignId('icon_id')->nullable()->constrained('icons');

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('status_projects', function (Blueprint $table) {
             $table->id();
-            $table->string('status');
+            $table->string('status_name')->require();
             $table->foreignId('icon_id')->nullable()->constrained('icons');
             $table->timestamps();
         });
