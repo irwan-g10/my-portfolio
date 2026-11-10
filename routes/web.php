@@ -47,7 +47,7 @@ Route::get('/certificates', [CertificateController::class, 'index'])->name('cert
 Route::get('/certificates/create', [CertificateController::class, 'create'])->name('certificates.create');
 
 Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
-Route::post('/skills', [SkillController::class, 'store'])->name('skills.store');
+Route::post('/api/skills', [SkillController::class, 'store'])->name('skills.store');
 Route::get('/skills/create', [SkillController::class, 'create'])->name('skills.create');
 
 Route::get('/category-skills', [CategorySkillController::class, 'index'])->name('category-skills.index');

@@ -11,7 +11,8 @@ export default function Dropdown({
 }) {
     const [optionShow, setOptionShow] = useState(false);
     return (
-        <div className="group relative">
+        <div className="relative grid">
+            <label htmlFor="">{label}</label>
             <select
                 name={name}
                 value={value}
@@ -22,14 +23,14 @@ export default function Dropdown({
                     value=""
                     className=""
                 >
-                    <div>{label}</div>
+                    <div>Select {label}</div>
                 </option>
                 {options.map((option, index) => (
                     <option
                         key={index}
-                        value={option}
+                        value={option.value ? option.value : option}
                     >
-                        {option}
+                        {option.label ? option.label : option}
                     </option>
                 ))}
             </select>

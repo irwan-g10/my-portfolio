@@ -27,6 +27,7 @@ export default function SkillTable({ skills }) {
                         <th className="w-4/10 p-3">Skill Name</th>
                         <th className="w-3/10 p-3">Category</th>
                         <th className="w-3/10 p-3">Level</th>
+                        <th className="w-3/10 p-3">Percentage</th>
                         <th className="w-1 p-3 text-center">Action</th>
                     </tr>
                 </thead>
@@ -46,9 +47,10 @@ export default function SkillTable({ skills }) {
                                     className="text-lg"
                                 />
                             </td>
-                            <td className="p-3">{skill.title}</td>
-                            <td className="p-3">{skill.job_desc}</td>
-                            <td className="p-3">{skill.description}</td>
+                            <td className="p-3">{skill.name}</td>
+                            <td className="p-3">{skill.category}</td>
+                            <td className="p-3">{skill.level}</td>
+                            <td className="p-3">{skill.percentage}</td>
                             <td className="p-3">
                                 <ActionButton
                                     handleDelete={() => handleDelete(skill.id)}

@@ -11,6 +11,7 @@ export default function Index({ skills, category, level }) {
         name: '',
         category: '',
     });
+    console.log(skills.data);
     const [dataActive, setDataActive] = useState('skills');
     const statistic = [
         {
