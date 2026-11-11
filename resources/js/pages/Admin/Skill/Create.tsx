@@ -53,7 +53,7 @@ export default function Create({ category, level }) {
     const handleSumbit = (e) => {
         e.preventDefault();
 
-        console.log(data.level);
+        console.log(category);
         // if (isUpdate) {
         //     put(`/api/tech-stacks/${techStack.id}`, {
         //         onSuccess: () => reset(),
@@ -94,7 +94,7 @@ export default function Create({ category, level }) {
                                 setData('category', e.target.value)
                             }
                             options={category.map((item) => ({
-                                label: item.name,
+                                label: item.category_name,
                                 value: item.id,
                             }))}
                         />
@@ -132,16 +132,16 @@ export default function Create({ category, level }) {
                                                 (100 / level.length) *
                                                     (index + 1),
                                             );
-                                            setData('level', lev.name);
+                                            setData('level', lev.level_name);
                                         }}
                                     >
                                         <div
-                                            className={`h-5 rounded-full border-b-[5px] ${data.level === lev.name ? 'border-amber-500' : 'border-slate-100'}`}
+                                            className={`h-5 rounded-full border-b-[5px] ${data.level === lev.level_name ? 'border-amber-500' : 'border-slate-100'}`}
                                         ></div>
                                         <div
-                                            className={`text-center text-sm ${data.level === lev.name ? 'text-amber-500' : 'text-gray-500'}`}
+                                            className={`text-center text-sm ${data.level === lev.level_name ? 'text-amber-500' : 'text-gray-500'}`}
                                         >
-                                            {lev.name}
+                                            {lev.level_name}
                                         </div>
                                     </div>
                                 ))}

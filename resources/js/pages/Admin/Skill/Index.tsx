@@ -1,5 +1,5 @@
 import StatisticCard from '@/components/StatisticCard';
-import { useForm } from '@inertiajs/react';
+import { router, useForm } from '@inertiajs/react';
 import { useState } from 'react';
 import AdminLayout from '../AdminLayout';
 import CategorySkillContent from './Components/CategorySkillContent';
@@ -11,7 +11,9 @@ export default function Index({ skills, category, level }) {
         name: '',
         category: '',
     });
-    console.log(skills.data);
+
+    const dataaaa = () => router.get('/api/category-skills');
+    console.log(dataaaa);
     const [dataActive, setDataActive] = useState('skills');
     const statistic = [
         {
@@ -41,11 +43,11 @@ export default function Index({ skills, category, level }) {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        post('/skills', {
-            onSuccess: () => reset(),
-            onError: (erors) => console.log(erors),
-        });
+        // e.preventDefault();
+        // post('/skills', {
+        //     onSuccess: () => reset(),
+        //     onError: (erors) => console.log(erors),
+        // });
         // console.log(skills);
     };
     return (

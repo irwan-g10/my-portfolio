@@ -4,16 +4,63 @@ namespace App\Http\Controllers;
 
 use App\Models\CategorySkill;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Inertia\Inertia;
+use Throwable;
 
 class CategorySkillController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Inertia::render('Admin/CategorySkill/CategorySkill', ['categorySkills' => CategorySkill::paginate(5)]);
+        try {
+            $paginate = $request->query('paginate');
+            $search = $request->query('search');
+            $sort = $request->query('sort', 'latest');
+
+            $query = CategorySkill::when($search, function ($q, $search) {
+                return $q->where('category_name',);
+            });
+
+            switch ($sort) {
+                case 'name_asc':
+                    $query->orderBy('name', 'asc');
+                    break;
+                case 'name_desc':
+                    $query->orderBy('name', 'desc');
+                    break;
+                case 'oldest':
+                    $query->oldest();
+                    break;
+                default:
+                    $query->latest();
+                    break;
+            };
+
+            if ($paginate) {
+                $categorySkills = $query->paginate($paginate)->withQueryString();
+            } else {
+                $categorySkills = $query->get();
+            }
+
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Category Skill retrieved succesfully',
+                'data' => $categorySkills
+            ]);
+        } catch (Throwable $e) {
+            Log::error('Failed to retrieve category skills', [
+                'error' => $e->getMessage(),
+            ]);
+
+            return response()->json([
+                'status' => 'failed',
+                'message' => $e->getMessage()
+            ], 500);
+        }
     }
 
     /**
@@ -69,6 +116,6 @@ class CategorySkillController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //nb  
     }
 }

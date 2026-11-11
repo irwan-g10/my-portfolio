@@ -38,7 +38,7 @@ export default function CategorySkillTableContent({ categorySkills }) {
                             <td className="p-3 whitespace-nowrap">
                                 {index + 1}
                             </td>
-                            <td className="p-3">{category.name}</td>
+                            <td className="p-3">{category.category_name}</td>
                             <td className="p-3">
                                 <div className="flex gap-2">
                                     <Button

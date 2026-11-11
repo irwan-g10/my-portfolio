@@ -60,6 +60,7 @@ Route::post('/api/level-skills', [LevelSkillController::class, 'store'])->name('
 
 
 Route::post('/api/category-skills', [CategorySkillController::class, 'store'])->name('category-skills.store');
+Route::get('/api/category-skills', [CategorySkillController::class, 'index'])->name('category-skills.index');
 
 Route::get('/tech-stacks', [TechStackController::class, 'index'])->name('tech-stacks.index');
 Route::get('/tech-stacks/create', [TechStackController::class, 'create'])->name('tech-stacks.create');
