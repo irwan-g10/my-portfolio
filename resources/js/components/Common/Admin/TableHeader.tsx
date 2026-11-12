@@ -2,7 +2,7 @@ import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import CategoryBadge from '../CategoryBadge';
 
-export default function TableHeader({ title, addUrl, onClick }) {
+export default function TableHeader({ title, addUrl, onClick, setSearching }) {
     return (
         <div className="grid w-full grid-cols-5 items-center gap-2">
             <div className="col-span-2 grid grid-cols-2 gap-2">
@@ -18,6 +18,7 @@ export default function TableHeader({ title, addUrl, onClick }) {
                     inline
                     label={'Cari data :'}
                     placeholder={`FIlter by ${title} name`}
+                    onChange={(e) => setSearching(e.target.value)}
                 />
             </div>
             <div className="">

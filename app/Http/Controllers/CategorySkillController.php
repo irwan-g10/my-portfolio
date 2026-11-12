@@ -21,18 +21,21 @@ class CategorySkillController extends Controller
             $sort = $request->query('sort', 'latest');
 
             $query = CategorySkill::when($search, function ($q, $search) {
-                return $q->where('category_name',);
+                return $q->where('category_name', 'like', '%' . $search . '%');
             });
 
             switch ($sort) {
                 case 'name_asc':
-                    $query->orderBy('name', 'asc');
+                    $query->orderBy('category_name', 'asc');
                     break;
                 case 'name_desc':
-                    $query->orderBy('name', 'desc');
+                    $query->orderBy('category_name', 'desc');
                     break;
                 case 'oldest':
                     $query->oldest();
+                    break;
+                case 'latest':
+                    $query->latest();
                     break;
                 default:
                     $query->latest();
@@ -77,12 +80,11 @@ class CategorySkillController extends Controller
     public function store(Request $request)
     {
         $validate = $request->validate([
-            'name' => 'required|string|max:255',
+            'category_name' => 'required|string|max:255',
         ]);
 
         CategorySkill::create($validate);
 
-        // dd($validate);
 
         return redirect()->route('category-skills.index')->with('success', 'Category Skill created successfully.');
     }

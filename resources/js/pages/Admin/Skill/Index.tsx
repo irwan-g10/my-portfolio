@@ -1,5 +1,5 @@
 import StatisticCard from '@/components/StatisticCard';
-import { router, useForm } from '@inertiajs/react';
+import { useForm } from '@inertiajs/react';
 import { useState } from 'react';
 import AdminLayout from '../AdminLayout';
 import CategorySkillContent from './Components/CategorySkillContent';
@@ -12,33 +12,29 @@ export default function Index({ skills, category, level }) {
         category: '',
     });
 
-    const dataaaa = () => router.get('/api/category-skills');
-    console.log(dataaaa);
-    const [dataActive, setDataActive] = useState('skills');
+    const [dataActive, setDataActive] = useState('Skill');
     const statistic = [
         {
-            key: 'skills',
             title: 'Skill',
             total: skills.total,
         },
         {
-            key: 'category',
             title: 'Category',
             total: category.total,
         },
         {
-            key: 'level',
             title: 'Level',
             total: level.total,
         },
     ];
     let content;
 
-    if (dataActive === 'skills') {
+    if (dataActive === 'Skill') {
         content = <SkillContent skills={skills} />;
-    } else if (dataActive === 'category') {
+    } else if (dataActive === 'Category') {
         content = <CategorySkillContent categorySkills={category} />;
-    } else if (dataActive === 'level') {
+        // console.log(dataCategory);
+    } else if (dataActive === 'Level') {
         content = <LevelSkillContent levelSkills={level} />;
     }
 
@@ -56,11 +52,11 @@ export default function Index({ skills, category, level }) {
                 <div className="grid grid-cols-3 gap-2">
                     {statistic.map((stat) => (
                         <StatisticCard
-                            key={stat.key}
+                            key={stat.title}
                             title={stat.title}
                             total={stat.total}
-                            active={dataActive === stat.key}
-                            onClick={() => setDataActive(stat.key)}
+                            active={dataActive === stat.title}
+                            onClick={() => setDataActive(stat.title)}
                         />
                     ))}
                 </div>

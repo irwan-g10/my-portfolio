@@ -1,7 +1,11 @@
 import Button from '@/components/ui/Button';
 import { router } from '@inertiajs/react';
 
-export default function CategorySkillTableContent({ categorySkills }) {
+export default function CategorySkillTableContent({
+    categorySkills,
+    selectedCategory,
+    setSelectedCategory,
+}) {
     const handleDelete = (id) => {
         if (confirm('Apakah kamu yakin ingin menghapus data ini?')) {
             // 2. Jalankan request DELETE ke route Laravel
@@ -11,6 +15,14 @@ export default function CategorySkillTableContent({ categorySkills }) {
                     console.log('Data berhasil dihapus');
                 },
             });
+        }
+    };
+
+    const handleCheckboxChange = (id) => {
+        if (selectedCategory.includes(id)) {
+            setSelectedCategory(selectedCategory.filter((item) => item !== id));
+        } else {
+            setSelectedCategory([...selectedCategory, id]);
         }
     };
     return (
@@ -33,7 +45,16 @@ export default function CategorySkillTableContent({ categorySkills }) {
                             className={`hover:bg-slate-600 ${index % 2 === 0 ? '' : 'bg-slate-950/50'}`}
                         >
                             <td className="p-3">
-                                <input type="checkbox" />
+                                <input
+                                    type="checkbox"
+                                    value={category.id}
+                                    checked={selectedCategory.includes(
+                                        category.id,
+                                    )}
+                                    onChange={() =>
+                                        handleCheckboxChange(category.id)
+                                    }
+                                />
                             </td>
                             <td className="p-3 whitespace-nowrap">
                                 {index + 1}
