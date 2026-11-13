@@ -6,7 +6,7 @@ import AdminLayout from '../AdminLayout';
 
 export default function CreateCategorySkill({ categorySkill }) {
     const { data, setData, post, put, processing, errors, reset } = useForm({
-        name: categorySkill?.status || '',
+        category_name: categorySkill?.status || '',
     });
     const handleSumbit = (e) => {
         e.preventDefault();
@@ -38,8 +38,10 @@ export default function CreateCategorySkill({ categorySkill }) {
                     <Input
                         label="Category Name"
                         placeholder="Enter Category Name"
-                        value={data.name}
-                        onChange={(e) => setData('name', e.target.value)}
+                        value={data.category_name}
+                        onChange={(e) =>
+                            setData('category_name', e.target.value)
+                        }
                     />
                     <div className="flex justify-end">
                         <Button

@@ -38,7 +38,7 @@ export default function LevelSkillTable({ levelSkills }) {
                             <td className="p-3 whitespace-nowrap">
                                 {index + 1}
                             </td>
-                            <td className="p-3">{level.name}</td>
+                            <td className="p-3">{level.level_name}</td>
                             <td className="p-3">
                                 <div className="flex gap-2">
                                     <Button

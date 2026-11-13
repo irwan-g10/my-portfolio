@@ -15,7 +15,7 @@ class CategorySkillController extends Controller
      */
     public function index(Request $request)
     {
-        try {
+        return $this->handleAPiRequests(function () use ($request) {
             $paginate = $request->query('paginate');
             $search = $request->query('search');
             $sort = $request->query('sort', 'latest');
@@ -54,16 +54,7 @@ class CategorySkillController extends Controller
                 'message' => 'Category Skill retrieved succesfully',
                 'data' => $categorySkills
             ]);
-        } catch (Throwable $e) {
-            Log::error('Failed to retrieve category skills', [
-                'error' => $e->getMessage(),
-            ]);
-
-            return response()->json([
-                'status' => 'failed',
-                'message' => $e->getMessage()
-            ], 500);
-        }
+        }, 'Failed to retrieved Category Skill');
     }
 
     /**
@@ -79,14 +70,18 @@ class CategorySkillController extends Controller
      */
     public function store(Request $request)
     {
-        $validate = $request->validate([
-            'category_name' => 'required|string|max:255',
-        ]);
+        return $this->handleAPiRequests(function () use ($request) {
+            $validate = $request->validate([
+                'category_name' => 'required|string|max:255'
+            ]);
 
-        CategorySkill::create($validate);
-
-
-        return redirect()->route('category-skills.index')->with('success', 'Category Skill created successfully.');
+            $categorySkills = CategorySkill::create($validate);
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Category Skill created succesfully',
+                'data' => $categorySkills
+            ], 201);
+        }, 'Failed to create category skill');
     }
 
     /**
@@ -100,17 +95,28 @@ class CategorySkillController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    public function edit(string $id) {}
 
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
     {
-        //
+        return $this->handleAPiRequests(function () use ($request, $id) {
+            $categorySkills = CategorySkill::findOrFail($id);
+
+            $validate = $request->validate([
+                'category_name' => 'required|string|max:255'
+            ]);
+
+            $categorySkills->update($validate);
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Category Skill updated successfully',
+                'data' => $categorySkills
+            ]);
+        }, 'Failed to update Category Skill');
     }
 
     /**
@@ -118,6 +124,14 @@ class CategorySkillController extends Controller
      */
     public function destroy(string $id)
     {
-        //nb  
+        return $this->handleAPiRequests(function () use ($id) {
+            $categorySkill = CategorySkill::findOrFail($id);
+            $categorySkill->delete();
+
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Category Skill deleted successfully'
+            ]);
+        }, 'Failed to delete Category');
     }
 }

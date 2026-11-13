@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class CategorySkill extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['category_name'];
 }
