@@ -15,46 +15,48 @@ class CategorySkillController extends Controller
      */
     public function index(Request $request)
     {
-        return $this->handleAPiRequests(function () use ($request) {
-            $paginate = $request->query('paginate');
-            $search = $request->query('search');
-            $sort = $request->query('sort', 'latest');
 
-            $query = CategorySkill::when($search, function ($q, $search) {
-                return $q->where('category_name', 'like', '%' . $search . '%');
-            });
+        return $this->handleGetAllAPiRequests(CategorySkill::class, 'category_name', $request);
+        // return $this->handleAPiRequests(function () use ($request) {
+        //     $paginate = $request->query('paginate');
+        //     $search = $request->query('search');
+        //     $sort = $request->query('sort', 'latest');
 
-            switch ($sort) {
-                case 'name_asc':
-                    $query->orderBy('category_name', 'asc');
-                    break;
-                case 'name_desc':
-                    $query->orderBy('category_name', 'desc');
-                    break;
-                case 'oldest':
-                    $query->oldest();
-                    break;
-                case 'latest':
-                    $query->latest();
-                    break;
-                default:
-                    $query->latest();
-                    break;
-            };
+        //     $query = CategorySkill::when($search, function ($q, $search) {
+        //         return $q->where('category_name', 'like', '%' . $search . '%');
+        //     });
 
-            if ($paginate) {
-                $categorySkills = $query->paginate($paginate)->withQueryString();
-            } else {
-                $categorySkills = $query->get();
-            }
+        //     switch ($sort) {
+        //         case 'name_asc':
+        //             $query->orderBy('category_name', 'asc');
+        //             break;
+        //         case 'name_desc':
+        //             $query->orderBy('category_name', 'desc');
+        //             break;
+        //         case 'oldest':
+        //             $query->oldest();
+        //             break;
+        //         case 'latest':
+        //             $query->latest();
+        //             break;
+        //         default:
+        //             $query->latest();
+        //             break;
+        //     };
+
+        //     if ($paginate) {
+        //         $categorySkills = $query->paginate($paginate)->withQueryString();
+        //     } else {
+        //         $categorySkills = $query->get();
+        //     }
 
 
-            return response()->json([
-                'status' => 'success',
-                'message' => 'Category Skill retrieved succesfully',
-                'data' => $categorySkills
-            ]);
-        }, 'Failed to retrieved Category Skill');
+        //     return response()->json([
+        //         'status' => 'success',
+        //         'message' => 'Category Skill retrieved succesfully',
+        //         'data' => $categorySkills
+        //     ]);
+        // }, 'Failed to retrieved Category Skill');
     }
 
     /**

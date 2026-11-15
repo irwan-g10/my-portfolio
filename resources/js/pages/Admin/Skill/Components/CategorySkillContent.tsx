@@ -26,9 +26,9 @@ export default function CategorySkillContent({ categorySkills }) {
             });
 
             setCategory(response.data.data);
-            console.log(response.data.data.data);
+            console.log(response.data);
         } catch (error) {
-            console.error('Error fetching data:', error);
+            console.log('Error fetching data:', error);
         } finally {
             setIsLoading(false);
         }
@@ -38,6 +38,7 @@ export default function CategorySkillContent({ categorySkills }) {
         fetchDataCategory();
     }, [searching, sorting, pagination]);
 
+    // console.log(category);
     return (
         <Card className="relative grid gap-5 text-xs">
             <TableHeader

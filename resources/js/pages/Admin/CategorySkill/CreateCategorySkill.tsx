@@ -23,7 +23,7 @@ export default function CreateCategorySkill({ categorySkill }) {
         post('/api/category-skills', {
             onSuccess: () => reset(),
             onError: (errors) => {
-                console.log(errors);
+                console.error('Error fetching data:', errors);
             },
         });
         // }
