@@ -13,31 +13,13 @@ use Throwable;
 
 abstract class Controller
 {
-    protected function handleAPiRequests(
-        Closure $callback,
-        string $logMessage
-    ) {
-        try {
-            return $callback();
-        } catch (ValidationException | ModelNotFoundException | HttpExceptionInterface $e) {
-            throw $e;
-        } catch (Throwable $e) {
-            Log::error($logMessage, [
-                'exception' => $e,
-            ]);
-            return response()->json([
-                'status' => 'failed',
-                'message' => app()->isProduction()
-                    ? 'Internal server errore'
-                    : $e->getMessage(),
-            ], 500);
-        }
-    }
+
 
     protected function handleGetAllAPiRequests(
         string $model,
         string $searchCol,
-        Request $request
+        Request $request,
+        array $with = []
     ) {
         $modelName = class_basename($model);
         try {
@@ -71,6 +53,10 @@ abstract class Controller
                 $data = $query->paginate($paginate)->withQueryString();
             } else {
                 $data = $query->get();
+            }
+
+            if (!empty($with)) {
+                $data->with($with);
             }
 
 

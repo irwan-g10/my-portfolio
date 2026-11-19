@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CategorySkillSeeder::class,
-            LevelSkillSeeder::class
+            LevelSkillSeeder::class,
+            SkillSeeder::class
         ]);
     }
 }

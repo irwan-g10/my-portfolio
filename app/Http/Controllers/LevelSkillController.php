@@ -11,9 +11,14 @@ class LevelSkillController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return Inertia::render('Admin/LevelSkill/LevelSkill');
+        // return Inertia::render('Admin/LevelSkill/LevelSkill');
+        return $this->handleGetAllAPiRequests(
+            model: LevelSkill::class,
+            searchCol: 'level_name',
+            request: $request
+        );
     }
 
     /**

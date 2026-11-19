@@ -6,7 +6,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import CategorySkillTableContent from './CategorySkillTableContent';
 
-export default function CategorySkillContent({ categorySkills }) {
+export default function CategorySkillContent() {
     const [category, setCategory] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [searching, setSearching] = useState('');
@@ -26,7 +26,7 @@ export default function CategorySkillContent({ categorySkills }) {
             });
 
             setCategory(response.data.data);
-            console.log(response.data);
+            // console.log(response.data);
         } catch (error) {
             console.log('Error fetching data:', error);
         } finally {
@@ -62,7 +62,7 @@ export default function CategorySkillContent({ categorySkills }) {
                 selectedData={selectedCategory}
                 setPagination={setPagination}
             />
-            <Pagination data={categorySkills} />
+            <Pagination data={category} />
         </Card>
     );
 }

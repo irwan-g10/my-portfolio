@@ -1,6 +1,6 @@
 import StatisticCard from '@/components/StatisticCard';
 import AdminLayout from '../AdminLayout';
-import CategorySkillTable from '../Skill/Components/CategorySkillContent';
+import CategorySkillContent from '../Skill/Components/CategorySkillContent';
 
 function CategorySkill({ categorySkills }) {
     console.log(categorySkills);
@@ -11,7 +11,7 @@ function CategorySkill({ categorySkills }) {
                     title="Category Skill"
                     total="10"
                 />
-                <CategorySkillTable categorySkills={categorySkills} />
+                <CategorySkillContent categorySkills={categorySkills} />
             </div>
         </AdminLayout>
     );

@@ -54,7 +54,7 @@ Route::get('/category-skills', [CategorySkillController::class, 'index'])->name(
 Route::get('/category-skills/create', [CategorySkillController::class, 'create'])->name('category-skills.create');
 
 
-Route::get('/level-skills', [LevelSkillController::class, 'index'])->name('level-skills.index');
+Route::get('/api/level-skills', [LevelSkillController::class, 'index'])->name('level-skills.index');
 Route::get('/level-skills/create', [LevelSkillController::class, 'create'])->name('level-skills.create');
 Route::post('/api/level-skills', [LevelSkillController::class, 'store'])->name('level-skills.store');
 
